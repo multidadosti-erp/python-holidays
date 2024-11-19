@@ -3,38 +3,39 @@ name = "holidays"
 description = "World Holidays Framework"
 license = { "text" = "MIT" }
 readme = "README.rst"
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 dynamic = ["version"]
 
 authors = [{ name = "Vacanza Team" }]
 dependencies = ["python-dateutil"]
 classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Intended Audience :: Education",
-    "Intended Audience :: End Users/Desktop",
-    "Intended Audience :: Financial and Insurance Industry",
-    "Intended Audience :: Information Technology",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Topic :: File Formats :: JSON",
-    "Topic :: Office/Business :: Financial :: Accounting",
-    "Topic :: Office/Business :: Financial :: Investment",
-    "Topic :: Office/Business :: Scheduling",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: File Formats :: JSON",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Topic :: Office/Business :: Financial :: Investment",
+  "Topic :: Office/Business :: Scheduling",
+  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 keywords = ["holidays", "calendar", "l10n", "worldwide", "vacation"]
 maintainers = [
-    { name = "Arkadii Yakovets" },
-    { name = "Panpakorn Siripanich" },
-    { name = "Serhii Murza" },
+  { name = "Arkadii Yakovets" },
+  { name = "Panpakorn Siripanich" },
+  { name = "Serhii Murza" },
 ]
 
 [project.urls]
@@ -83,7 +84,7 @@ disable_error_code = "attr-defined"
 
 [tool.pytest.ini_options]
 filterwarnings = [
-    "ignore::DeprecationWarning:holidays.deprecations.v1_incompatibility",
+  "ignore::DeprecationWarning:holidays.deprecations.v1_incompatibility",
 ]
 
 [tool.rstcheck]
