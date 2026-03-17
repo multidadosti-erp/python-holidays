@@ -152,6 +152,10 @@ msgstr "Black Awareness Day"
 msgid "Elevação do Amazonas à categoria de província"
 msgstr "Elevation of Amazonas to province"
 
+#. Our Lady of Conception.
+msgid "Nossa Senhora da Conceição"
+msgstr "Our Lady of Conception"
+
 #. Saint Joseph's Day.
 msgid "São José"
 msgstr "Saint Joseph's Day"
@@ -223,6 +227,10 @@ msgstr "Piauí Day"
 #. Political Emancipation of Paraná.
 msgid "Emancipação do Paraná"
 msgstr "Political Emancipation of Paraná"
+
+#. Our Lady of Rocio.
+msgid "Nossa Senhora do Rocio"
+msgstr "Our Lady of Rocio"
 
 #. Saint George's Day.
 msgid "São Jorge"

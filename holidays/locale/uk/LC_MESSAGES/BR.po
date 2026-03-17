@@ -152,6 +152,10 @@ msgstr "День свідомості темношкірих"
 msgid "Elevação do Amazonas à categoria de província"
 msgstr "День піднесення Амазонас до категорії провінцій"
 
+#. Our Lady of Conception.
+msgid "Nossa Senhora da Conceição"
+msgstr "День Богоматері Непорочного Зачаття"
+
 #. Saint Joseph's Day.
 msgid "São José"
 msgstr "День Святого Йосипа"
@@ -223,6 +227,10 @@ msgstr "День Піауї"
 #. Political Emancipation of Paraná.
 msgid "Emancipação do Paraná"
 msgstr "День політичного звільнення Парани"
+
+#. Our Lady of Rocio.
+msgid "Nossa Senhora do Rocio"
+msgstr "День Богоматері Росіо"
 
 #. Saint George's Day.
 msgid "São Jorge"
