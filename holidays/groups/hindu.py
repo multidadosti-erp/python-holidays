@@ -12,8 +12,14 @@
 
 from collections.abc import Iterable
 from datetime import date
+<<<<<<< HEAD
 
 from holidays.calendars.hindu import _HinduLunisolar
+=======
+from typing import Optional
+
+from holidays.calendars import _HinduLunisolar
+>>>>>>> develop
 from holidays.groups.eastern import EasternCalendarHolidays
 
 
@@ -27,20 +33,30 @@ class HinduCalendarHolidays(EasternCalendarHolidays):
         self._hindu_calendar_show_estimated = show_estimated
 
     def _add_hindu_calendar_holiday(
+<<<<<<< HEAD
         self, name: str, dt_estimated: tuple[date | None, bool], days_delta: int = 0
     ) -> date | None:
+=======
+        self, name: str, dt_estimated: tuple[Optional[date], bool]
+    ) -> Optional[date]:
+>>>>>>> develop
         """
         Add Hindu calendar holiday.
 
         Adds customizable estimation label to holiday name if holiday date
         is an estimation.
         """
+<<<<<<< HEAD
 
         return self._add_eastern_calendar_holiday(
             name,
             dt_estimated,
             show_estimated=self._hindu_calendar_show_estimated,
             days_delta=days_delta,
+=======
+        return self._add_eastern_calendar_holiday(
+            name, dt_estimated, self._hindu_calendar_show_estimated
+>>>>>>> develop
         )
 
     def _add_hindu_calendar_holiday_set(

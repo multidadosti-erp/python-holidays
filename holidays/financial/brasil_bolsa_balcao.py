@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -17,6 +21,7 @@ from holidays.holiday_base import HolidayBase
 
 
 class BrasilBolsaBalcao(HolidayBase, ChristianHolidays, InternationalHolidays):
+<<<<<<< HEAD
     """Brasil, Bolsa, Balcão holidays.
 
     References:
@@ -31,15 +36,33 @@ class BrasilBolsaBalcao(HolidayBase, ChristianHolidays, InternationalHolidays):
     Historical data:
         * [Feriados ANBIMA 2001-2099](https://web.archive.org/web/20241209033536/https://www.anbima.com.br/feriados/)
         * [Calendario de negociação B3](https://web.archive.org/web/20250126154858/https://www.b3.com.br/pt_br/solucoes/plataformas/puma-trading-system/para-participantes-e-traders/calendario-de-negociacao/feriados/)
+=======
+    """
+    Official regulations:
+        - `Decreto n. 155-B, de 14.01.1890 <https://www2.camara.leg.br/legin/fed/decret/1824-1899/decreto-155-b-14-janeiro-1890-517534-publicacaooriginal-1-pe.html>`_
+        - `Decreto n. 19.488, de 15.12.1930 <https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-19488-15-dezembro-1930-508040-republicacao-85201-pe.html>`_
+        - `Lei n. 14.759, de 21.12.2023 <https://www2.camara.leg.br/legin/fed/lei/2023/lei-14759-21-dezembro-2023-795091-publicacaooriginal-170522-pl.html>`_
+        - `Resolução n. 2.516, de 29.06.1998 <https://www.bcb.gov.br/pre/normativos/res/1998/pdf/res_2516_v2_P.pdf>`_
+        - `Lei n. 662, de 6.04.1949 <https://www2.camara.leg.br/legin/fed/lei/1940-1949/lei-662-6-abril-1949-347136-publicacaooriginal-1-pl.html>`_
+        - `Lei n. 6.802, de 30.06.1980 <https://www.planalto.gov.br/ccivil_03/leis/l6802.htm>`_
+        - `Decreto n. 19.488, de 15.12.1930 <https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-19488-15-dezembro-1930-508040-republicacao-85201-pe.html>`_
+        - `Decreto n. 22.647, de 17.04.1933 <https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-22647-17-abril-1933-558774-publicacaooriginal-80337-pe.html>`_
+    Historical data:
+        - `Feriados ANBIMA 2001-2099 <https://www.anbima.com.br/feriados>`_
+        - `Calendario de negociação B3 <https://www.b3.com.br/pt_br/solucoes/plataformas/puma-trading-system/para-participantes-e-traders/calendario-de-negociacao/feriados>`_
+>>>>>>> develop
     """
 
     market = "BVMF"
     default_language = "pt_BR"
     supported_languages = ("en_US", "pt_BR", "uk")
+<<<<<<< HEAD
     # Decreto n. 155-B, de 14.01.1890
     # Curiously enough, 1890 is also the year of foundation of the
     # São Paulo Stock Exchange, which would later become the B3.
     start_year = 1890
+=======
+>>>>>>> develop
 
     def __init__(self, *args, **kwargs) -> None:
         ChristianHolidays.__init__(self)
@@ -47,6 +70,15 @@ class BrasilBolsaBalcao(HolidayBase, ChristianHolidays, InternationalHolidays):
         super().__init__(*args, **kwargs)
 
     def _populate_public_holidays(self):
+<<<<<<< HEAD
+=======
+        # Decreto n. 155-B, de 14.01.1890
+        # Curiously enough, 1890 is also the year of foundation of the
+        # São Paulo Stock Exchange, which would later become the B3.
+        if self._year <= 1889:
+            return None
+
+>>>>>>> develop
         # Universal Fraternization Day.
         self._add_new_years_day(tr("Confraternização Universal"))
 
@@ -71,7 +103,11 @@ class BrasilBolsaBalcao(HolidayBase, ChristianHolidays, InternationalHolidays):
             self._add_holiday_apr_21(tr("Tiradentes"))
 
         if self._year >= 1925:
+<<<<<<< HEAD
             # Worker's Day.
+=======
+            # Workers' Day.
+>>>>>>> develop
             self._add_labor_day(tr("Dia do Trabalhador"))
 
         # Corpus Christi.

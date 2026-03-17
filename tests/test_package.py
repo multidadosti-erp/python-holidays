@@ -22,7 +22,11 @@ class TestPackage(TestCase):
 
         for attr_name, attr_value in {
             "name": "holidays",
+<<<<<<< HEAD
             "summary": "Open World Holidays Framework",
+=======
+            "summary": "World Holidays Framework",
+>>>>>>> develop
             "version": holidays.__version__,
         }.items():
             with self.subTest(attr=attr_name):

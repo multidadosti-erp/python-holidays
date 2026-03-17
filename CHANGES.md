@@ -1,3 +1,4 @@
+<<<<<<< HEAD:CHANGES.md
 # Version 0.93
 
 Released March 16, 2026
@@ -631,6 +632,10 @@ Released December 2, 2024
 - Add SECURITY.md (#2142 by @arkid15r)
 
 # Version 0.61
+=======
+Version 0.61
+============
+>>>>>>> develop:CHANGES
 
 Released November 18, 2024
 
@@ -650,7 +655,12 @@ Released November 18, 2024
 - Add Europe Day to InternationalHolidays (#2114 by @KJhellico)
 - Add Portugal subdivision aliases (#2110 by @dgomes)
 
+<<<<<<< HEAD:CHANGES.md
 # Version 0.60
+=======
+Version 0.60
+============
+>>>>>>> develop:CHANGES
 
 Released November 4, 2024
 
@@ -675,7 +685,12 @@ Released November 4, 2024
 - Update United States holidays: Alaska state holidays correction (#2083 by @PPsyrius)
 - Simplify PR template (#2099 by @arkid15r)
 
+<<<<<<< HEAD:CHANGES.md
 # Version 0.59
+=======
+Version 0.59
+============
+>>>>>>> develop:CHANGES
 
 Released October 21, 2024
 
@@ -690,7 +705,12 @@ Released October 21, 2024
 - Drop Python 3.8 support (#2042 by @PPsyrius)
 - Satisfy mypy requirements (#2053 by @arkid15r)
 
+<<<<<<< HEAD:CHANGES.md
 # Version 0.58
+=======
+Version 0.58
+============
+>>>>>>> develop:CHANGES
 
 Released October 7, 2024
 
@@ -715,7 +735,12 @@ Released October 7, 2024
 - Move to `holidays` from `python-holidays` (#2027 by @arkid15r)
 - Remove deprecated `fix-encoding-pragma`, add `pyupgrade` (#2007 by @PPsyrius, @arkid15r)
 
+<<<<<<< HEAD:CHANGES.md
 # Version 0.57
+=======
+Version 0.57
+============
+>>>>>>> develop:CHANGES
 
 Released September 16, 2024
 
@@ -730,7 +755,12 @@ Released September 16, 2024
 - Extend `_ThaiLunisolar` calendar support to 2157 (#1981 by @PPsyrius)
 - Unify en_US Islamic holidays name translation (#1984 by @KJhellico)
 
+<<<<<<< HEAD:CHANGES.md
 # Version 0.56
+=======
+Version 0.56
+============
+>>>>>>> develop:CHANGES
 
 Released September 2, 2024
 

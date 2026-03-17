@@ -15,10 +15,15 @@ import os
 import re
 import sys
 import warnings
+<<<<<<< HEAD
 from collections import defaultdict
 from collections.abc import Generator
 from datetime import date
 from functools import cache
+=======
+from collections.abc import Generator
+from datetime import date
+>>>>>>> develop
 
 from dateutil.parser import parse
 
@@ -35,6 +40,7 @@ PYTHON_VERSION = f"{sys.version_info.major}.{sys.version_info.minor}"
 
 class TestCase:
     """Base class for holidays test cases."""
+<<<<<<< HEAD
 
     @staticmethod
     @cache
@@ -78,6 +84,8 @@ class TestCase:
             subdiv_special_flag,
             supported_special_flags,
         )
+=======
+>>>>>>> develop
 
     @classmethod
     def _generate_assert_methods(cls):
@@ -600,7 +608,11 @@ class TestCase:
     def _assertLocalizedHolidays(self, localized_holidays, language=None):
         """Helper: assert localized holidays match expected names."""
         instance = self.test_class(
+<<<<<<< HEAD
             years=int(localized_holidays[0][0].split("-")[0]),
+=======
+            years=localized_holidays[0][0].split("-")[0],
+>>>>>>> develop
             language=language,
             categories=self.test_class.supported_categories,
         )

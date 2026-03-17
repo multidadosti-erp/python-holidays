@@ -12,8 +12,13 @@
     "1950-10-12": "Columbus Day",
     "1950-10-31": "Halloween",
     "1950-11-11": "Armistice Day",
+<<<<<<< HEAD
     "1950-11-23": "Thanksgiving Day",
+=======
+    "1950-11-23": "Thanksgiving",
+>>>>>>> develop
     "1950-12-25": "Christmas Day",
+    "1950-12-26": "Washington's Birthday",
     "1951-01-01": "New Year's Day",
     "1951-02-02": "Groundhog Day",
     "1951-02-14": "Valentine's Day",
@@ -74,7 +79,13 @@
     "1954-10-12": "Columbus Day",
     "1954-10-31": "Halloween",
     "1954-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1954-11-25": "Thanksgiving Day",
+=======
+    "1954-11-25": "Thanksgiving",
+    "1954-12-23": "Washington's Birthday",
+    "1954-12-24": "Christmas Day (observed)",
+>>>>>>> develop
     "1954-12-25": "Christmas Day",
     "1955-01-01": "New Year's Day",
     "1955-02-02": "Groundhog Day",
@@ -89,7 +100,12 @@
     "1955-10-12": "Columbus Day",
     "1955-10-31": "Halloween",
     "1955-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1955-11-24": "Thanksgiving Day",
+=======
+    "1955-11-24": "Thanksgiving",
+    "1955-12-23": "Washington's Birthday",
+>>>>>>> develop
     "1955-12-25": "Christmas Day",
     "1955-12-26": "Christmas Day (observed)",
     "1956-01-01": "New Year's Day",
@@ -170,7 +186,12 @@
     "1960-10-31": "Halloween",
     "1960-11-08": "Election Day",
     "1960-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1960-11-24": "Thanksgiving Day",
+=======
+    "1960-11-24": "Thanksgiving",
+    "1960-12-23": "Washington's Birthday",
+>>>>>>> develop
     "1960-12-25": "Christmas Day",
     "1960-12-26": "Christmas Day (observed)",
     "1961-01-01": "New Year's Day",
@@ -187,8 +208,13 @@
     "1961-10-12": "Columbus Day",
     "1961-10-31": "Halloween",
     "1961-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1961-11-23": "Thanksgiving Day",
+=======
+    "1961-11-23": "Thanksgiving",
+>>>>>>> develop
     "1961-12-25": "Christmas Day",
+    "1961-12-26": "Washington's Birthday",
     "1962-01-01": "New Year's Day",
     "1962-02-02": "Groundhog Day",
     "1962-02-14": "Valentine's Day",
@@ -250,7 +276,13 @@
     "1965-10-12": "Columbus Day",
     "1965-10-31": "Halloween",
     "1965-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1965-11-25": "Thanksgiving Day",
+=======
+    "1965-11-25": "Thanksgiving",
+    "1965-12-23": "Washington's Birthday",
+    "1965-12-24": "Christmas Day (observed)",
+>>>>>>> develop
     "1965-12-25": "Christmas Day",
     "1966-01-01": "New Year's Day",
     "1966-02-02": "Groundhog Day",
@@ -265,7 +297,12 @@
     "1966-10-12": "Columbus Day",
     "1966-10-31": "Halloween",
     "1966-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1966-11-24": "Thanksgiving Day",
+=======
+    "1966-11-24": "Thanksgiving",
+    "1966-12-23": "Washington's Birthday",
+>>>>>>> develop
     "1966-12-25": "Christmas Day",
     "1966-12-26": "Christmas Day (observed)",
     "1967-01-01": "New Year's Day",
@@ -283,8 +320,13 @@
     "1967-10-31": "Halloween",
     "1967-11-10": "Veterans Day (observed)",
     "1967-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1967-11-23": "Thanksgiving Day",
+=======
+    "1967-11-23": "Thanksgiving",
+>>>>>>> develop
     "1967-12-25": "Christmas Day",
+    "1967-12-26": "Washington's Birthday",
     "1968-01-01": "New Year's Day",
     "1968-02-02": "Groundhog Day",
     "1968-02-14": "Valentine's Day",
@@ -348,7 +390,11 @@
     "1971-10-11": "Columbus Day",
     "1971-10-25": "Veterans Day",
     "1971-10-31": "Halloween",
+<<<<<<< HEAD
     "1971-11-25": "Thanksgiving Day",
+=======
+    "1971-11-25": "Thanksgiving",
+>>>>>>> develop
     "1971-12-23": "Washington's Birthday",
     "1971-12-24": "Christmas Day (observed)",
     "1971-12-25": "Christmas Day",
@@ -368,7 +414,11 @@
     "1972-10-23": "Veterans Day",
     "1972-10-31": "Halloween",
     "1972-11-07": "Election Day",
+<<<<<<< HEAD
     "1972-11-23": "Thanksgiving Day",
+=======
+    "1972-11-23": "Thanksgiving",
+>>>>>>> develop
     "1972-12-25": "Christmas Day",
     "1972-12-26": "Washington's Birthday",
     "1973-01-01": "New Year's Day",
@@ -438,7 +488,11 @@
     "1976-10-25": "Veterans Day",
     "1976-10-31": "Halloween",
     "1976-11-02": "Election Day",
+<<<<<<< HEAD
     "1976-11-25": "Thanksgiving Day",
+=======
+    "1976-11-25": "Thanksgiving",
+>>>>>>> develop
     "1976-12-23": "Washington's Birthday",
     "1976-12-24": "Christmas Day (observed)",
     "1976-12-25": "Christmas Day",
@@ -457,7 +511,11 @@
     "1977-10-10": "Columbus Day",
     "1977-10-24": "Veterans Day",
     "1977-10-31": "Halloween",
+<<<<<<< HEAD
     "1977-11-24": "Thanksgiving Day",
+=======
+    "1977-11-24": "Thanksgiving",
+>>>>>>> develop
     "1977-12-23": "Washington's Birthday",
     "1977-12-25": "Christmas Day",
     "1977-12-26": "Christmas Day (observed)",
@@ -477,7 +535,11 @@
     "1978-10-31": "Halloween",
     "1978-11-10": "Veterans Day (observed)",
     "1978-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1978-11-23": "Thanksgiving Day",
+=======
+    "1978-11-23": "Thanksgiving",
+>>>>>>> develop
     "1978-12-25": "Christmas Day",
     "1978-12-26": "Washington's Birthday",
     "1979-01-01": "New Year's Day",
@@ -549,7 +611,11 @@
     "1982-10-11": "Columbus Day",
     "1982-10-31": "Halloween",
     "1982-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1982-11-25": "Thanksgiving Day",
+=======
+    "1982-11-25": "Thanksgiving",
+>>>>>>> develop
     "1982-12-23": "Washington's Birthday",
     "1982-12-24": "Christmas Day (observed)",
     "1982-12-25": "Christmas Day",
@@ -568,7 +634,11 @@
     "1983-10-10": "Columbus Day",
     "1983-10-31": "Halloween",
     "1983-11-11": "Veterans Day",
+<<<<<<< HEAD
     "1983-11-24": "Thanksgiving Day",
+=======
+    "1983-11-24": "Thanksgiving",
+>>>>>>> develop
     "1983-12-23": "Washington's Birthday",
     "1983-12-25": "Christmas Day",
     "1983-12-26": "Christmas Day (observed)",

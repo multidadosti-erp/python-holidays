@@ -212,6 +212,14 @@ class AzerbaijanIslamicHolidays(_CustomIslamicHolidays):
         2016: (SEP, 12),
         2018: (AUG, 22),
         2019: (AUG, 12),
+<<<<<<< HEAD
+=======
+        2020: (JUL, 31),
+        2021: (JUL, 20),
+        2022: (JUL, 9),
+        2023: (JUN, 28),
+        2024: (JUN, 16),
+>>>>>>> develop
     }
 
     EID_AL_FITR_DATES_CONFIRMED_YEARS = (2002, 2026)
@@ -255,9 +263,12 @@ class AzerbaijanStaticHolidays:
     # Presidential elections.
     presidential_elections = tr("Prezidenti seçkiləri")
 
+<<<<<<< HEAD
     # Municipal elections.
     municipal_elections = tr("Bələdiyyə seçkiləri")
 
+=======
+>>>>>>> develop
     special_public_holidays = {
         2011: (AUG, 29, AUG, 27),
         2013: (
@@ -269,7 +280,12 @@ class AzerbaijanStaticHolidays:
             (JAN, 6, DEC, 29, 2013),
         ),
         2018: (APR, 11, presidential_elections),
+<<<<<<< HEAD
         2019: (DEC, 27, municipal_elections),
+=======
+        # Municipal elections.
+        2019: (DEC, 27, tr("Bələdiyyə seçkiləri")),
+>>>>>>> develop
         2020: (
             (JAN, 3, DEC, 28, 2019),
             (JAN, 6, DEC, 29, 2019),
@@ -297,6 +313,7 @@ class AzerbaijanStaticHolidays:
             (APR, 12, APR, 6),
             (NOV, 12, NOV, 16),
             (NOV, 13, NOV, 23),
+<<<<<<< HEAD
             (DEC, 30, DEC, 28),
         ),
         2025: (
@@ -305,6 +322,8 @@ class AzerbaijanStaticHolidays:
             (MAR, 27, MAR, 10),
             (MAR, 28, APR, 1),
             (JUN, 27, JUN, 21),
+=======
+>>>>>>> develop
         ),
     }
 

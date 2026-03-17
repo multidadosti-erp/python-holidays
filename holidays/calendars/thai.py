@@ -20,7 +20,14 @@ THAI_CALENDAR = "THAI_CALENDAR"
 
 
 class _ThaiLunisolar:
+<<<<<<< HEAD
     """Thai Lunar Calendar Holidays.
+=======
+    """
+    ** Thai Lunar Calendar Holidays only work from 1941 (B.E. 2484) onwards
+       until 2157 (B.E. 2700) as we only have Thai year-type data for
+       cross-checking until then.
+>>>>>>> develop
 
     Works from 1913 (B.E. 2456/2455) onwards until 2157 (B.E. 2700), as we only have
     Thai year-type data for cross-checking through that period.
@@ -109,9 +116,19 @@ class _ThaiLunisolar:
         >>> print(thls.visakha_bucha_date(2010))
         2010-05-28
 
+<<<<<<< HEAD
     """
 
     # Athikawan (Extra-Day Year) list goes from 1914-2157 C.E.
+=======
+    >>> from holidays.calendars.thai import _ThaiLunisolar
+    >>> thls = _ThaiLunisolar()
+    >>> print(thls.visakha_bucha_date(2010))
+    2010-05-28
+    """
+
+    # Athikawan (Extra-Day Year) list goes from 1941-2157 C.E.
+>>>>>>> develop
     # Copied off from 1757-2157 (B.E. 2300-2700) Thai Lunar Calendar
     ATHIKAWAN_YEARS_GREGORIAN = {
         1914,
@@ -164,7 +181,11 @@ class _ThaiLunisolar:
         2153,
     }
 
+<<<<<<< HEAD
     # Athikamat (Extra-Month Year) list goes from 1914-2157 C.E.:
+=======
+    # Athikamat (Extra-Month Year) list goes from 1941-2157 C.E.:
+>>>>>>> develop
     # Copied off from 1757-2157 (B.E. 2300-2700) Thai Lunar Calendar
     # Approx formula as follows: (common_era-78)-0.45222)%2.7118886 < 1
     ATHIKAMAT_YEARS_GREGORIAN = {
@@ -261,12 +282,21 @@ class _ThaiLunisolar:
     }
 
     # While Buddhist Holy Days have been observed since the 1900s
+<<<<<<< HEAD
     #   Thailand's Public Holiday Act wasn't codified until 1914 (B.E. 2457)
     #   and that our array only goes up to B.E. 2700; We'll thus only populate
     #   the data for 1914-2157 (B.E. 2457-2700).
     # Sources: หนังสือเวียนกรมการปกครอง กระทรวงมหาดไทย มท 0310.1/ว4 5 ก.พ. 2539
     START_DATE = date(1913, 11, 28)
     START_YEAR = 1914
+=======
+    #   Due to the calendar changes in 1941 (B.E. 2484) and that
+    #   our array only goes up to B.E. 2700; We'll thus only populate
+    #   the data for 1941-2157 (B.E. 2484-2700).
+    # Sources: หนังสือเวียนกรมการปกครอง กระทรวงมหาดไทย มท 0310.1/ว4 5 ก.พ. 2539
+    START_DATE = date(1940, 11, 30)
+    START_YEAR = 1941
+>>>>>>> develop
     END_YEAR = 2157
 
     def __init__(self, calendar=THAI_CALENDAR) -> None:
@@ -294,6 +324,7 @@ class _ThaiLunisolar:
                 f"Unknown calendar name: {calendar}. Use `KHMER_CALENDAR` or `THAI_CALENDAR`."
             )
 
+<<<<<<< HEAD
     @cache
     def _get_start_date(self, year: int) -> date | None:
         """Calculate the start date of that particular Thai Lunar Calendar Year.
@@ -301,6 +332,15 @@ class _ThaiLunisolar:
         This usually falls in November or December of the previous Gregorian
         year in question. Should the year be outside of working scope
         (1914-2157: B.E 2457-2700), this will returns None instead.
+=======
+    @lru_cache
+    def _get_start_date(self, year: int) -> Optional[date]:
+        """
+        Calculate the start date of that particular Thai Lunar Calendar Year.
+        This usually falls in November or December of the previous Gregorian
+        year in question. Should the year be outside of working scope
+        (1941-2157: B.E 2484-2700), this will returns None instead.
+>>>>>>> develop
 
         Args:
             year:
@@ -556,6 +596,7 @@ class _ThaiLunisolar:
         * Athikamat:
             15th Waxing Day of Month 8/8 or 177[1-6] + 29[7] + 30[8] + 15[8.8] -1 = 250
 
+<<<<<<< HEAD
         * Athikawan:
             15th Waxing Day of Month 8 or 177[1-6] + 30[7] + 15[8] -1 = 221
 
@@ -567,6 +608,9 @@ class _ThaiLunisolar:
                 The Gregorian year.
 
         Returns:
+=======
+        :return:
+>>>>>>> develop
             Estimated Gregorian date of Asarnha Bucha.
             Returns None if the Gregorian year input is invalid.
         """
@@ -594,6 +638,7 @@ class _ThaiLunisolar:
         * Athikamat:
             1st Waning Day of Month 8.8 or 177[1-6] + 29[7] + 30[8] + 16[8.8] -1 = 251
 
+<<<<<<< HEAD
         * Athikawan:
             1st Waning Day of Month 8 or 177[1-6] + 30[7] + 16[8] -1 = 222
 
@@ -607,6 +652,9 @@ class _ThaiLunisolar:
                 The Gregorian year.
 
         Returns:
+=======
+        :return:
+>>>>>>> develop
             Estimated Gregorian date of Khao Phansa.
             Returns None if the Gregorian year input is invalid.
         """

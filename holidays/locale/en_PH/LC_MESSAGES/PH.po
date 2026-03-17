@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -14,11 +18,18 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.81\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2024-10-30 02:45+0700\n"
 "PO-Revision-Date: 2025-09-09 23:22+0300\n"
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
+=======
+"Project-Id-Version: Holidays 0.60\n"
+"POT-Creation-Date: 2024-10-30 02:45+0700\n"
+"PO-Revision-Date: 2024-11-02 01:47+0700\n"
+"Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
+>>>>>>> develop
 "Language-Team: Holidays Localization Team\n"
 "Language: en_PH\n"
 "MIME-Version: 1.0\n"
@@ -26,12 +37,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingva 5.0.3\n"
 "X-Generator: Poedit 3.5\n"
+<<<<<<< HEAD
 "X-Source-Language: en_PH\n"
 
 #. %s (estimated).
 #, c-format
 msgid "%s (estimated)"
 msgstr ""
+=======
+>>>>>>> develop
 
 #. New Year's Day.
 msgid "New Year's Day"
@@ -69,6 +83,13 @@ msgstr ""
 msgid "Independence Day"
 msgstr ""
 
+<<<<<<< HEAD
+=======
+#. Founding Anniversary of Iglesia ni Cristo.
+msgid "Founding Anniversary of Iglesia ni Cristo"
+msgstr ""
+
+>>>>>>> develop
 #. Ninoy Aquino Day.
 msgid "Ninoy Aquino Day"
 msgstr ""
@@ -77,6 +98,13 @@ msgstr ""
 msgid "National Heroes Day"
 msgstr ""
 
+<<<<<<< HEAD
+=======
+#. All Saints' Day Eve.
+msgid "All Saints' Day Eve"
+msgstr ""
+
+>>>>>>> develop
 #. All Saints' Day.
 msgid "All Saints' Day"
 msgstr ""
@@ -89,6 +117,13 @@ msgstr ""
 msgid "Feast of the Immaculate Conception of Mary"
 msgstr ""
 
+<<<<<<< HEAD
+=======
+#. Christmas Eve.
+msgid "Christmas Eve"
+msgstr ""
+
+>>>>>>> develop
 #. Christmas Day.
 msgid "Christmas Day"
 msgstr ""
@@ -109,10 +144,13 @@ msgstr ""
 msgid "Eid'l Adha"
 msgstr ""
 
+<<<<<<< HEAD
 #. Founding Anniversary of Iglesia ni Cristo.
 msgid "Founding Anniversary of Iglesia ni Cristo"
 msgstr ""
 
+=======
+>>>>>>> develop
 #. Additional special (non-working) day.
 msgid "Additional special (non-working) day"
 msgstr ""
@@ -121,6 +159,7 @@ msgstr ""
 msgid "Elections special (non-working) day"
 msgstr ""
 
+<<<<<<< HEAD
 #. Christmas Eve.
 msgid "Christmas Eve"
 msgstr ""
@@ -131,4 +170,9 @@ msgstr ""
 
 #. All Souls' Day.
 msgid "All Souls' Day"
+=======
+#. %s (estimated).
+#, c-format
+msgid "%s (estimated)"
+>>>>>>> develop
 msgstr ""

@@ -47,8 +47,13 @@ class Jordan(HolidayBase, ChristianHolidays, InternationalHolidays, IslamicHolid
 
     def _get_weekend(self, dt: date) -> set[int]:
         # The resting days are Friday and Saturday since Jan 6, 2000.
+<<<<<<< HEAD
         # https://web.archive.org/web/20241226195649/http://archive.wfn.org/2000/01/msg00078.html
         return {FRI, SAT} if dt >= date(2000, JAN, 6) else {THU, FRI}
+=======
+        # https://archive.wfn.org/2000/01/msg00078.html
+        self.weekend = {THU, FRI} if self._year <= 1999 else {FRI, SAT}
+>>>>>>> develop
 
     def _populate_public_holidays(self):
         # New Year's Day.

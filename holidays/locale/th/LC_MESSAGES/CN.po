@@ -14,8 +14,12 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.84\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
+=======
+"Project-Id-Version: Holidays 0.42\n"
+>>>>>>> develop
 "POT-Creation-Date: 2023-09-28 19:23+0700\n"
 "PO-Revision-Date: 2025-10-29 22:34+0700\n"
 "Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
@@ -100,6 +104,16 @@ msgstr "%d/%m/%Y"
 msgid "休息日（%s日起取代）"
 msgstr "วันหยุด (แทน %s)"
 
+<<<<<<< HEAD
+=======
+#. 70th Anniversary of the Victory of the Chinese People's War of Resistance
+#. against Japanese
+#. Aggression and the World Anti-Fascist War.
+msgid "中国人民抗日战争暨世界反法西斯战争胜利70周年纪念日"
+msgstr ""
+"ครบรอบ 70 ปีแห่งการได้รับชัยชนะจากสงครามต่อต้านญี่ปุ่นและลัทธิฟาสซิสต์โลก"
+
+>>>>>>> develop
 #. Chinese New Year (Spring Festival) Extended Holiday.
 msgid "春节延长假期"
 msgstr "หยุดพิเศษวันตรุษจีน"

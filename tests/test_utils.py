@@ -230,8 +230,15 @@ class TestListSupportedEntities(unittest.TestCase):
     def test_list_supported_financial(self):
         supported_financial = list_supported_financial(include_aliases=False)
 
+<<<<<<< HEAD
         for market in ("BVMF", "IFEU", "XECB", "XNYS"):
             self.assertIn(market, supported_financial)
+=======
+        self.assertIn("ECB", supported_financial)
+        self.assertIn("IFEU", supported_financial)
+        self.assertIn("NYSE", supported_financial)
+        self.assertIn("BVMF", supported_financial)
+>>>>>>> develop
 
         xnys_subdivisions = supported_financial.get("XNYS", [])
         self.assertIsInstance(xnys_subdivisions, list)

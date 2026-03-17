@@ -14,10 +14,16 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.76\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2024-02-28 09:55-0800\n"
 "PO-Revision-Date: 2025-06-26 17:55+0300\n"
+=======
+"Project-Id-Version: Holidays 0.57\n"
+"POT-Creation-Date: 2024-02-28 09:55-0800\n"
+"PO-Revision-Date: 2024-09-07 17:25+0300\n"
+>>>>>>> develop
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
 "Language-Team: Holidays Localization Team\n"
 "Language: en_US\n"
@@ -25,8 +31,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingua 4.15.0\n"
+<<<<<<< HEAD
 "X-Generator: Poedit 3.5\n"
 "X-Source-Language: ar\n"
+=======
+"X-Generator: Poedit 3.4.2\n"
+>>>>>>> develop
 
 #. %s (estimated).
 #, c-format
@@ -37,6 +47,21 @@ msgstr "%s (estimated)"
 msgid "رأس السنة الميلادية"
 msgstr "New Year's Day"
 
+<<<<<<< HEAD
+=======
+#. Isra' and Mi'raj.
+msgid "ليلة المعراج"
+msgstr "Isra' and Mi'raj"
+
+#. Eid al-Fitr.
+msgid "عيد الفطر"
+msgstr "Eid al-Fitr"
+
+#. Eid al-Fitr Holiday.
+msgid "عطلة عيد الفطر"
+msgstr "Eid al-Fitr Holiday"
+
+>>>>>>> develop
 #. Labor Day.
 msgid "عيد العمال"
 msgstr "Labor Day"

@@ -14,7 +14,11 @@ import unittest
 from datetime import date
 
 from holidays import calendars
+<<<<<<< HEAD
 from holidays.calendars.gregorian import JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
+=======
+from holidays.calendars.gregorian import JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV
+>>>>>>> develop
 from holidays.calendars.thai import KHMER_CALENDAR
 
 

@@ -20,6 +20,7 @@ from holidays.observed_holiday_base import ObservedHolidayBase, TUE_WED_THU_TO_N
 
 
 class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
+<<<<<<< HEAD
     """Brazil holidays.
 
     References:
@@ -30,12 +31,24 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         * [Lei n. 14.759, de 21.12.2023](https://web.archive.org/web/20250402234552/https://www2.camara.leg.br/legin/fed/lei/2023/lei-14759-21-dezembro-2023-795091-publicacaooriginal-170522-pl.html)
         * São Paulo Capital:
             * [Anexo Único Integrante do Decreto n. 56.756, de 4.01.2016](https://web.archive.org/web/20251224031221/https://legislacao.prefeitura.sp.gov.br/leis/decreto-56756-de-04-de-janeiro-de-2016/anexo/5ec3d7a71411926001a56c56/Anexo%20Único%20do%20Decreto%20nº%2056.756_2016.pdf)
+=======
+    """
+    References:
+        - https://pt.wikipedia.org/wiki/Feriados_no_Brasil
+        - `Decreto n. 155-B, de 14.01.1890 <https://www2.camara.leg.br/legin/fed/decret/1824-1899/decreto-155-b-14-janeiro-1890-517534-publicacaooriginal-1-pe.html>`_
+        - `Decreto n. 19.488, de 15.12.1930 <https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-19488-15-dezembro-1930-508040-republicacao-85201-pe.html>`_
+        - `Lei n. 662, de 6.04.1949 <https://www2.camara.leg.br/legin/fed/lei/1940-1949/lei-662-6-abril-1949-347136-publicacaooriginal-1-pl.html>`_
+        - `Lei n. 14.759, de 21.12.2023 <https://www2.camara.leg.br/legin/fed/lei/2023/lei-14759-21-dezembro-2023-795091-publicacaooriginal-170522-pl.html>`_
+>>>>>>> develop
     """
 
     country = "BR"
     default_language = "pt_BR"
+<<<<<<< HEAD
     # Decreto n. 155-B, de 14.01.1890
     start_year = 1890
+=======
+>>>>>>> develop
     subdivisions = (
         "AC",
         "AL",
@@ -64,8 +77,11 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         "SE",
         "SP",
         "TO",
+<<<<<<< HEAD
         # Cities.
         "São Paulo Capital",
+=======
+>>>>>>> develop
     )
     subdivisions_aliases = {
         "Acre": "AC",
@@ -96,6 +112,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         "São Paulo": "SP",
         "Tocantins": "TO",
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
     supported_categories = (OPTIONAL, PUBLIC)
     supported_languages = ("en_US", "pt_BR", "uk")
 
@@ -105,12 +125,23 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         super().__init__(*args, **kwargs)
 
     def _populate_public_holidays(self):
+<<<<<<< HEAD
+=======
+        # Decreto n. 155-B, de 14.01.1890
+        if self._year <= 1889:
+            return None
+
+>>>>>>> develop
         # Universal Fraternization Day.
         self._add_new_years_day(tr("Confraternização Universal"))
 
         if 1892 <= self._year <= 1930:
             # Republic Constitution Day.
+<<<<<<< HEAD
             self._add_holiday_feb_24(tr("Constituição da República"))
+=======
+            self._add_holiday_feb_24(tr("Constituição da Republica"))
+>>>>>>> develop
 
         # Good Friday.
         self._add_good_friday(tr("Sexta-feira Santa"))
@@ -158,9 +189,12 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         if self._year >= 1922:
             # Christmas Day.
             self._add_christmas_day(tr("Natal"))
+<<<<<<< HEAD
 
         if self.subdiv == "São Paulo Capital":
             self._populate_subdiv_sao_paulo_capital_public_holidays()
+=======
+>>>>>>> develop
 
     def _populate_optional_holidays(self):
         # Carnival.
@@ -232,7 +266,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
             self._add_holiday_nov_20(tr("Consciência Negra"))
 
         if self._year >= 2013:
+<<<<<<< HEAD
             # Evangelical Day.
+=======
+>>>>>>> develop
             self._add_holiday_nov_30(tr("Dia do Evangélico"))
 
     def _populate_subdiv_am_public_holidays(self):
@@ -240,7 +277,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         self._add_holiday_sep_5(tr("Elevação do Amazonas à categoria de província"))
 
         if 2010 <= self._year <= 2023:
+<<<<<<< HEAD
             # Black Awareness Day.
+=======
+>>>>>>> develop
             self._add_holiday_nov_20(tr("Consciência Negra"))
 
     def _populate_subdiv_ap_public_holidays(self):
@@ -256,7 +296,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         self._add_holiday_sep_13(tr("Criação do Território Federal"))
 
         if 2008 <= self._year <= 2023:
+<<<<<<< HEAD
             # Black Awareness Day.
+=======
+>>>>>>> develop
             self._add_holiday_nov_20(tr("Consciência Negra"))
 
     def _populate_subdiv_ba_public_holidays(self):
@@ -277,7 +320,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         # Founding of Brasilia.
         self._add_holiday_apr_21(tr("Fundação de Brasília"))
 
+<<<<<<< HEAD
         # Evangelical Day.
+=======
+>>>>>>> develop
         self._add_holiday_nov_30(tr("Dia do Evangélico"))
 
     def _populate_subdiv_es_public_holidays(self):
@@ -306,7 +352,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
 
     def _populate_subdiv_mt_public_holidays(self):
         if 2003 <= self._year <= 2023:
+<<<<<<< HEAD
             # Black Awareness Day.
+=======
+>>>>>>> develop
             self._add_holiday_nov_20(tr("Consciência Negra"))
 
     def _populate_subdiv_pa_public_holidays(self):
@@ -336,7 +385,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
             self._add_saint_georges_day(tr("São Jorge"))
 
         if 2002 <= self._year <= 2023:
+<<<<<<< HEAD
             # Black Awareness Day.
+=======
+>>>>>>> develop
             self._add_holiday_nov_20(tr("Consciência Negra"))
 
     def _populate_subdiv_rn_public_holidays(self):
@@ -349,6 +401,7 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
             self._add_holiday_oct_3(tr("Mártires de Cunhaú e Uruaçu"))
 
     def _populate_subdiv_ro_public_holidays(self):
+<<<<<<< HEAD
         # State Creation Day.
         self._add_holiday_jan_4(tr("Criação do Estado"))
 
@@ -358,6 +411,14 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
 
     def _populate_subdiv_rr_public_holidays(self):
         # State Creation Day.
+=======
+        self._add_holiday_jan_4(tr("Criação do Estado"))
+
+        if self._year >= 2002:
+            self._add_holiday_jun_18(tr("Dia do Evangélico"))
+
+    def _populate_subdiv_rr_public_holidays(self):
+>>>>>>> develop
         self._add_holiday_oct_5(tr("Criação do Estado"))
 
     def _populate_subdiv_rs_public_holidays(self):
@@ -388,6 +449,7 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         if self._year >= 1997:
             # Constitutionalist Revolution.
             self._add_holiday_jul_9(tr("Revolução Constitucionalista"))
+<<<<<<< HEAD
 
     def _populate_subdiv_sao_paulo_capital_public_holidays(self):
         self._populate_subdiv_sp_public_holidays()
@@ -396,6 +458,8 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         if self._year >= 1968:
             # São Paulo City Anniversary.
             self._add_holiday_jan_25(tr("Aniversário da Cidade de São Paulo"))
+=======
+>>>>>>> develop
 
     def _populate_subdiv_to_public_holidays(self):
         if self._year >= 1998:
@@ -405,7 +469,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         # Our Lady of Nativity.
         self._add_nativity_of_mary_day(tr("Nossa Senhora da Natividade"))
 
+<<<<<<< HEAD
         # State Creation Day.
+=======
+>>>>>>> develop
         self._add_holiday_oct_5(tr("Criação do Estado"))
 
 

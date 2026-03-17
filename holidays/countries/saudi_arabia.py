@@ -64,7 +64,11 @@ class SaudiArabia(ObservedHolidayBase, IslamicHolidays, StaticHolidays):
         kwargs.setdefault("observed_rule", FRI_TO_PREV_THU + SAT_TO_NEXT_SUN)
         super().__init__(*args, **kwargs)
 
+<<<<<<< HEAD
     def _add_islamic_observed(self, dt: date) -> None:
+=======
+    def _add_islamic_observed(self, dts: set[date]) -> None:
+>>>>>>> develop
         # Observed days are added to make up for any days falling on a weekend.
         if not self.observed:
             return None

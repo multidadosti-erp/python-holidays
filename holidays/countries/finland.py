@@ -208,8 +208,17 @@ class Finland(HolidayBase, ChristianHolidays, InternationalHolidays):
 
         # Become a Flag Day in 2019.
         if self._year >= 2019:
+<<<<<<< HEAD
             # Europe Day.
             self._add_europe_day(tr("Eurooppa-päivä"))
+=======
+            # Europe Day
+            self._add_europe_day(tr("Eurooppa-päivä"))
+
+        if self._year >= 1918:
+            # Mothers' Day
+            self._add_holiday_2nd_sun_of_may(tr("Äitienpäivä"))
+>>>>>>> develop
 
         # Petition for Flag Day status starts in the 1920s.
         # Become a Flag Day in 1952.

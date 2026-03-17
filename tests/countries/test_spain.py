@@ -259,6 +259,7 @@ class TestSpain(CommonCountryTests, TestCase):
             "2025-12-25",
         )
 
+<<<<<<< HEAD
     def test_fixed_holidays_2026(self):
         self.assertNonObservedHoliday(
             "2026-01-01",
@@ -271,6 +272,8 @@ class TestSpain(CommonCountryTests, TestCase):
             "2026-12-25",
         )
 
+=======
+>>>>>>> develop
     def test_islamic(self):
         self.assertNoHolidayName(
             "Fiesta del Sacrificio-Eidul Adha", Spain(subdiv="CE", years=2009)
@@ -1199,12 +1202,16 @@ class TestSpain(CommonCountryTests, TestCase):
             (MAY, 31): {"CM"},
             (JUN, 6): {"CE", "ML"},
             (JUN, 9): {"MC", "RI"},
+<<<<<<< HEAD
             (JUN, 13): {"CE"},
+=======
+>>>>>>> develop
             (JUN, 19): {"CM"},
             (JUN, 24): {"CT", "VC"},
             (JUL, 25): {"GA", "MD", "NC", "PV"},
             (JUL, 28): {"CB"},
             (AUG, 5): {"CE"},
+<<<<<<< HEAD
             (SEP, 8): {"AS", "EX", "ML"},
             (SEP, 11): {"CT"},
             (SEP, 15): {"CB"},
@@ -1212,10 +1219,18 @@ class TestSpain(CommonCountryTests, TestCase):
             (OCT, 9): {"VC"},
             (OCT, 13): {"AN", "AR", "AS", "CL", "EX"},
             (DEC, 3): {"NC"},
+=======
+            (SEP, 8): {"AS", "EX"},
+            (SEP, 11): {"CT"},
+            (SEP, 15): {"CB"},
+            (OCT, 9): {"VC"},
+            (OCT, 13): {"AN", "AR", "AS", "CL", "EX"},
+>>>>>>> develop
             (DEC, 26): {"CT", "IB"},
         }
         self._assertVariableDays(2025, province_days)
 
+<<<<<<< HEAD
     def test_variable_holidays_2026(self):
         province_days = {
             (FEB, 28): {"AN"},
@@ -1274,6 +1289,15 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-02-28", "Día de Andalucía"),
             ("2023-03-01", "Día de las Islas Baleares"),
             ("2023-03-13", "Estatuto de Autonomía de la Ciudad de Melilla"),
+=======
+    def test_l10n_default(self):
+        self.assertLocalizedHolidays(
+            ("2023-01-02", "Lunes siguiente a Año nuevo"),
+            ("2023-01-06", "Epifanía del Señor"),
+            ("2023-02-21", "Martes de Carnaval"),
+            ("2023-02-28", "Día de Andalucia"),
+            ("2023-03-01", "Día de las Islas Baleares"),
+>>>>>>> develop
             ("2023-03-20", "Lunes siguiente a San José"),
             ("2023-04-06", "Jueves Santo"),
             ("2023-04-07", "Viernes Santo"),
@@ -1287,7 +1311,10 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-05-31", "Día de Castilla-La Mancha"),
             ("2023-06-08", "Corpus Christi"),
             ("2023-06-09", "Día de La Rioja; Día de la Región de Murcia"),
+<<<<<<< HEAD
             ("2023-06-13", "San Antonio"),
+=======
+>>>>>>> develop
             ("2023-06-24", "San Juan"),
             ("2023-06-29", "Fiesta del Sacrificio-Aid Al Adha; Fiesta del Sacrificio-Eidul Adha"),
             ("2023-07-25", "Día Nacional de Galicia; Santiago Apóstol"),
@@ -1295,11 +1322,15 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-08-05", "Nuestra Señora de África"),
             ("2023-08-15", "Asunción de la Virgen"),
             ("2023-09-02", "Día de Ceuta"),
+<<<<<<< HEAD
             (
                 "2023-09-08",
                 "Día de Asturias; Día de Extremadura; "
                 "Día de Nuestra Señora la Virgen de la Victoria",
             ),
+=======
+            ("2023-09-08", "Día de Asturias; Día de Extremadura"),
+>>>>>>> develop
             ("2023-09-11", "Fiesta Nacional de Cataluña"),
             ("2023-09-15", "La Bien Aparecida"),
             ("2023-10-09", "Día de la Comunidad Valenciana"),
@@ -1310,6 +1341,7 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-12-08", "Inmaculada Concepción"),
             ("2023-12-25", "Natividad del Señor"),
             ("2023-12-26", "San Esteban"),
+<<<<<<< HEAD
         )
 
     def test_l10n_ca(self):
@@ -1356,6 +1388,8 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-12-08", "Immaculada Concepció"),
             ("2023-12-25", "Nativitat del Senyor"),
             ("2023-12-26", "Sant Esteve"),
+=======
+>>>>>>> develop
         )
 
     def test_l10n_en_us(self):
@@ -1366,7 +1400,10 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-02-21", "Shrove Tuesday"),
             ("2023-02-28", "Andalusia Day"),
             ("2023-03-01", "Day of the Balearic Islands"),
+<<<<<<< HEAD
             ("2023-03-13", "Statute of Autonomy of Melilla Day"),
+=======
+>>>>>>> develop
             ("2023-03-20", "Monday following Saint Joseph's Day"),
             ("2023-04-06", "Maundy Thursday"),
             ("2023-04-07", "Good Friday"),
@@ -1380,7 +1417,10 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-05-31", "Castilla-La Mancha Day"),
             ("2023-06-08", "Corpus Christi"),
             ("2023-06-09", "La Rioja Day; Murcia Day"),
+<<<<<<< HEAD
             ("2023-06-13", "Saint Anthony's Day"),
+=======
+>>>>>>> develop
             ("2023-06-24", "Saint John the Baptist"),
             ("2023-06-29", "Eid al-Adha"),
             ("2023-07-25", "Galician National Day; Saint James' Day"),
@@ -1388,9 +1428,15 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-08-05", "Santa Maria of Africa"),
             ("2023-08-15", "Assumption Day"),
             ("2023-09-02", "Ceuta Day"),
+<<<<<<< HEAD
             ("2023-09-08", "Asturias Day; Day of Our Lady of Victory; Extremadura Day"),
             ("2023-09-11", "National Day of Catalonia"),
             ("2023-09-15", "Our Lady of Bien Aparecida"),
+=======
+            ("2023-09-08", "Asturia Day; Extremadura Day"),
+            ("2023-09-11", "National Day of Catalonia"),
+            ("2023-09-15", "Our Lady of the Bien Aparecida"),
+>>>>>>> develop
             ("2023-10-09", "Valencian Community Day"),
             ("2023-10-12", "National Day"),
             ("2023-11-01", "All Saints' Day"),
@@ -1399,6 +1445,7 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-12-08", "Immaculate Conception"),
             ("2023-12-25", "Christmas Day"),
             ("2023-12-26", "Saint Stephen's Day"),
+<<<<<<< HEAD
         )
 
     def test_l10n_th(self):
@@ -1442,6 +1489,8 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-12-08", "วันสมโภชแม่พระผู้ปฏิสนธินิรมล"),
             ("2023-12-25", "วันคริสต์มาส"),
             ("2023-12-26", "วันสมโภชนักบุญสเตเฟน"),
+=======
+>>>>>>> develop
         )
 
     def test_l10n_uk(self):
@@ -1452,7 +1501,10 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-02-21", "Масний вівторок"),
             ("2023-02-28", "День Андалусії"),
             ("2023-03-01", "День Балеарських островів"),
+<<<<<<< HEAD
             ("2023-03-13", "День Статуту автономії міста Мелілья"),
+=======
+>>>>>>> develop
             ("2023-03-20", "Понеділок після День Святого Йосипа"),
             ("2023-04-06", "Великий четвер"),
             ("2023-04-07", "Страсна пʼятниця"),
@@ -1466,17 +1518,29 @@ class TestSpain(CommonCountryTests, TestCase):
             ("2023-05-31", "День Кастилії-Ла-Манча"),
             ("2023-06-08", "Свято Тіла і Крові Христових"),
             ("2023-06-09", "День Мурсії; День Ріохи"),
+<<<<<<< HEAD
             ("2023-06-13", "День Святого Антонія"),
+=======
+>>>>>>> develop
             ("2023-06-24", "День Івана Хрестителя"),
             ("2023-06-29", "Курбан-байрам"),
             ("2023-07-25", "День Святого Якова; Національний день Галісії"),
             ("2023-07-28", "День Інституцій Кантабрії"),
+<<<<<<< HEAD
             ("2023-08-05", "День Пресвятої Богородиці Африканської"),
             ("2023-08-15", "Внебовзяття Пресвятої Діви Марії"),
             ("2023-09-02", "День Сеути"),
             ("2023-09-08", "День Астурії; День Естремадури; День Пресвятої Богородиці Перемоги"),
             ("2023-09-11", "Національний день Каталонії"),
             ("2023-09-15", "День Пресвятої Богородиці Обʼявленої"),
+=======
+            ("2023-08-05", "День Богоматері Африканської"),
+            ("2023-08-15", "Внебовзяття Пресвятої Діви Марії"),
+            ("2023-09-02", "День Сеути"),
+            ("2023-09-08", "День Астурії; День Естремадури"),
+            ("2023-09-11", "Національний день Каталонії"),
+            ("2023-09-15", "День Богоматері Обʼявлення"),
+>>>>>>> develop
             ("2023-10-09", "День Валенсії"),
             ("2023-10-12", "Національний день Іспанії"),
             ("2023-11-01", "День усіх святих"),

@@ -117,7 +117,33 @@ class France(HolidayBase, ChristianHolidays, InternationalHolidays):
             # New Year's Day.
             self._add_new_years_day(tr("Jour de l'an"))
 
+<<<<<<< HEAD
         # Established on March 8th, 1886.
+=======
+        if self._year >= 1919:
+            self._add_labor_day(
+                # Labor Day.
+                tr("Fête du Travail")
+                if self._year >= 1948
+                # Labor and Social Concord Day.
+                else tr("Fête du Travail et de la Concorde sociale")
+            )
+
+        if 1953 <= self._year <= 1959 or self._year >= 1982:
+            # Victory Day.
+            self._add_world_war_two_victory_day(tr("Fête de la Victoire"))
+
+        if self._year >= 1880:
+            # National Day.
+            self._add_holiday_jul_14(tr("Fête nationale"))
+
+        if self._year >= 1918:
+            # Armistice Day.
+            self._add_holiday_nov_11(tr("Armistice"))
+
+        # Religious holidays.
+
+>>>>>>> develop
         if self._year >= 1886:
             # Easter Monday.
             self._add_easter_monday(tr("Lundi de Pâques"))

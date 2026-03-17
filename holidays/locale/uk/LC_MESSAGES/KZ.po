@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -15,7 +19,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Holidays 0.58\n"
+<<<<<<< HEAD
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
+=======
+>>>>>>> develop
 "POT-Creation-Date: 2024-09-26 20:24+0300\n"
 "PO-Revision-Date: 2024-09-26 20:33+0300\n"
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
@@ -26,7 +33,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingva 5.0.4\n"
 "X-Generator: Poedit 3.5\n"
+<<<<<<< HEAD
 "X-Source-Language: kk\n"
+=======
+>>>>>>> develop
 
 #. %s (estimated).
 #, c-format
@@ -55,7 +65,11 @@ msgstr "Православне Різдво"
 msgid "Халықаралық әйелдер күні"
 msgstr "Міжнародний жіночий день"
 
+<<<<<<< HEAD
 #. Nowruz Holiday.
+=======
+#. Nowruz holiday.
+>>>>>>> develop
 msgid "Наурыз мейрамы"
 msgstr "Свято Новруз"
 

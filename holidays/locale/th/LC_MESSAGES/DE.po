@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -14,19 +18,32 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.87\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2024-09-05 23:21+0700\n"
 "PO-Revision-Date: 2025-12-02 18:20+0200\n"
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
+=======
+"Project-Id-Version: Holidays 0.60\n"
+"POT-Creation-Date: 2024-09-05 23:21+0700\n"
+"PO-Revision-Date: 2024-10-30 02:14+0700\n"
+"Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
+>>>>>>> develop
 "Language-Team: Holidays Localization Team\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+<<<<<<< HEAD
 "Generated-By: Lingva 5.0.3\n"
 "X-Generator: Poedit 3.6\n"
 "X-Source-Language: de\n"
+=======
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Lingva 5.0.3\n"
+"X-Generator: Poedit 3.5\n"
+>>>>>>> develop
 
 #. New Year's Day.
 msgid "Neujahr"
@@ -56,6 +73,13 @@ msgstr "วันจันทร์หลังวันสมโภชพระ
 msgid "Tag der Deutschen Einheit"
 msgstr "วันรวมชาติเยอรมัน"
 
+<<<<<<< HEAD
+=======
+#. Reformation Day.
+msgid "Reformationstag"
+msgstr "วันแห่งการปฏิรูป"
+
+>>>>>>> develop
 #. Repentance and Prayer Day.
 msgid "Buß- und Bettag"
 msgstr "วันแห่งการอธิษฐานและการกลับใจ"
@@ -76,6 +100,7 @@ msgstr "วันอาทิตย์อีสเตอร์"
 msgid "Pfingstsonntag"
 msgstr "วันสมโภชพระจิตเจ้า"
 
+<<<<<<< HEAD
 #. Reformation Day.
 msgid "Reformationstag"
 msgstr "วันแห่งการปฏิรูป"
@@ -83,6 +108,29 @@ msgstr "วันแห่งการปฏิรูป"
 #. Women's Day.
 msgid "Frauentag"
 msgstr "วันสตรี"
+=======
+#. International Women's Day.
+msgid "Internationaler Frauentag"
+msgstr "วันสตรีสากล"
+
+#. 75th anniversary of the liberation from Nazism and the end of the Second
+#. World War in Europe.
+msgid ""
+"75. Jahrestag der Befreiung vom Nationalsozialismus und der Beendigung des "
+"Zweiten Weltkriegs in Europa"
+msgstr ""
+"วันครบรอบ 75 "
+"ปีของการปลดปล่อยจากระบอบชาติสังคมนิยมและการสิ้นสุดสงครามโลกครั้งที่สองในยุโรป"
+
+#. 80th anniversary of the liberation from Nazism and the end of the Second
+#. World War in Europe.
+msgid ""
+"80. Jahrestag der Befreiung vom Nationalsozialismus und der Beendigung des "
+"Zweiten Weltkriegs in Europa"
+msgstr ""
+"วันครบรอบ 80 "
+"ปีของการปลดปล่อยจากระบอบชาติสังคมนิยมและการสิ้นสุดสงครามโลกครั้งที่สองในยุโรป"
+>>>>>>> develop
 
 #. Epiphany.
 msgid "Heilige Drei Könige"
@@ -104,6 +152,7 @@ msgstr "วันสมโภชแม่พระรับเกียรติ
 msgid "Weltkindertag"
 msgstr "วันเด็กสากล"
 
+<<<<<<< HEAD
 #. Augsburg Peace Festival.
 msgid "Augsburger Hohes Friedensfest"
 msgstr "วันเทศกาลสันติภาพเอาก์สบวร์ก"
@@ -120,6 +169,8 @@ msgid ""
 "Europa"
 msgstr "วันครบรอบ 80 ปีของการปลดปล่อยจากระบอบชาติสังคมนิยมและการสิ้นสุดสงครามโลกครั้งที่สองในยุโรป"
 
+=======
+>>>>>>> develop
 #. 75th anniversary of the East German uprising of 1953.
 msgid "75. Jahrestag des Aufstandes vom 17. Juni 1953"
 msgstr "วันครบรอบ 75 ปีของการก่อการกำเริบในเยอรมนีตะวันออก ค.ศ. 1953"

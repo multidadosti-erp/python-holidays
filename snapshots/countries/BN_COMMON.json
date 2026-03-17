@@ -229,7 +229,10 @@
     "1996-02-06": "Anniversary of the revelation of the Quran (estimated)",
     "1996-02-19": "Eid al-Fitr (estimated); Lunar New Year",
     "1996-02-20": "Eid al-Fitr (estimated)",
+<<<<<<< HEAD
     "1996-02-21": "Eid al-Fitr (observed, estimated); Lunar New Year (observed)",
+=======
+>>>>>>> develop
     "1996-02-23": "National Day",
     "1996-02-24": "National Day (observed)",
     "1996-04-27": "Eid al-Adha (estimated)",
@@ -249,8 +252,12 @@
     "1997-02-07": "Lunar New Year",
     "1997-02-08": "Eid al-Fitr (estimated)",
     "1997-02-09": "Eid al-Fitr (estimated)",
+<<<<<<< HEAD
     "1997-02-10": "Lunar New Year (observed)",
     "1997-02-11": "Eid al-Fitr (observed, estimated)",
+=======
+    "1997-02-10": "Eid al-Fitr (observed, estimated)",
+>>>>>>> develop
     "1997-02-23": "National Day",
     "1997-02-24": "National Day (observed)",
     "1997-04-17": "Eid al-Adha (estimated)",
@@ -297,7 +304,11 @@
     "1999-11-06": "Isra' and Mi'raj",
     "1999-12-09": "First Day of Ramadan",
     "1999-12-25": "Anniversary of the revelation of the Quran; Christmas Day",
+<<<<<<< HEAD
     "1999-12-27": "Anniversary of the revelation of the Quran (observed); Christmas Day (observed)",
+=======
+    "1999-12-27": "Christmas Day (observed)",
+>>>>>>> develop
     "2000-01-01": "New Year's Day",
     "2000-01-08": "Eid al-Fitr",
     "2000-02-05": "Lunar New Year",
@@ -333,7 +344,11 @@
     "2002-01-01": "New Year's Day",
     "2002-02-12": "Lunar New Year",
     "2002-02-23": "Eid al-Adha; National Day",
+<<<<<<< HEAD
     "2002-02-25": "Eid al-Adha (observed); National Day (observed)",
+=======
+    "2002-02-25": "National Day (observed)",
+>>>>>>> develop
     "2002-03-15": "Islamic New Year",
     "2002-03-16": "Islamic New Year (observed)",
     "2002-05-25": "Prophet's Birthday",
@@ -368,8 +383,12 @@
     "2004-01-22": "Lunar New Year",
     "2004-02-02": "Eid al-Adha",
     "2004-02-22": "Islamic New Year",
+<<<<<<< HEAD
     "2004-02-23": "National Day",
     "2004-02-24": "Islamic New Year (observed)",
+=======
+    "2004-02-23": "Islamic New Year (observed); National Day",
+>>>>>>> develop
     "2004-05-02": "Prophet's Birthday",
     "2004-05-03": "Prophet's Birthday (observed)",
     "2004-05-31": "Armed Forces Day",
@@ -419,8 +438,14 @@
     "2006-10-24": "Eid al-Fitr",
     "2006-10-25": "Eid al-Fitr",
     "2006-12-25": "Christmas Day",
+<<<<<<< HEAD
     "2007-01-01": "Eid al-Adha; New Year's Day",
     "2007-01-02": "Eid al-Adha (observed); New Year's Day (observed)",
+=======
+    "2006-12-31": "Eid al-Adha",
+    "2007-01-01": "New Year's Day",
+    "2007-01-02": "New Year's Day (observed)",
+>>>>>>> develop
     "2007-01-20": "Islamic New Year",
     "2007-02-18": "Lunar New Year",
     "2007-02-19": "Lunar New Year (observed)",
@@ -560,7 +585,11 @@
     "2014-06-29": "First Day of Ramadan",
     "2014-06-30": "First Day of Ramadan (observed)",
     "2014-07-15": "Anniversary of the revelation of the Quran; Sultan Hassanal Bolkiah's Birthday",
+<<<<<<< HEAD
     "2014-07-16": "Anniversary of the revelation of the Quran (observed); Sultan Hassanal Bolkiah's Birthday (observed)",
+=======
+    "2014-07-16": "Anniversary of the revelation of the Quran (observed)",
+>>>>>>> develop
     "2014-07-28": "Eid al-Fitr",
     "2014-07-29": "Eid al-Fitr",
     "2014-07-30": "Eid al-Fitr",
@@ -784,21 +813,41 @@
     "2025-09-06": "Prophet's Birthday (observed)",
     "2025-12-25": "Christmas Day",
     "2026-01-01": "New Year's Day",
+<<<<<<< HEAD
     "2026-01-17": "Isra' and Mi'raj",
+=======
+    "2026-01-16": "Isra' and Mi'raj (estimated)",
+    "2026-01-17": "Isra' and Mi'raj (observed, estimated)",
+>>>>>>> develop
     "2026-02-17": "Lunar New Year",
     "2026-02-19": "First Day of Ramadan",
     "2026-02-23": "National Day",
+<<<<<<< HEAD
     "2026-03-07": "Anniversary of the revelation of the Quran",
     "2026-03-21": "Eid al-Fitr",
     "2026-03-22": "Eid al-Fitr",
     "2026-03-23": "Eid al-Fitr",
     "2026-03-24": "Eid al-Fitr (observed)",
     "2026-05-27": "Eid al-Adha",
+=======
+    "2026-03-06": "Anniversary of the revelation of the Quran (estimated)",
+    "2026-03-07": "Anniversary of the revelation of the Quran (observed, estimated)",
+    "2026-03-20": "Eid al-Fitr (estimated)",
+    "2026-03-21": "Eid al-Fitr (estimated)",
+    "2026-03-22": "Eid al-Fitr (estimated)",
+    "2026-03-23": "Eid al-Fitr (observed, estimated)",
+    "2026-03-24": "Eid al-Fitr (observed, estimated)",
+    "2026-05-27": "Eid al-Adha (estimated)",
+>>>>>>> develop
     "2026-05-31": "Armed Forces Day",
     "2026-06-01": "Armed Forces Day (observed)",
     "2026-06-17": "Islamic New Year",
     "2026-07-15": "Sultan Hassanal Bolkiah's Birthday",
+<<<<<<< HEAD
     "2026-08-25": "Prophet's Birthday",
+=======
+    "2026-08-25": "Prophet's Birthday (estimated)",
+>>>>>>> develop
     "2026-12-25": "Christmas Day",
     "2026-12-26": "Christmas Day (observed)",
     "2027-01-01": "New Year's Day",
@@ -819,7 +868,10 @@
     "2027-07-15": "Sultan Hassanal Bolkiah's Birthday",
     "2027-08-14": "Prophet's Birthday (estimated)",
     "2027-12-25": "Christmas Day; Isra' and Mi'raj (estimated)",
+<<<<<<< HEAD
     "2027-12-27": "Christmas Day (observed); Isra' and Mi'raj (observed, estimated)",
+=======
+>>>>>>> develop
     "2028-01-01": "New Year's Day",
     "2028-01-26": "Lunar New Year",
     "2028-01-28": "First Day of Ramadan (estimated)",
@@ -936,9 +988,14 @@
     "2033-12-23": "Eid al-Fitr (estimated)",
     "2033-12-24": "Eid al-Fitr (estimated)",
     "2033-12-25": "Christmas Day; Eid al-Fitr (estimated)",
+<<<<<<< HEAD
     "2033-12-26": "Eid al-Fitr (observed, estimated)",
     "2033-12-27": "Christmas Day (observed)",
     "2033-12-28": "Eid al-Fitr (observed, estimated)",
+=======
+    "2033-12-26": "Christmas Day (observed); Eid al-Fitr (observed, estimated)",
+    "2033-12-27": "Christmas Day (observed); Eid al-Fitr (observed, estimated)",
+>>>>>>> develop
     "2034-01-01": "New Year's Day",
     "2034-01-02": "New Year's Day (observed)",
     "2034-02-19": "Lunar New Year",
@@ -1105,7 +1162,10 @@
     "2042-03-04": "Prophet's Birthday (estimated)",
     "2042-05-31": "Armed Forces Day",
     "2042-07-15": "Isra' and Mi'raj (estimated); Sultan Hassanal Bolkiah's Birthday",
+<<<<<<< HEAD
     "2042-07-16": "Isra' and Mi'raj (observed, estimated); Sultan Hassanal Bolkiah's Birthday (observed)",
+=======
+>>>>>>> develop
     "2042-08-17": "First Day of Ramadan (estimated)",
     "2042-08-18": "First Day of Ramadan (observed, estimated)",
     "2042-09-02": "Anniversary of the revelation of the Quran (estimated)",
@@ -1120,8 +1180,12 @@
     "2043-01-01": "New Year's Day",
     "2043-02-10": "Lunar New Year",
     "2043-02-22": "Prophet's Birthday (estimated)",
+<<<<<<< HEAD
     "2043-02-23": "National Day",
     "2043-02-24": "Prophet's Birthday (observed, estimated)",
+=======
+    "2043-02-23": "National Day; Prophet's Birthday (observed, estimated)",
+>>>>>>> develop
     "2043-05-31": "Armed Forces Day",
     "2043-06-01": "Armed Forces Day (observed)",
     "2043-07-04": "Isra' and Mi'raj (estimated)",

@@ -33,7 +33,10 @@ from holidays.observed_holiday_base import ObservedHolidayBase
 
 class Indonesia(
     ObservedHolidayBase,
+<<<<<<< HEAD
     BalineseSakaCalendarHolidays,
+=======
+>>>>>>> develop
     BuddhistCalendarHolidays,
     ChineseCalendarHolidays,
     ChristianHolidays,
@@ -44,11 +47,21 @@ class Indonesia(
     """Indonesia holidays.
 
     References:
+<<<<<<< HEAD
         * <https://en.wikipedia.org/wiki/Public_holidays_in_Indonesia>
         * <https://id.wikipedia.org/wiki/Hari_libur_di_Indonesia>
         * <https://web.archive.org/web/20250413192412/https://www.liburnasional.com/sejarah/>
         * [1963-2025](https://id.wikipedia.org/wiki/Indonesia_dalam_tahun_1963)
         * <https://web.archive.org/web/20250413192423/https://www.timeanddate.com/holidays/indonesia/>
+=======
+    - https://en.wikipedia.org/wiki/Public_holidays_in_Indonesia
+    - https://id.wikipedia.org/wiki/Hari_libur_di_Indonesia
+    - https://www.liburnasional.com/sejarah/
+    - https://id.wikipedia.org/wiki/Indonesia_dalam_tahun_1963 (1963-2024)
+    - https://www.timeanddate.com/holidays/indonesia
+    - https://en.wikipedia.org/wiki/Nyepi
+    - https://bali.com/bali/travel-guide/culture/nyepi-balinese-new-year/
+>>>>>>> develop
     """
 
     country = "ID"
@@ -158,8 +171,64 @@ class Indonesia(
 
         # Keputusan Presiden no 3 tahun 1983. (1983-01-19; Added Nationally)
         if self._year >= 1983:
+<<<<<<< HEAD
             # Day of Silence.
             self._add_nyepi(tr("Hari Suci Nyepi"))
+=======
+            dates_obs = {
+                1983: (MAR, 15),
+                1984: (MAR, 4),
+                1985: (MAR, 22),
+                1986: (MAR, 12),
+                1987: (MAR, 31),
+                1988: (MAR, 19),
+                1989: (MAR, 9),
+                1990: (MAR, 27),
+                1991: (MAR, 17),
+                1992: (MAR, 5),
+                1993: (MAR, 24),
+                1994: (MAR, 12),
+                1995: (APR, 1),
+                1996: (MAR, 21),
+                1997: (APR, 9),
+                1998: (MAR, 29),
+                1999: (MAR, 18),
+                2000: (APR, 4),
+                2001: (MAR, 25),
+                2002: (APR, 13),
+                2003: (APR, 2),
+                2004: (MAR, 22),
+                2005: (MAR, 11),
+                2006: (MAR, 30),
+                2007: (MAR, 19),
+                2008: (MAR, 7),
+                2009: (MAR, 26),
+                2010: (MAR, 16),
+                2011: (MAR, 5),
+                2012: (MAR, 23),
+                2013: (MAR, 12),
+                2014: (MAR, 31),
+                2015: (MAR, 21),
+                2016: (MAR, 9),
+                2017: (MAR, 28),
+                2018: (MAR, 17),
+                2019: (MAR, 7),
+                2020: (MAR, 25),
+                2021: (MAR, 14),
+                2022: (MAR, 3),
+                2023: (MAR, 22),
+                2024: (MAR, 11),
+                2025: (MAR, 29),
+                2026: (MAR, 19),
+                2027: (MAR, 8),
+                2028: (MAR, 26),
+                2029: (MAR, 15),
+                2030: (MAR, 5),
+            }
+            if self._year in dates_obs:
+                # Day of Silence.
+                self._add_holiday(tr("Hari Suci Nyepi"), dates_obs[self._year])
+>>>>>>> develop
 
             # Vesak Day.
             self._add_vesak(tr("Hari Raya Waisak"))
@@ -251,6 +320,21 @@ class IndonesiaChineseHolidays(_CustomChineseHolidays):
         2007: (FEB, 19),
         2010: (FEB, 15),
         2013: (FEB, 11),
+<<<<<<< HEAD
+=======
+        2014: (JAN, 31),
+        2015: (FEB, 19),
+        2016: (FEB, 8),
+        2017: (JAN, 28),
+        2018: (FEB, 16),
+        2019: (FEB, 5),
+        2020: (JAN, 25),
+        2021: (FEB, 12),
+        2022: (FEB, 1),
+        2023: (JAN, 22),
+        2024: (FEB, 10),
+        2025: (JAN, 29),
+>>>>>>> develop
     }
 
 
@@ -262,6 +346,7 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         1965: (APR, 12),
         1966: (APR, 2),
         1967: (MAR, 22),
+<<<<<<< HEAD
         1970: (FEB, 17),
         1972: (JAN, 27),
         1973: (JAN, 15),
@@ -275,12 +360,46 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         1988: (JUL, 24),
         1990: (JUL, 3),
         1991: (JUN, 23),
+=======
+        1968: (MAR, 9),
+        1969: (FEB, 27),
+        1970: (FEB, 17),
+        1971: (FEB, 6),
+        1972: (JAN, 27),
+        1973: (JAN, 15),
+        1974: ((JAN, 4), (DEC, 24)),
+        1975: (DEC, 13),
+        1976: (DEC, 2),
+        1977: (NOV, 21),
+        1978: (NOV, 11),
+        1979: (OCT, 31),
+        1980: (OCT, 19),
+        1981: (OCT, 8),
+        1982: (SEP, 28),
+        1983: (SEP, 17),
+        1984: (SEP, 6),
+        1985: (AUG, 26),
+        1986: (AUG, 16),
+        1987: (AUG, 5),
+        1988: (JUL, 24),
+        1989: (JUL, 13),
+        1990: (JUL, 3),
+        1991: (JUN, 23),
+        1992: (JUN, 11),
+>>>>>>> develop
         1993: (JUN, 1),
         1994: (MAY, 21),
         1995: (MAY, 10),
         1996: (APR, 28),
         1997: (APR, 18),
+<<<<<<< HEAD
         1999: (MAR, 28),
+=======
+        1998: (APR, 7),
+        1999: (MAR, 28),
+        2000: (MAR, 16),
+        2001: (MAR, 5),
+>>>>>>> develop
         2002: (FEB, 23),
         2003: (FEB, 12),
         2004: (FEB, 2),
@@ -292,6 +411,10 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         2022: (JUL, 10),
         2023: (JUN, 29),
         2024: (JUN, 17),
+<<<<<<< HEAD
+=======
+        2025: (JUN, 6),
+>>>>>>> develop
     }
 
     EID_AL_FITR_DATES_CONFIRMED_YEARS = (1963, 2025)
@@ -300,20 +423,44 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         1964: (FEB, 15),
         1965: (FEB, 3),
         1966: (JAN, 23),
+<<<<<<< HEAD
         1968: ((JAN, 2), (DEC, 21)),
         1969: (DEC, 11),
         1974: (OCT, 17),
+=======
+        1967: (JAN, 12),
+        1968: ((JAN, 2), (DEC, 21)),
+        1969: (DEC, 11),
+        1970: (NOV, 30),
+        1971: (NOV, 19),
+        1972: (NOV, 7),
+        1973: (OCT, 27),
+        1974: (OCT, 17),
+        1975: (OCT, 6),
+>>>>>>> develop
         1976: (SEP, 25),
         1977: (SEP, 15),
         1978: (SEP, 4),
         1979: (AUG, 24),
+<<<<<<< HEAD
         1982: (JUL, 22),
         1983: (JUL, 12),
+=======
+        1980: (AUG, 12),
+        1981: (AUG, 1),
+        1982: (JUL, 22),
+        1983: (JUL, 12),
+        1984: (JUN, 30),
+>>>>>>> develop
         1985: (JUN, 20),
         1986: (JUN, 9),
         1987: (MAY, 29),
         1988: (MAY, 17),
         1989: (MAY, 7),
+<<<<<<< HEAD
+=======
+        1990: (APR, 26),
+>>>>>>> develop
         1991: (APR, 16),
         1992: (APR, 5),
         1993: (MAR, 25),
@@ -323,22 +470,40 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         1997: (FEB, 9),
         1998: (JAN, 30),
         1999: (JAN, 19),
+<<<<<<< HEAD
+=======
+        2000: ((JAN, 8), (DEC, 27)),
+        2001: (DEC, 16),
+>>>>>>> develop
         2002: (DEC, 6),
         2006: (OCT, 24),
         2019: (JUN, 5),
         2023: (APR, 22),
+<<<<<<< HEAD
+=======
+        2024: (APR, 10),
+>>>>>>> develop
         2025: (MAR, 31),
     }
 
     HIJRI_NEW_YEAR_DATES_CONFIRMED_YEARS = (1968, 2025)
     HIJRI_NEW_YEAR_DATES = {
+<<<<<<< HEAD
         1970: (MAR, 10),
         1971: (FEB, 27),
+=======
+        1968: (MAR, 30),
+        1969: (MAR, 19),
+        1970: (MAR, 10),
+        1971: (FEB, 27),
+        1972: (FEB, 16),
+>>>>>>> develop
         1973: (FEB, 5),
         1974: (JAN, 25),
         1975: (JAN, 14),
         1976: ((JAN, 3), (DEC, 22)),
         1977: (DEC, 12),
+<<<<<<< HEAD
         1979: (NOV, 21),
         1981: (OCT, 29),
         1983: (OCT, 8),
@@ -348,17 +513,56 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         1989: (AUG, 3),
         1991: (JUL, 13),
         1992: (JUL, 2),
+=======
+        1978: (DEC, 1),
+        1979: (NOV, 21),
+        1980: (NOV, 9),
+        1981: (OCT, 29),
+        1982: (OCT, 18),
+        1983: (OCT, 8),
+        1984: (SEP, 26),
+        1985: (SEP, 16),
+        1986: (SEP, 5),
+        1987: (AUG, 26),
+        1988: (AUG, 14),
+        1989: (AUG, 3),
+        1990: (JUL, 23),
+        1991: (JUL, 13),
+        1992: (JUL, 2),
+        1993: (JUN, 21),
+>>>>>>> develop
         1994: (JUN, 11),
         1995: (MAY, 31),
         1996: (MAY, 19),
         1997: (MAY, 8),
         1998: (APR, 28),
+<<<<<<< HEAD
         2003: (MAR, 3),
         2004: (FEB, 23),
+=======
+        1999: (APR, 17),
+        2000: (APR, 6),
+        2001: (MAR, 26),
+        2002: (MAR, 15),
+        2003: (MAR, 3),
+        2004: (FEB, 23),
+        2005: (FEB, 10),
+        2006: (JAN, 31),
+        2007: (JAN, 20),
+        2008: ((JAN, 10), (DEC, 29)),
+        2009: (DEC, 18),
+        2010: (DEC, 7),
+>>>>>>> develop
         2011: (NOV, 27),
         2013: (NOV, 5),
         2019: (SEP, 1),
         2021: (AUG, 11),
+<<<<<<< HEAD
+=======
+        2022: (JUL, 30),
+        2023: (JUL, 19),
+        2024: (JUL, 7),
+>>>>>>> develop
         2025: (JUN, 27),
     }
 
@@ -367,6 +571,7 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         1968: (OCT, 20),
         1969: (OCT, 9),
         1970: (SEP, 29),
+<<<<<<< HEAD
         1972: (SEP, 6),
         1973: (AUG, 26),
         1974: (AUG, 16),
@@ -384,53 +589,155 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
         1992: (FEB, 1),
         1994: ((JAN, 10), (DEC, 30)),
         1995: (DEC, 20),
+=======
+        1971: (SEP, 17),
+        1972: (SEP, 6),
+        1973: (AUG, 26),
+        1974: (AUG, 16),
+        1975: (AUG, 5),
+        1976: (JUL, 25),
+        1977: (JUL, 14),
+        1978: (JUL, 3),
+        1979: (JUN, 22),
+        1980: (JUN, 11),
+        1981: (MAY, 31),
+        1982: (MAY, 21),
+        1983: (MAY, 10),
+        1984: (APR, 29),
+        1985: (APR, 18),
+        1986: (APR, 7),
+        1987: (MAR, 27),
+        1988: (MAR, 16),
+        1989: (MAR, 5),
+        1990: (FEB, 23),
+        1991: (FEB, 12),
+        1992: (FEB, 1),
+        1993: (JAN, 20),
+        1994: ((JAN, 10), (DEC, 30)),
+        1995: (DEC, 20),
+        1996: (DEC, 8),
+>>>>>>> develop
         1997: (NOV, 28),
         1998: (NOV, 17),
         1999: (NOV, 6),
         2000: (OCT, 25),
         2001: (OCT, 15),
+<<<<<<< HEAD
         2003: (SEP, 22),
         2004: (SEP, 13),
         2005: (SEP, 2),
         2007: (AUG, 11),
         2010: (JUL, 10),
+=======
+        2002: (OCT, 4),
+        2003: (SEP, 22),
+        2004: (SEP, 13),
+        2005: (SEP, 2),
+        2006: (AUG, 21),
+        2007: (AUG, 11),
+        2008: (JUL, 30),
+        2009: (JUL, 20),
+        2010: (JUL, 10),
+        2011: (JUN, 29),
+        2012: (JUN, 17),
+        2013: (JUN, 6),
+>>>>>>> develop
         2014: (MAY, 27),
         2016: (MAY, 6),
         2018: (APR, 14),
+<<<<<<< HEAD
+=======
+        2019: (APR, 3),
+        2020: (MAR, 22),
+        2021: (MAR, 11),
+        2022: (FEB, 28),
+        2023: (FEB, 18),
+        2024: (FEB, 8),
+        2025: (JAN, 27),
+>>>>>>> develop
     }
 
     MAWLID_DATES_CONFIRMED_YEARS = (1968, 2025)
     MAWLID_DATES = {
+<<<<<<< HEAD
+=======
+        1968: (JUN, 8),
+        1969: (MAY, 28),
+        1970: (MAY, 18),
+        1971: (MAY, 7),
+>>>>>>> develop
         1972: (APR, 26),
         1973: (APR, 14),
         1974: (APR, 5),
         1975: (MAR, 25),
         1976: (MAR, 13),
+<<<<<<< HEAD
         1978: (FEB, 20),
+=======
+        1977: (MAR, 2),
+        1978: (FEB, 20),
+        1979: (FEB, 9),
+        1980: (JAN, 30),
+        1981: (JAN, 18),
+>>>>>>> develop
         1982: ((JAN, 8), (DEC, 28)),
         1983: (DEC, 17),
         1984: (DEC, 5),
         1985: (NOV, 25),
+<<<<<<< HEAD
         1987: (NOV, 4),
         1988: (OCT, 23),
         1989: (OCT, 12),
         1991: (SEP, 21),
+=======
+        1986: (NOV, 14),
+        1987: (NOV, 4),
+        1988: (OCT, 23),
+        1989: (OCT, 12),
+        1990: (OCT, 1),
+        1991: (SEP, 21),
+        1992: (SEP, 9),
+>>>>>>> develop
         1993: (AUG, 30),
         1994: (AUG, 20),
         1995: (AUG, 9),
         1996: (JUL, 28),
         1997: (JUL, 17),
+<<<<<<< HEAD
         2000: (JUN, 15),
+=======
+        1998: (JUL, 6),
+        1999: (JUN, 26),
+        2000: (JUN, 15),
+        2001: (JUN, 4),
+>>>>>>> develop
         2002: (MAY, 25),
         2003: (MAY, 15),
         2004: (MAY, 3),
         2005: (APR, 22),
+<<<<<<< HEAD
+=======
+        2006: (APR, 10),
+        2007: (MAR, 31),
+        2008: (MAR, 20),
+        2009: (MAR, 9),
+        2010: (FEB, 26),
+        2011: (FEB, 15),
+>>>>>>> develop
         2012: (FEB, 5),
         2014: (JAN, 14),
         2015: ((JAN, 3), (DEC, 24)),
         2016: (DEC, 12),
         2017: (DEC, 1),
+<<<<<<< HEAD
         2021: (OCT, 20),
+=======
+        2018: (NOV, 20),
+        2019: (NOV, 9),
+        2020: (OCT, 29),
+        2021: (OCT, 20),
+        2022: (OCT, 8),
+>>>>>>> develop
         2023: (SEP, 28),
         2024: (SEP, 16),
         2025: (SEP, 5),
@@ -438,6 +745,7 @@ class IndonesiaIslamicHolidays(_CustomIslamicHolidays):
 
 
 class IndonesiaStaticHolidays:
+<<<<<<< HEAD
     """Indonesia special holidays.
 
     References (Election Days):
@@ -487,6 +795,55 @@ class IndonesiaStaticHolidays:
         * <https://web.archive.org/web/20250413193243/https://setkab.go.id/inilah-keppres-7-2024-tentang-cuti-bersama-asn-tahun-2024/>
         * <https://web.archive.org/web/20250413193349/https://setkab.go.id/pemerintah-tetapkan-hari-libur-nasional-dan-cuti-bersama-tahun-2025/>
         * <https://web.archive.org/web/20250802143125/https://news.detik.com/berita/d-8039857/pemerintah-tetapkan-senin-18-agustus-hari-libur>
+=======
+    """
+    References (Election Days):
+    - https://peraturan.bpk.go.id/Details/58370/keppres-no-53-tahun-1999
+    - https://peraturan.bpk.go.id/Details/55580/keppres-no-26-tahun-2004
+    - https://peraturan.bpk.go.id/Details/55662/keppres-no-55-tahun-2004
+    - https://peraturan.bpk.go.id/Details/55763/keppres-no-75-tahun-2004
+    - https://peraturan.bpk.go.id/Details/55345/keppres-no-7-tahun-2009
+    - https://peraturan.bpk.go.id/Details/55369/keppres-no-17-tahun-2009
+    - https://peraturan.bpk.go.id/Details/57563/keppres-no-14-tahun-2014
+    - https://peraturan.bpk.go.id/Details/57581/keppres-no-24-tahun-2014
+    - https://peraturan.bpk.go.id/Details/54477/keppres-no-25-tahun-2015
+    - https://peraturan.bpk.go.id/Details/57397/keppres-no-3-tahun-2017
+    - https://peraturan.bpk.go.id/Details/82669/keppres-no-15-tahun-2018
+    - https://peraturan.bpk.go.id/Details/104497/keppres-no-10-tahun-2019
+    - https://peraturan.bpk.go.id/Details/152704/keppres-no-22-tahun-2020
+    - https://peraturan.bpk.go.id/Details/277337/keppres-no-10-tahun-2024
+    - https://www.buduk.desa.id/berita/read/83/surat-edaran-menteri-ketenagakerjaan-republik-indonesia-nomor-1-tahun-2024.html
+
+    References (Joint Holidays):
+    - https://data.santoslolowang.com/viewing/Agama_Nasional_Indonesia/kepbersama_2002.pdf/
+    - https://nasional.tempo.co/read/5515/tahun-depan-libur-hari-raya-berubah
+    - https://nasional.tempo.co/read/45224/2005-pemerintah-tetapkan-13-hari-libur-nasional
+    - https://news.detik.com/berita/d-562326/30-maret-libur-hari-nyepi-31-maret-ditetapkan-cuti-bersama
+    - https://news.detik.com/berita/d-836627/dari-12-hari-jatah-cuti-tahun-ini-dipaksa-cuti-bareng-11-hari
+    - https://news.detik.com/berita/d-787189/inilah-jadwal-libur-dan-cuti-bersama-2008
+    - https://news.detik.com/berita/d-889403/cuti-bersama-dihapus-sisa-4-hari-untuk-lebaran-natal
+    - https://news.detik.com/berita/d-1263142/kamis-24-desember-cuti-bersama
+    - https://news.detik.com/berita/d-1179419/daftar-libur-dan-cuti-bersama-2010
+    - https://news.detik.com/berita/d-1378563/daftar-hari-libur-nasional-dan-cuti-bersama-2011
+    - https://news.detik.com/berita/d-1639209/pemerintah-tetapkan-senin-16-mei-2011-cuti-bersama
+    - https://news.detik.com/berita/d-1831855/cuti-bersama-tahun-2012-bertambah-1-hari-jadi-6-hari
+    - https://news.detik.com/berita/d-1969257/ini-dia-jadwal-hari-libur-nasional-cuti-bersama-tahun-2013
+    - https://news.detik.com/berita/d-2335984/daftar-cuti-bersama-dan-hari-libur-nasional-2014-termasuk-may-day
+    - https://news.detik.com/berita/d-2576131/ini-daftar-hari-libur-dan-cuti-bersama-tahun-2015
+    - https://bkpsdm.salatiga.go.id/pelaksanaan-hari-libur-nasional-dan-cuti-bersama-tahun-2015.html
+    - https://news.detik.com/berita/d-2952083/ini-rincian-libur-dan-cuti-bersama-2016
+    - https://news.detik.com/berita/d-3366218/libur-nasional-dan-cuti-bersama-2017-tambah-3-hari-ini-daftar-lengkapnya
+    - https://setkab.go.id/tidak-kurangi-hak-cuti-tahunan-presiden-jokowi-tetapkan-23-juni-sebagai-cuti-bersama-idul-fitri/
+    - https://setkab.go.id/pelayanan-publik-tetap-jalan-presiden-jokowi-tetapkan-cuti-bersama-pns-tahun-2018/
+    - https://setkab.go.id/keppres-no-132019-cuti-bersama-pns-pada-idul-fitri-1440h-tanggal-3-4-dan-7-juni/
+    - https://setkab.go.id/pemerintah-keluarkan-skb-3-menteri-hapus-tiga-hari-cuti-bersama-2020/
+    - https://setkab.go.id/inilah-perubahan-hari-libur-nasional-dan-cuti-bersama-tahun-2021/
+    - https://setkab.go.id/presiden-jokowi-terbitkan-keppres-4-tahun-2022-tentang-cuti-bersama-asn-tahun-2022/
+    - https://news.detik.com/berita/d-6468002/apakah-ada-cuti-bersama-natal-2022-cek-infonya-di-sini
+    - https://setkab.go.id/presiden-tandatangani-keppres-perubahan-cuti-bersama-bagi-asn/
+    - https://setkab.go.id/inilah-keppres-7-2024-tentang-cuti-bersama-asn-tahun-2024/
+    - https://setkab.go.id/pemerintah-tetapkan-hari-libur-nasional-dan-cuti-bersama-tahun-2025/
+>>>>>>> develop
     """
 
     # General Election Day.
@@ -518,8 +875,11 @@ class IndonesiaStaticHolidays:
     vesak_joint_holiday = tr("Cuti Bersama Hari Raya Waisak")
     # New Year's Joint Holiday.
     new_years_joint_holiday = tr("Cuti Bersama Tahun Baru Masehi")
+<<<<<<< HEAD
     # Independence Day Joint Holiday.
     independence_day_joint_holiday = tr("Cuti Bersama Hari Kemerdekaan Republik Indonesia")
+=======
+>>>>>>> develop
 
     special_public_holidays = {
         1999: (JUN, 7, legislative_election_day),
@@ -579,7 +939,12 @@ class IndonesiaStaticHolidays:
         2006: (
             (MAR, 31, day_of_silence_joint_holiday),
             (MAY, 26, ascension_joint_holiday),
+<<<<<<< HEAD
             (AUG, 18, independence_day_joint_holiday),
+=======
+            # Independence Day Joint Holiday.
+            (AUG, 18, tr("Cuti Bersama Hari Kemerdekaan Republik Indonesia")),
+>>>>>>> develop
             (OCT, 23, eid_al_fitr_joint_holiday),
             (OCT, 26, eid_al_fitr_joint_holiday),
             (OCT, 27, eid_al_fitr_joint_holiday),
@@ -727,7 +1092,10 @@ class IndonesiaStaticHolidays:
             (MAY, 13, vesak_joint_holiday),
             (MAY, 30, ascension_joint_holiday),
             (JUN, 9, eid_al_adha_joint_holiday),
+<<<<<<< HEAD
             (AUG, 18, independence_day_joint_holiday),
+=======
+>>>>>>> develop
             (DEC, 26, christmas_joint_holiday),
         ),
     }

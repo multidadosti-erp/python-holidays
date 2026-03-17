@@ -11,6 +11,10 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
+<<<<<<< HEAD
+=======
+from typing import Optional
+>>>>>>> develop
 
 from holidays.calendars.custom import _CustomCalendar
 from holidays.calendars.gregorian import MAY, JUN
@@ -426,16 +430,27 @@ class _BuddhistLunisolar:
         2100: (MAY, 23),
     }
 
+<<<<<<< HEAD
     def _get_holiday(self, holiday: str, year: int) -> tuple[date | None, bool]:
+=======
+    def _get_holiday(self, holiday: str, year: int) -> tuple[Optional[date], bool]:
+>>>>>>> develop
         estimated_dates = getattr(self, f"{holiday}_DATES", {})
         exact_dates = getattr(self, f"{holiday}_DATES_{_CustomCalendar.CUSTOM_ATTR_POSTFIX}", {})
         dt = exact_dates.get(year, estimated_dates.get(year, ()))
         return date(year, *dt) if dt else None, year not in exact_dates
 
+<<<<<<< HEAD
     def vesak_date(self, year: int) -> tuple[date | None, bool]:
         return self._get_holiday(VESAK, year)
 
     def vesak_may_date(self, year: int) -> tuple[date | None, bool]:
+=======
+    def vesak_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(VESAK, year)
+
+    def vesak_may_date(self, year: int) -> tuple[Optional[date], bool]:
+>>>>>>> develop
         return self._get_holiday(VESAK_MAY, year)
 
 

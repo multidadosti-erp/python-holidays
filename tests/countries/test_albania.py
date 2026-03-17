@@ -19,17 +19,32 @@ from tests.common import CommonCountryTests
 class TestAlbania(CommonCountryTests, TestCase):
     @classmethod
     def setUpClass(cls):
+<<<<<<< HEAD
         super().setUpClass(Albania)
+=======
+        super().setUpClass(Albania, years=range(1993, 2050))
+
+    def test_country_aliases(self):
+        self.assertAliases(Albania, AL, ALB)
+>>>>>>> develop
+
+    def test_no_holidays(self):
+        self.assertNoHolidays(Albania(years=1992))
 
     def test_special_holidays(self):
+<<<<<<< HEAD
         self.assertHolidayName(
             "Ditë pushimi",
+=======
+        self.assertHoliday(
+>>>>>>> develop
             "2020-01-03",
             "2022-03-21",
             "2024-03-15",
         )
 
     def test_new_years_day(self):
+<<<<<<< HEAD
         name = "Festat e Vitit të Ri"
         self.assertHolidayName(
             name,
@@ -72,6 +87,23 @@ class TestAlbania(CommonCountryTests, TestCase):
         )
         self.assertHolidayName(f"{name} (ditë pushimi e shtyrë)", obs_dts)
         self.assertNoNonObservedHoliday(obs_dts)
+=======
+        self.assertHolidayName(
+            "Festat e Vitit të Ri",
+            (f"{year}-01-01" for year in range(1993, 2050)),
+            (f"{year}-01-02" for year in range(1993, 2050)),
+        )
+
+    def test_summer_day(self):
+        name = "Dita e Verës"
+        self.assertHolidayName(name, (f"{year}-03-14" for year in range(2004, 2050)))
+        self.assertNoHolidayName(name, range(1993, 2004))
+
+    def test_nowruz_day(self):
+        name = "Dita e Nevruzit"
+        self.assertHolidayName(name, (f"{year}-03-22" for year in range(1996, 2050)))
+        self.assertNoHolidayName(name, range(1993, 1996))
+>>>>>>> develop
 
     def test_catholic_easter_sunday(self):
         name = "E diela e Pashkëve Katolike"
@@ -85,6 +117,7 @@ class TestAlbania(CommonCountryTests, TestCase):
             "2023-04-09",
             "2024-03-31",
         )
+<<<<<<< HEAD
         self.assertHolidayName(name, self.full_range)
         obs_dts = (
             # Special.
@@ -92,6 +125,9 @@ class TestAlbania(CommonCountryTests, TestCase):
         )
         self.assertHolidayName(f"{name} (ditë pushimi e shtyrë)", obs_dts)
         self.assertNoNonObservedHoliday(obs_dts)
+=======
+        self.assertHolidayName(name, range(1993, 2050))
+>>>>>>> develop
 
     def test_orthodox_easter_sunday(self):
         name = "E diela e Pashkëve Ortodokse"
@@ -104,6 +140,15 @@ class TestAlbania(CommonCountryTests, TestCase):
             "2022-04-24",
             "2023-04-16",
             "2024-05-05",
+<<<<<<< HEAD
+=======
+        )
+        self.assertHolidayName(name, range(1993, 2050))
+
+    def test_international_workers_day(self):
+        self.assertHolidayName(
+            "Dita Ndërkombëtare e Punëtorëve", (f"{year}-05-01" for year in range(1993, 2050))
+>>>>>>> develop
         )
         self.assertHolidayName(name, self.full_range)
         obs_dts = (
@@ -115,6 +160,7 @@ class TestAlbania(CommonCountryTests, TestCase):
         self.assertHolidayName(f"{name} (ditë pushimi e shtyrë)", obs_dts)
         self.assertNoNonObservedHoliday(obs_dts)
 
+<<<<<<< HEAD
     def test_international_workers_day(self):
         name = "Dita Ndërkombëtare e Punëtorëve"
         self.assertHolidayName(name, (f"{year}-05-01" for year in self.full_range))
@@ -214,6 +260,40 @@ class TestAlbania(CommonCountryTests, TestCase):
     def test_eid_al_fitr(self):
         name = "Dita e Bajramit të Madh"
         self.assertIslamicNoEstimatedHolidayName(
+=======
+    def test_mother_teresa_day(self):
+        name1 = "Dita e Lumturimit të Shenjt Terezës"
+        name2 = "Dita e Shenjtërimit të Shenjt Terezës"
+        self.assertHolidayName(name1, (f"{year}-10-19" for year in range(2004, 2018)))
+        self.assertNoHolidayName(name1, range(1993, 2004), range(2018, 2050))
+        self.assertHolidayName(name2, (f"{year}-09-05" for year in range(2018, 2050)))
+        self.assertNoHolidayName(name2, range(1993, 2018))
+
+    def test_alphabet_day(self):
+        name = "Dita e Alfabetit"
+        self.assertHolidayName(name, (f"{year}-11-22" for year in range(2024, 2050)))
+        self.assertNoHolidayName(name, range(1993, 2024))
+
+    def test_flag_and_independence_day(self):
+        self.assertHolidayName(
+            "Dita Flamurit dhe e Pavarësisë", (f"{year}-11-28" for year in range(1993, 2050))
+        )
+
+    def test_liberation_day(self):
+        self.assertHolidayName("Dita e Çlirimit", (f"{year}-11-29" for year in range(1993, 2050)))
+
+    def test_national_youth_day(self):
+        name = "Dita Kombëtare e Rinisë"
+        self.assertHolidayName(name, (f"{year}-12-08" for year in range(2009, 2050)))
+        self.assertNoHolidayName(name, range(1993, 2009))
+
+    def test_christmas_day(self):
+        self.assertHolidayName("Krishtlindjet", (f"{year}-12-25" for year in range(1993, 2050)))
+
+    def test_eid_al_fitr(self):
+        name = "Dita e Bajramit të Madh"
+        self.assertHolidayName(
+>>>>>>> develop
             name,
             "2018-06-15",
             "2019-06-04",
@@ -223,6 +303,7 @@ class TestAlbania(CommonCountryTests, TestCase):
             "2023-04-21",
             "2024-04-10",
         )
+<<<<<<< HEAD
         self.assertIslamicNoEstimatedHolidayName(name, self.full_range)
         obs_dts = (
             "2012-08-20",
@@ -238,6 +319,15 @@ class TestAlbania(CommonCountryTests, TestCase):
             name,
             "2006-01-10",
             "2006-12-31",
+=======
+        years_found = {dt.year for dt in self.holidays.get_named(name, lookup="startswith")}
+        self.assertTrue(set(range(1993, 2050)).issubset(years_found))
+
+    def test_eid_al_adha(self):
+        name = "Dita e Kurban Bajramit"
+        self.assertHolidayName(
+            name,
+>>>>>>> develop
             "2018-08-21",
             "2019-08-11",
             "2020-07-31",
@@ -246,21 +336,104 @@ class TestAlbania(CommonCountryTests, TestCase):
             "2023-06-28",
             "2024-06-16",
         )
+<<<<<<< HEAD
         self.assertIslamicNoEstimatedHolidayName(name, self.full_range)
         obs_dts = (
+=======
+        self.assertHoliday(
+            "2006-01-10",
+            "2006-12-31",
+        )
+        years_found = {dt.year for dt in self.holidays.get_named(name, lookup="startswith")}
+        self.assertTrue(set(range(1993, 2050)).issubset(years_found))
+
+    def test_observed(self):
+        dt = (
+            # New Year's Day.
+            "2012-01-03",
+            "2016-01-04",
+            "2017-01-03",
+            "2021-01-04",
+            "2022-01-03",
+            "2022-01-04",
+            "2023-01-03",
+            # Summer Day.
+            "2010-03-15",
+            "2015-03-16",
+            "2020-03-16",
+            "2021-03-15",
+            # Nowruz Day.
+            "2014-03-24",
+            "2015-03-23",
+            "2020-03-23",
+            # International Workers' Day.
+            "2010-05-03",
+            "2011-05-02",
+            "2016-05-02",
+            "2021-05-03",
+            # Mother Teresa Beatification/Canonization Day.
+            "2013-10-21",
+            "2014-10-20",
+            "2020-09-07",
+            "2021-09-06",
+            # Alphabet Day.
+            "2025-11-24",
+            "2026-11-23",
+            # Flag and Independence Day.
+            "2010-11-30",
+            "2015-11-30",
+            "2020-11-30",
+            "2021-11-30",
+            # Liberation Day.
+            "2014-12-01",
+            "2015-12-01",
+            "2020-12-01",
+            # National Youth Day.
+            "2012-12-10",
+            "2013-12-09",
+            "2018-12-10",
+            "2019-12-09",
+            "2024-12-09",
+            # Christmas Day.
+            "2010-12-27",
+            "2011-12-26",
+            "2016-12-26",
+            "2021-12-27",
+            "2022-12-26",
+            # Eid al-Fitr.
+            "2012-08-20",
+            "2017-06-26",
+            "2020-05-25",
+            # Eid al-Adha.
+>>>>>>> develop
             "2007-01-03",
             "2014-10-06",
             "2016-09-12",
             "2019-08-12",
             "2022-07-11",
             "2024-06-17",
+<<<<<<< HEAD
+=======
+            # special cases:
+            # Catholic Easter Sunday.
+            "2008-03-25",
+            # Orthodox Easter Sunday.
+            "2000-05-02",
+            "2021-05-04",
+            "2027-05-04",
+>>>>>>> develop
         )
         self.assertIslamicNoEstimatedHolidayName(f"{name} (ditë pushimi e shtyrë)", obs_dts)
         self.assertNoNonObservedHoliday(obs_dts)
 
     def test_2022(self):
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2022,
+=======
+        self.assertHolidays(
+            Albania(years=2022),
+>>>>>>> develop
             ("2022-01-01", "Festat e Vitit të Ri"),
             ("2022-01-02", "Festat e Vitit të Ri"),
             ("2022-01-03", "Festat e Vitit të Ri (ditë pushimi e shtyrë)"),
@@ -286,8 +459,13 @@ class TestAlbania(CommonCountryTests, TestCase):
         )
 
     def test_2023(self):
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2023,
+=======
+        self.assertHolidays(
+            Albania(years=2023),
+>>>>>>> develop
             ("2023-01-01", "Festat e Vitit të Ri"),
             ("2023-01-02", "Festat e Vitit të Ri"),
             ("2023-01-03", "Festat e Vitit të Ri (ditë pushimi e shtyrë)"),

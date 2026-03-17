@@ -15,7 +15,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Holidays 0.28\n"
+<<<<<<< HEAD
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
+=======
+>>>>>>> develop
 "POT-Creation-Date: 2023-06-25 17:39+0300\n"
 "PO-Revision-Date: 2023-06-25 17:40+0300\n"
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"

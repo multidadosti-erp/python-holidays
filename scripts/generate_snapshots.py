@@ -60,10 +60,26 @@ class SnapshotGenerator:
         self.args = arg_parser.parse_args()
 
     @staticmethod
+<<<<<<< HEAD
     def prepare_snapshot_directory(snapshot_path: Path) -> None:
         """Prepare a directory for snapshots."""
         shutil.rmtree(snapshot_path, ignore_errors=True)
         snapshot_path.mkdir(parents=True, exist_ok=True)
+=======
+    def prepare_snapshot_directory(snapshot_path):
+        """Prepare a directory for snapshots."""
+        path = Path(snapshot_path)
+        shutil.rmtree(path, ignore_errors=True)
+        path.mkdir(parents=True, exist_ok=True)
+
+    @staticmethod
+    def save(snapshot, file_path):
+        with open(file_path, "w") as output:
+            output.write(
+                json.dumps({str(dt): name for dt, name in sorted(snapshot.items())}, indent=4)
+            )
+            output.write("\n")  # Get along with pre-commit.
+>>>>>>> develop
 
     @staticmethod
     def save(snapshot: dict, file_path: Path) -> None:
@@ -117,6 +133,7 @@ class SnapshotGenerator:
             return None
 
         supported_countries = list_supported_countries(include_aliases=False)
+<<<<<<< HEAD
         country_list = self.args.country or list(supported_countries.keys())
         if unknown_countries := set(country_list).difference(supported_countries.keys()):
             raise ValueError(f"Countries {', '.join(unknown_countries)} not available")
@@ -131,6 +148,29 @@ class SnapshotGenerator:
             for subdiv in (None, *country.subdivisions):
                 work_items.append(
                     (country_code, subdiv, country.supported_categories, self.years, snapshot_path)
+=======
+        country_list = self.args.country or supported_countries
+        if unknown_countries := set(country_list).difference(supported_countries.keys()):
+            raise ValueError(f"Countries {', '.join(unknown_countries)} not available")
+
+        snapshot_path = "snapshots/countries"
+        if not self.args.country:
+            self.prepare_snapshot_directory(snapshot_path)
+        for country_code in country_list:
+            country = getattr(holidays, country_code)
+
+            for subdiv in (None,) + country.subdivisions:
+                self.save(
+                    holidays.country_holidays(
+                        country_code,
+                        subdiv=subdiv,
+                        years=self.years,
+                        categories=country.supported_categories,
+                        language="en_US",
+                    ),
+                    f"{snapshot_path}/"
+                    f"{country_code}_{(subdiv or 'COMMON').replace(' ', '_').upper()}.json",
+>>>>>>> develop
                 )
         with ProcessPoolExecutor() as executor:
             list(executor.map(SnapshotGenerator._country_subdiv_snapshot_worker, work_items))
@@ -141,6 +181,7 @@ class SnapshotGenerator:
             return None
 
         supported_markets = list_supported_financial(include_aliases=False)
+<<<<<<< HEAD
         market_list = self.args.market or list(supported_markets.keys())
         if unknown_markets := set(market_list).difference(supported_markets.keys()):
             raise ValueError(f"Markets {', '.join(unknown_markets)} not available")
@@ -154,6 +195,23 @@ class SnapshotGenerator:
             market = financial_holidays(market_code)
             work_items.append(
                 (market_code, market.supported_categories, self.years, snapshot_path)
+=======
+        market_list = self.args.market or supported_markets
+        if unknown_markets := set(market_list).difference(supported_markets.keys()):
+            raise ValueError(f"Markets {', '.join(unknown_markets)} not available")
+
+        snapshot_path = "snapshots/financial"
+        if not self.args.market:
+            self.prepare_snapshot_directory(snapshot_path)
+        for market_code in market_list:
+            self.save(
+                holidays.country_holidays(
+                    market_code,
+                    years=self.years,
+                    language="en_US",
+                ),
+                f"{snapshot_path}/{market_code}.json",
+>>>>>>> develop
             )
         with ProcessPoolExecutor() as executor:
             list(executor.map(SnapshotGenerator._financial_snapshot_worker, work_items))

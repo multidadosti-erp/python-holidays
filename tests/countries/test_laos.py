@@ -19,7 +19,11 @@ from tests.common import CommonCountryTests
 class TestLaos(CommonCountryTests, TestCase):
     @classmethod
     def setUpClass(cls):
+<<<<<<< HEAD
         super().setUpClass(Laos)
+=======
+        super().setUpClass(Laos, years=range(1976, 2050), years_non_observed=range(2018, 2050))
+>>>>>>> develop
 
     def test_special_bank_holidays(self):
         self.assertBankHoliday("2015-01-02")
@@ -84,8 +88,12 @@ class TestLaos(CommonCountryTests, TestCase):
         self.assertBankHolidayNameCount(name, 3, self.full_range)
 
     def test_new_years_day(self):
+<<<<<<< HEAD
         name = "ວັນປີໃໝ່ສາກົນ"
         self.assertHolidayName(name, (f"{year}-01-01" for year in self.full_range))
+=======
+        self.assertHoliday(f"{year}-01-01" for year in range(1976, 2050))
+>>>>>>> develop
 
         obs_dts = (
             "2012-01-02",
@@ -97,8 +105,12 @@ class TestLaos(CommonCountryTests, TestCase):
         self.assertNoNonObservedHoliday(obs_dts)
 
     def test_international_women_rights_day(self):
+<<<<<<< HEAD
         name = "ວັນແມ່ຍິງສາກົນ"
         self.assertHolidayName(name, (f"{year}-03-08" for year in self.full_range))
+=======
+        self.assertHoliday(f"{year}-03-08" for year in range(1976, 2050))
+>>>>>>> develop
 
         obs_dts = (
             "2015-03-09",
@@ -111,7 +123,11 @@ class TestLaos(CommonCountryTests, TestCase):
         name = "ບຸນປີໃໝ່ລາວ"
         songkran_years_apr_13_15 = {2012, 2017}
         songkran_years_apr_13_16 = {2016, 2020, 2024}
+<<<<<<< HEAD
         for year in self.full_range:
+=======
+        for year in range(1976, 2050):
+>>>>>>> develop
             if year in songkran_years_apr_13_15:
                 self.assertHolidayName(name, f"{year}-04-13", f"{year}-04-14", f"{year}-04-15")
             elif year in songkran_years_apr_13_16:
@@ -143,9 +159,14 @@ class TestLaos(CommonCountryTests, TestCase):
         self.assertHolidayName(f"ພັກຊົດເຊີຍ{name}", obs_dts)
         self.assertNoNonObservedHoliday(obs_dts)
 
+<<<<<<< HEAD
     def test_international_labor_day(self):
         name = "ວັນກຳມະກອນສາກົນ"
         self.assertHolidayName(name, (f"{year}-05-01" for year in self.full_range))
+=======
+    def test_labor_day(self):
+        self.assertHoliday(f"{year}-05-01" for year in range(1976, 2050))
+>>>>>>> develop
 
         obs_dts = (
             "2016-05-02",
@@ -167,8 +188,12 @@ class TestLaos(CommonCountryTests, TestCase):
         self.assertNoWorkdayHolidayName(name, range(self.start_year, 2018))
 
     def test_lao_national_day(self):
+<<<<<<< HEAD
         name = "ວັນຊາດ"
         self.assertHolidayName(name, (f"{year}-12-02" for year in self.full_range))
+=======
+        self.assertHoliday(f"{year}-12-02" for year in range(1976, 2050))
+>>>>>>> develop
 
         obs_dts = (
             "2012-12-03",

@@ -12,6 +12,10 @@
 
 from gettext import gettext as tr
 
+<<<<<<< HEAD
+=======
+from holidays.calendars.gregorian import APR, MAY, _timedelta
+>>>>>>> develop
 from holidays.constants import HALF_DAY, PUBLIC
 from holidays.groups import ChristianHolidays, InternationalHolidays
 from holidays.observed_holiday_base import (
@@ -22,6 +26,7 @@ from holidays.observed_holiday_base import (
 )
 
 
+<<<<<<< HEAD
 class Curacao(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
     """Curaçao holidays.
 
@@ -31,6 +36,12 @@ class Curacao(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         * <https://en.wikipedia.org/wiki/Public_holidays_in_Curaçao>
         * <https://web.archive.org/web/20240723012531/https://loketdigital.gobiernu.cw/contact/officiele-vrije-dagen-op-curacao-nationale-feestdagen>
         * <https://web.archive.org/web/20250422122824/https://www.meetcuracao.com/2-juli-dia-di-bandera-y-himno-op-curacao/>
+=======
+class Curacao(HolidayBase, ChristianHolidays, InternationalHolidays):
+    """
+    https://loketdigital.gobiernu.cw/Loket/product/571960bbe1e5fe8712b10a1323630e70
+    https://en.wikipedia.org/wiki/Public_holidays_in_Cura%C3%A7ao
+>>>>>>> develop
     """
 
     country = "CW"
@@ -157,6 +168,7 @@ class Curacao(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         self._add_christmas_day_two(tr("Di dos dia di Pasku di Nasementu"))
 
     def _populate_half_day_holidays(self):
+<<<<<<< HEAD
         # New Year's Eve.
         # Status: In-Use.
         # Presumed to have been added after 2010.
@@ -164,6 +176,13 @@ class Curacao(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         if self._year >= 2010:
             # New Year's Eve.
             self._add_new_years_eve(tr("Vispu di Aña Nobo"))
+=======
+        if self._year <= 1953:
+            return None
+
+        # New Year's Eve.
+        self._add_new_years_eve(tr("Vispu di Aña Nobo"))
+>>>>>>> develop
 
 
 class CW(Curacao):

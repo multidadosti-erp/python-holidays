@@ -82,6 +82,10 @@ class Portugal(HolidayBase, ChristianHolidays, InternationalHolidays):
         "Região Autónoma dos Açores": "20",
         "Região Autónoma da Madeira": "30",
     }
+<<<<<<< HEAD
+=======
+    _deprecated_subdivisions = ("Ext",)
+>>>>>>> develop
     supported_languages = ("en_US", "pt_PT", "uk")
     _deprecated_subdivisions = ("Ext",)
 

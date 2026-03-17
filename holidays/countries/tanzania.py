@@ -292,8 +292,19 @@ class Tanzania(
         # Prophet's Birthday.
         dts_observed.update(self._add_mawlid_day(tr("Maulidi")))
 
+<<<<<<< HEAD
         if self.observed:
             self._populate_observed(dts_observed, dts_special)
+=======
+        # Prophet's Birthday.
+        self._add_mawlid_day(tr("Maulidi"))
+
+        # Defunct Holidays.
+
+        # 5th Day of February ??? (Name Unavailable)
+        # Status: Defunct.
+        # Abrogated in Written Law (Miscellaneous Amendments) (No. 1) Act, 1993.
+>>>>>>> develop
 
 
 class TZ(Tanzania):

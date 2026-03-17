@@ -12,18 +12,33 @@
 
 from unittest import TestCase
 
+<<<<<<< HEAD
 from holidays.constants import HALF_DAY
 from holidays.countries.curacao import Curacao
+=======
+from holidays.constants import HALF_DAY, PUBLIC
+from holidays.countries.curacao import Curacao, CW, CUW
+>>>>>>> develop
 from tests.common import CommonCountryTests
 
 
 class TestCuracao(CommonCountryTests, TestCase):
     @classmethod
     def setUpClass(cls):
+<<<<<<< HEAD
         super().setUpClass(Curacao, years_half_day=range(2010, 2050))
 
     def test_no_holidays(self):
         super().test_no_holidays()
+=======
+        super().setUpClass(Curacao, years=range(1954, 2050))
+
+    def test_country_aliases(self):
+        self.assertAliases(Curacao, CW, CUW)
+
+    def test_no_holidays(self):
+        self.assertNoHolidays(Curacao(categories=(HALF_DAY, PUBLIC), years=1953))
+>>>>>>> develop
 
         self.assertNoHolidays(Curacao(categories=HALF_DAY, years=range(self.start_year, 2010)))
 
@@ -45,6 +60,7 @@ class TestCuracao(CommonCountryTests, TestCase):
         )
 
     def test_2016_half_day(self):
+<<<<<<< HEAD
         self.assertHalfDayHolidaysInYear(
             2016,
             ("2016-12-31", "Vispu di Aña Nobo"),
@@ -104,6 +120,13 @@ class TestCuracao(CommonCountryTests, TestCase):
         )
         self.assertHolidayName(name, self.full_range)
 
+=======
+        self.assertHolidays(
+            Curacao(categories=HALF_DAY, years=2016),
+            ("2016-12-31", "Vispu di Aña Nobo"),
+        )
+
+>>>>>>> develop
     def test_queens_day(self):
         name = "Dia di la Reina"
         self.assertHolidayName(
@@ -209,6 +232,7 @@ class TestCuracao(CommonCountryTests, TestCase):
 
     def test_national_anthem_and_flag_day(self):
         name = "Dia di Himno i Bandera"
+<<<<<<< HEAD
         self.assertHolidayName(name, (f"{year}-07-02" for year in range(1984, self.end_year)))
         self.assertNoHolidayName(name, range(self.start_year, 1984))
 
@@ -230,6 +254,15 @@ class TestCuracao(CommonCountryTests, TestCase):
             name, (f"{year}-12-31" for year in range(2010, self.end_year))
         )
         self.assertNoHalfDayHolidayName(name, range(self.start_year, 2010))
+=======
+        self.assertNoHolidayName(name, range(1954, 1983))
+        self.assertHolidayName(name, (f"{year}-07-02" for year in range(1984, 2050)))
+
+    def test_curacao_day(self):
+        name = "Dia di Pais Kòrsou"
+        self.assertNoHolidayName(name, range(1954, 2009))
+        self.assertHolidayName(name, (f"{year}-10-10" for year in range(2010, 2050)))
+>>>>>>> develop
 
     def test_l10n_default(self):
         self.assertLocalizedHolidays(

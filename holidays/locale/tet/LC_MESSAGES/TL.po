@@ -14,19 +14,32 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.89\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2023-10-14 08:23+0700\n"
 "PO-Revision-Date: 2026-01-07 22:14+0700\n"
 "Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
+=======
+"Project-Id-Version: Holidays 0.60\n"
+"POT-Creation-Date: 2023-10-14 08:23+0700\n"
+"PO-Revision-Date: 2024-10-24 23:09+0300\n"
+"Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
+>>>>>>> develop
 "Language-Team: Holidays Localization Team\n"
 "Language: tet\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+<<<<<<< HEAD
 "Generated-By: Lingua 4.15.0\n"
 "X-Generator: Poedit 3.8\n"
 "X-Source-Language: pt_TL\n"
+=======
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Lingua 4.15.0\n"
+"X-Generator: Poedit 3.5\n"
+>>>>>>> develop
 
 #. %s (estimated).
 #, c-format
@@ -97,10 +110,24 @@ msgstr "Loron Natál"
 msgid "Dia dos Heróis Nacionais"
 msgstr "Loron Eroi Nasionál sira nian"
 
+<<<<<<< HEAD
+=======
+#. Holy Friday.
+msgid "Sexta-Feira Santa"
+msgstr "Sesta-Feira Santa"
+
+>>>>>>> develop
 #. Eid al-Fitr.
 msgid "Idul Fitri"
 msgstr "Idul-Fitri"
 
+<<<<<<< HEAD
+=======
+#. Corpus Christi.
+msgid "Festa do Corpo de Deus"
+msgstr "Festa Korpu de Deus"
+
+>>>>>>> develop
 #. Eid al-Adha.
 msgid "Idul Adha"
 msgstr "Idul Adha"
@@ -161,6 +188,13 @@ msgstr "Komemorasaun Aniversáriu Konsulta Populár ba dala 20"
 msgid "Celebrações do 25.º Aniversário da Consulta Popular"
 msgstr "Komemorasaun Aniversáriu Konsulta Populár ba dala 25"
 
+<<<<<<< HEAD
+=======
+#. Local Election Day.
+msgid "Dia de eleições locais"
+msgstr "Loron eleisaun lokál nian"
+
+>>>>>>> develop
 #. Visit of His Holiness Pope Francis to Timor-Leste.
 msgid "Visita de Sua Santidade o Papa Francisco a Timor-Leste"
 msgstr "Vizita Sua Santidade Papa Francisco mai Timor-Leste"

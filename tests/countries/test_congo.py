@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -12,7 +16,11 @@
 
 from unittest import TestCase
 
+<<<<<<< HEAD
 from holidays.countries.congo import Congo
+=======
+from holidays.countries.congo import Congo, CG, COG
+>>>>>>> develop
 from tests.common import CommonCountryTests
 
 
@@ -21,6 +29,7 @@ class TestCongo(CommonCountryTests, TestCase):
     def setUpClass(cls):
         super().setUpClass(Congo)
 
+<<<<<<< HEAD
     def test_new_years_day(self):
         self.assertHolidayName("Jour de l'An", (f"{year}-01-01" for year in self.full_range))
 
@@ -89,6 +98,27 @@ class TestCongo(CommonCountryTests, TestCase):
         # http://mokili.free.fr/jours_feries.php
         self.assertHolidaysInYear(
             2006,
+=======
+    def test_country_aliases(self):
+        self.assertAliases(Congo, CG, COG)
+
+    def test_no_holidays(self):
+        self.assertNoHolidays(Congo(years=1993))
+
+    def test_republic_day(self):
+        self.assertHoliday(
+            "2010-11-28",
+            "2015-11-28",
+            "2016-11-28",
+            "2017-11-28",
+            "2024-11-28",
+        )
+        self.assertNoHolidayName("Jour de la République", 2009)
+
+    def test_2006(self):
+        # http://mokili.free.fr/jours_feries.php
+        self.assertHolidays(
+>>>>>>> develop
             ("2006-01-01", "Jour de l'An"),
             ("2006-04-17", "Lundi de Pâques"),
             ("2006-05-01", "Fête du Travail"),
@@ -102,8 +132,12 @@ class TestCongo(CommonCountryTests, TestCase):
 
     def test_2010(self):
         # http://mokili.free.fr/jours_feries.php
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2010,
+=======
+        self.assertHolidays(
+>>>>>>> develop
             ("2010-01-01", "Jour de l'An"),
             ("2010-04-05", "Lundi de Pâques"),
             ("2010-05-01", "Fête du Travail"),
@@ -118,8 +152,12 @@ class TestCongo(CommonCountryTests, TestCase):
 
     def test_2015(self):
         # http://mokili.free.fr/jours_feries.php
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2015,
+=======
+        self.assertHolidays(
+>>>>>>> develop
             ("2015-01-01", "Jour de l'An"),
             ("2015-04-06", "Lundi de Pâques"),
             ("2015-05-01", "Fête du Travail"),
@@ -134,8 +172,12 @@ class TestCongo(CommonCountryTests, TestCase):
 
     def test_2016(self):
         # http://mokili.free.fr/jours_feries.php
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2016,
+=======
+        self.assertHolidays(
+>>>>>>> develop
             ("2016-01-01", "Jour de l'An"),
             ("2016-03-28", "Lundi de Pâques"),
             ("2016-05-01", "Fête du Travail"),
@@ -150,8 +192,12 @@ class TestCongo(CommonCountryTests, TestCase):
 
     def test_2017(self):
         # http://mokili.free.fr/jours_feries.php
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2017,
+=======
+        self.assertHolidays(
+>>>>>>> develop
             ("2017-01-01", "Jour de l'An"),
             ("2017-04-17", "Lundi de Pâques"),
             ("2017-05-01", "Fête du Travail"),

@@ -14,19 +14,30 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.89\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2023-10-14 08:23+0700\n"
 "PO-Revision-Date: 2026-01-07 22:14+0700\n"
 "Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
+=======
+"Project-Id-Version: Holidays 0.60\n"
+"POT-Creation-Date: 2023-10-14 08:23+0700\n"
+"PO-Revision-Date: 2024-10-24 23:11+0300\n"
+"Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
+>>>>>>> develop
 "Language-Team: Holidays Localization Team\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingua 4.15.0\n"
+<<<<<<< HEAD
 "X-Generator: Poedit 3.8\n"
 "X-Source-Language: pt_TL\n"
+=======
+"X-Generator: Poedit 3.5\n"
+>>>>>>> develop
 
 #. %s (estimated).
 #, c-format
@@ -97,13 +108,50 @@ msgstr "Christmas Day"
 msgid "Dia dos Heróis Nacionais"
 msgstr "National Heroes Day"
 
+<<<<<<< HEAD
+=======
+#. Holy Friday.
+msgid "Sexta-Feira Santa"
+msgstr "Holy Friday"
+
+>>>>>>> develop
 #. Eid al-Fitr.
 msgid "Idul Fitri"
 msgstr "Eid al-Fitr"
 
+<<<<<<< HEAD
 #. Eid al-Adha.
 msgid "Idul Adha"
 msgstr "Eid al-Adha"
+=======
+#. Corpus Christi.
+msgid "Festa do Corpo de Deus"
+msgstr "Corpus Christi"
+
+#. Eid al-Adha.
+msgid "Idul Adha"
+msgstr "Eid al-Adha"
+
+#. National Holidays (Special).
+msgid "Feriados Nacionais (Especiais)"
+msgstr "National Holidays (Special)"
+
+#. World Children's Day.
+msgid "Dia Mundial da Criança"
+msgstr "World Children's Day"
+
+#. Day of the Armed Forces for the National Liberation of Timor-Leste
+#. (FALINTIL).
+msgid ""
+"Dia das Forças Armadas de Libertação Nacional de Timor-Leste (FALINTIL)"
+msgstr ""
+"Day of the Armed Forces for the National Liberation of Timor-Leste "
+"(FALINTIL)"
+
+#. World Human Rights Day.
+msgid "Dia Mundial dos Direitos Humanos"
+msgstr "World Human Rights Day"
+>>>>>>> develop
 
 #. Ash Wednesday.
 msgid "Quarta-Feira de Cinzas"
@@ -161,6 +209,13 @@ msgstr "20th Anniversary Celebrations of the Popular Consultation"
 msgid "Celebrações do 25.º Aniversário da Consulta Popular"
 msgstr "25th Anniversary Celebrations of the Popular Consultation"
 
+<<<<<<< HEAD
+=======
+#. Local Election Day.
+msgid "Dia de eleições locais"
+msgstr "Local Election Day"
+
+>>>>>>> develop
 #. Visit of His Holiness Pope Francis to Timor-Leste.
 msgid "Visita de Sua Santidade o Papa Francisco a Timor-Leste"
 msgstr "Visit of His Holiness Pope Francis to Timor-Leste"

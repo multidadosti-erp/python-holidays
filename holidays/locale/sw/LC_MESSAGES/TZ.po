@@ -14,8 +14,12 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.80\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
+=======
+"Project-Id-Version: Holidays 0.35\n"
+>>>>>>> develop
 "POT-Creation-Date: 2023-10-07 15:05+0700\n"
 "PO-Revision-Date: 2025-08-27 14:29+0700\n"
 "Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"

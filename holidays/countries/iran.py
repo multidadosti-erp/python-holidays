@@ -137,7 +137,11 @@ class Iran(HolidayBase, IslamicHolidays, PersianCalendarHolidays, StaticHolidays
         self._add_ali_birthday_day(tr("ولادت امام علی علیه السلام و روز پدر"))
 
         # Isra' and Mi'raj.
+<<<<<<< HEAD
         self._add_isra_and_miraj_day(tr("مبعث رسول اکرم (ص)"))
+=======
+        self._add_isra_and_miraj_day(tr("مبعث"))
+>>>>>>> develop
 
         self._add_imam_mahdi_birthday_day(
             # Birthday of Mahdi.

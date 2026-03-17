@@ -36,7 +36,11 @@ class Mauritania(HolidayBase, InternationalHolidays, IslamicHolidays):
                 if holiday date is estimated.
         """
         InternationalHolidays.__init__(self)
+<<<<<<< HEAD
         IslamicHolidays.__init__(self, show_estimated=islamic_show_estimated)
+=======
+        IslamicHolidays.__init__(self)
+>>>>>>> develop
         super().__init__(*args, **kwargs)
 
     def _populate_public_holidays(self):

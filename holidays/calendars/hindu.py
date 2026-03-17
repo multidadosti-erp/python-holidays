@@ -12,6 +12,10 @@
 
 from collections.abc import Iterable
 from datetime import date
+<<<<<<< HEAD
+=======
+from typing import Optional
+>>>>>>> develop
 
 from holidays.calendars.custom import _CustomCalendar
 from holidays.calendars.gregorian import JAN, FEB, MAR, APR, MAY, JUN, AUG, SEP, OCT, NOV, DEC
@@ -1434,6 +1438,7 @@ class _HinduLunisolar:
         2100: (FEB, 24),
     }
 
+<<<<<<< HEAD
     # https://web.archive.org/web/20250121194712/https://www.timeanddate.com/holidays/india/vaisakhi
     VAISAKHI_DATES = {
         2001: (APR, 13),
@@ -1474,11 +1479,15 @@ class _HinduLunisolar:
     }
 
     def _get_holiday(self, holiday: str, year: int) -> tuple[date | None, bool]:
+=======
+    def _get_holiday(self, holiday: str, year: int) -> tuple[Optional[date], bool]:
+>>>>>>> develop
         estimated_dates = getattr(self, f"{holiday}_DATES", {})
         exact_dates = getattr(self, f"{holiday}_DATES_{_CustomCalendar.CUSTOM_ATTR_POSTFIX}", {})
         dt = exact_dates.get(year, estimated_dates.get(year, ()))
         return date(year, *dt) if dt else None, year not in exact_dates
 
+<<<<<<< HEAD
     def _get_holiday_set(self, holiday: str, year: int) -> Iterable[tuple[date, bool]]:
         estimated_dates = getattr(self, f"{holiday}_DATES", {})
         exact_dates = getattr(self, f"{holiday}_DATES_{_CustomCalendar.CUSTOM_ATTR_POSTFIX}", {})
@@ -1568,6 +1577,12 @@ class _HinduLunisolar:
         return self._get_holiday(TAMU_LOSAR, year)
 
     def thaipusam_date(self, year: int) -> tuple[date | None, bool]:
+=======
+    def diwali_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(DIWALI, year)
+
+    def thaipusam_date(self, year: int) -> tuple[Optional[date], bool]:
+>>>>>>> develop
         return self._get_holiday(THAIPUSAM, year)
 
     def vaisakhi_date(self, year: int) -> tuple[date | None, bool]:

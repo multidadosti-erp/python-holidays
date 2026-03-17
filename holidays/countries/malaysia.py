@@ -263,8 +263,15 @@ class Malaysia(
             self._observed_rule = FRI_TO_NEXT_WORKDAY
         elif self.subdiv in {"03", "11"}:
             self._observed_rule = SAT_TO_NEXT_WORKDAY
+<<<<<<< HEAD
         else:
             self._observed_rule = SUN_TO_NEXT_WORKDAY
+=======
+            self.weekend = {FRI, SAT}
+        else:
+            self._observed_rule = SUN_TO_NEXT_WORKDAY
+            self.weekend = {SAT, SUN}
+>>>>>>> develop
 
         if self.observed:
             self._populate_observed(self.dts_observed)

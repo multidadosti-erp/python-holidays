@@ -16,6 +16,7 @@ from gettext import gettext as tr
 from typing import TYPE_CHECKING
 
 from holidays.calendars import _CustomIslamicHolidays
+<<<<<<< HEAD
 from holidays.calendars.gregorian import (
     FEB,
     APR,
@@ -33,6 +34,10 @@ from holidays.calendars.gregorian import (
 )
 from holidays.constants import GOVERNMENT, OPTIONAL, PUBLIC
 from holidays.groups import InternationalHolidays, IslamicHolidays, StaticHolidays
+=======
+from holidays.calendars.gregorian import APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, FRI, SAT, SUN
+from holidays.groups import InternationalHolidays, IslamicHolidays
+>>>>>>> develop
 from holidays.holiday_base import HolidayBase
 
 if TYPE_CHECKING:
@@ -65,11 +70,16 @@ class UnitedArabEmirates(HolidayBase, InternationalHolidays, IslamicHolidays, St
     country = "AE"
     default_language = "ar"
     # %s (estimated).
+<<<<<<< HEAD
     estimated_label = tr("%s (المقدرة)")
     supported_categories = (GOVERNMENT, OPTIONAL, PUBLIC)
     supported_languages = ("ar", "en_US", "th")
     # Founded on DEC 2, 1971.
     start_year = 1972
+=======
+    estimated_label = tr("(تقدير) %s")
+    supported_languages = ("ar", "en_US")
+>>>>>>> develop
 
     def __init__(self, *args, islamic_show_estimated: bool = True, **kwargs):
         """
@@ -91,6 +101,10 @@ class UnitedArabEmirates(HolidayBase, InternationalHolidays, IslamicHolidays, St
         return {SAT, SUN} if dt.year >= 2022 else {FRI, SAT}
 
     def _populate_public_holidays(self):
+        # The resting days are Saturday and Sunday since Jan 1, 2022.
+        # https://time.com/6126260/uae-working-days-weekend/
+        self.weekend = {FRI, SAT} if self._year <= 2021 else {SAT, SUN}
+
         # New Year's Day.
         self._add_new_years_day(tr("رأس السنة الميلادية"))
 

@@ -137,10 +137,13 @@ class TestTimorLeste(CommonCountryTests, TestCase):
             "2024-09-10",
             "2024-09-11",
             "2024-10-31",
+<<<<<<< HEAD
             "2024-11-29",
             "2024-12-24",
             "2025-01-02",
             "2025-01-29",
+=======
+>>>>>>> develop
         )
 
     def test_new_years_day(self):
@@ -828,18 +831,31 @@ class TestTimorLeste(CommonCountryTests, TestCase):
             ("2023-01-23", "National Holidays (Special)"),
             ("2023-02-22", "Ash Wednesday; National Holidays (Special)"),
             ("2023-03-03", "Veteran's Day"),
+<<<<<<< HEAD
             ("2023-04-06", "Maundy Thursday; National Holidays (Special)"),
             ("2023-04-07", "Good Friday"),
+=======
+            ("2023-04-06", "Holy Thursday; National Holidays (Special)"),
+            ("2023-04-07", "Holy Friday"),
+>>>>>>> develop
             ("2023-04-10", "National Holidays (Special)"),
             ("2023-04-20", "National Holidays (Special)"),
             ("2023-04-21", "National Holidays (Special)"),
             ("2023-04-22", "Eid al-Fitr"),
+<<<<<<< HEAD
             ("2023-05-01", "International Worker's Day"),
+=======
+            ("2023-05-01", "World Labor Day"),
+>>>>>>> develop
             ("2023-05-18", "The Day of Ascension of Jesus Christ into Heaven"),
             ("2023-05-19", "Parliamentary Election Day"),
             ("2023-05-20", "Restoration of Independence Day"),
             ("2023-05-22", "Parliamentary Election Day"),
+<<<<<<< HEAD
             ("2023-06-01", "International Children's Day"),
+=======
+            ("2023-06-01", "World Children's Day"),
+>>>>>>> develop
             ("2023-06-08", "Corpus Christi"),
             ("2023-06-29", "Eid al-Adha"),
             (

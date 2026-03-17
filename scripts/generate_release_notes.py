@@ -82,7 +82,11 @@ class ReleaseNotesGenerator:
         self.remote_repo = Github(auth=Auth.Token(self.github_token)).get_repo(REPOSITORY_NAME)
 
         self.previous_commits: set[str] = set()
+<<<<<<< HEAD
         self.pull_requests: dict[int, tuple[str, str]] = {}
+=======
+        self.pull_requests: dict[int, str] = {}
+>>>>>>> develop
 
         self.tag = holidays.__version__
 

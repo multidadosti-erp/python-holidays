@@ -10,7 +10,12 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
+<<<<<<< HEAD
 from __future__ import annotations
+=======
+from datetime import date
+from gettext import gettext as tr
+>>>>>>> develop
 
 from gettext import gettext as tr
 from typing import TYPE_CHECKING
@@ -64,6 +69,7 @@ class Bulgaria(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, St
         kwargs.setdefault("observed_since", 2017)
         super().__init__(*args, **kwargs)
 
+<<<<<<< HEAD
     def _populate_observed(self, dts: set[date], *, multiple: bool = False) -> None:
         excluded_names = {
             # Holy Saturday.
@@ -72,6 +78,9 @@ class Bulgaria(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, St
             self.tr("Великден"),
         }
 
+=======
+    def _populate_observed(self, dts: set[date], excluded_names: set[str]) -> None:
+>>>>>>> develop
         for dt in sorted(dts):
             for name in self.get_list(dt):
                 if name not in excluded_names:

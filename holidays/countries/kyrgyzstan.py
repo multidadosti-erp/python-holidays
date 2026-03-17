@@ -196,7 +196,11 @@ class Kyrgyzstan(
             self._add_multiday_holiday(may_5, 3, name=name)
 
         # Victory Day.
+<<<<<<< HEAD
         dts_observed.add(self._add_world_war_two_victory_day(tr("Жеңиш күнү"), is_western=False))
+=======
+        self._add_world_war_two_victory_day("Victory Day", is_western=False)
+>>>>>>> develop
 
         dts_observed.add(
             # Independence Day.

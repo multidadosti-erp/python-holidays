@@ -408,7 +408,11 @@ class TestFrance(CommonCountryTests, TestCase):
             ("2022-05-28", "Abolition de l'esclavage"),
             ("2022-06-06", "Lundi de Pentecôte"),
             ("2022-06-10", "Abolition de l'esclavage"),
+<<<<<<< HEAD
             ("2022-06-29", "Fête de l'autonomie; Saints Pierre et Paul"),
+=======
+            ("2022-06-29", "Fête de l'autonomie"),
+>>>>>>> develop
             ("2022-07-14", "Fête nationale"),
             ("2022-07-21", "Fête de Victor Schoelcher"),
             ("2022-07-29", "Fête du Territoire"),
@@ -440,10 +444,17 @@ class TestFrance(CommonCountryTests, TestCase):
             ("2022-05-28", "Abolition of Slavery"),
             ("2022-06-06", "Whit Monday"),
             ("2022-06-10", "Abolition of Slavery"),
+<<<<<<< HEAD
             ("2022-06-29", "Internal Autonomy Day; Saints Peter and Paul Day"),
             ("2022-07-14", "National Day"),
             ("2022-07-21", "Victor Schoelcher Day"),
             ("2022-07-29", "Territory Day"),
+=======
+            ("2022-06-29", "Internal Autonomy Day"),
+            ("2022-07-14", "National Day"),
+            ("2022-07-21", "Feast of Victor Schoelcher"),
+            ("2022-07-29", "Festival of the Territory"),
+>>>>>>> develop
             ("2022-08-15", "Assumption Day"),
             ("2022-09-24", "Citizenship Day"),
             ("2022-10-09", "Abolition of Slavery"),
@@ -452,6 +463,7 @@ class TestFrance(CommonCountryTests, TestCase):
             ("2022-12-20", "Abolition of Slavery"),
             ("2022-12-25", "Christmas Day"),
             ("2022-12-26", "Saint Stephen's Day"),
+<<<<<<< HEAD
         )
 
     def test_l10n_th(self):
@@ -484,6 +496,8 @@ class TestFrance(CommonCountryTests, TestCase):
             ("2022-12-20", "วันเลิกทาส"),
             ("2022-12-25", "วันคริสต์มาส"),
             ("2022-12-26", "วันสมโภชนักบุญสเตเฟน"),
+=======
+>>>>>>> develop
         )
 
     def test_l10n_uk(self):
@@ -504,7 +518,11 @@ class TestFrance(CommonCountryTests, TestCase):
             ("2022-05-28", "День скасування рабства"),
             ("2022-06-06", "День Святого Духа"),
             ("2022-06-10", "День скасування рабства"),
+<<<<<<< HEAD
             ("2022-06-29", "День Святих Петра і Павла; День автономії"),
+=======
+            ("2022-06-29", "День автономії"),
+>>>>>>> develop
             ("2022-07-14", "Національне свято"),
             ("2022-07-21", "День Віктора Шольшера"),
             ("2022-07-29", "День Території"),

@@ -64,12 +64,16 @@ class Egypt(
         """
         ChristianHolidays.__init__(self, JULIAN_CALENDAR)
         InternationalHolidays.__init__(self)
+<<<<<<< HEAD
         IslamicHolidays.__init__(
             self, cls=EgyptIslamicHolidays, show_estimated=islamic_show_estimated
         )
         StaticHolidays.__init__(self, cls=EgyptStaticHolidays)
         kwargs.setdefault("observed_rule", EG_OBSERVED_RULE)
         kwargs.setdefault("observed_since", 2020)
+=======
+        IslamicHolidays.__init__(self)
+>>>>>>> develop
         super().__init__(*args, **kwargs)
 
     def _populate_public_holidays(self):

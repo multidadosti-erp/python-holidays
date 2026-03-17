@@ -52,6 +52,7 @@ class Germany(HolidayBase, ChristianHolidays, InternationalHolidays, StaticHolid
 
     country = "DE"
     default_language = "de"
+<<<<<<< HEAD
     # Germany reunification was completed on Oct 3, 1990.
     start_year = 1991
     subdivisions = (
@@ -74,6 +75,28 @@ class Germany(HolidayBase, ChristianHolidays, InternationalHolidays, StaticHolid
         "TH",  # Thüringen.
         # Cities.
         "Augsburg",
+=======
+    supported_categories = (CATHOLIC, PUBLIC)
+    supported_languages = ("de", "en_US", "th", "uk")
+    subdivisions = (
+        # ISO 3166-2:DE
+        "BB",
+        "BE",
+        "BW",
+        "BY",
+        "HB",
+        "HE",
+        "HH",
+        "MV",
+        "NI",
+        "NW",
+        "RP",
+        "SH",
+        "SL",
+        "SN",
+        "ST",
+        "TH",
+>>>>>>> develop
     )
     subdivisions_aliases = {
         "Brandenburg": "BB",
@@ -93,8 +116,11 @@ class Germany(HolidayBase, ChristianHolidays, InternationalHolidays, StaticHolid
         "Sachsen-Anhalt": "ST",
         "Thüringen": "TH",
     }
+<<<<<<< HEAD
     supported_categories = (CATHOLIC, PUBLIC)
     supported_languages = ("de", "en_US", "th", "uk")
+=======
+>>>>>>> develop
     _deprecated_subdivisions = ("BYP",)
 
     def __init__(self, *args, **kwargs) -> None:
@@ -167,6 +193,7 @@ class Germany(HolidayBase, ChristianHolidays, InternationalHolidays, StaticHolid
         # Epiphany.
         self._add_epiphany_day(tr("Heilige Drei Könige"))
 
+<<<<<<< HEAD
         # Corpus Christi.
         self._add_corpus_christi_day(tr("Fronleichnam"))
 
@@ -174,6 +201,18 @@ class Germany(HolidayBase, ChristianHolidays, InternationalHolidays, StaticHolid
         self._add_all_saints_day(tr("Allerheiligen"))
 
     def _populate_subdiv_by_catholic_holidays(self):
+=======
+        if self._year >= 1991:
+            self._add_epiphany_day(tr("Heilige Drei Könige"))
+            self._add_corpus_christi_day(tr("Fronleichnam"))
+
+        self._add_all_saints_day(tr("Allerheiligen"))
+
+    def _populate_subdiv_by_catholic_holidays(self):
+        if self._year <= 1990:
+            return None
+
+>>>>>>> develop
         # Assumption Day.
         self._add_assumption_of_mary_day(tr("Mariä Himmelfahrt"))
 
@@ -283,12 +322,20 @@ class DEU(Germany):
 
 
 class GermanyStaticHolidays:
+<<<<<<< HEAD
     """Germany special holidays.
 
     References:
         * <https://web.archive.org/web/20241127055605/https://www.stuttgarter-zeitung.de/inhalt.reformationstag-2017-einmalig-bundesweiter-feiertag.b7e189b3-a33d-41a3-a0f4-141cd13df54e.html>
         * <https://web.archive.org/web/20250415233518/https://www.bbc.com/news/world-europe-52574748>
         * <https://web.archive.org/web/20241219151307/https://gesetze.berlin.de/bsbe/document/jlr-FeiertGBEV8P1>
+=======
+    """
+    References:
+     - https://www.stuttgarter-zeitung.de/inhalt.reformationstag-2017-einmalig-bundesweiter-feiertag.b7e189b3-a33d-41a3-a0f4-141cd13df54e.html
+     - https://www.bbc.com/news/world-europe-52574748
+     - https://gesetze.berlin.de/bsbe/document/jlr-FeiertGBEV8P1
+>>>>>>> develop
     """
 
     special_public_holidays = {

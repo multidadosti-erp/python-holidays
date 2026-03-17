@@ -11,12 +11,20 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
+<<<<<<< HEAD
+=======
+from typing import Optional
+>>>>>>> develop
 
 from holidays.calendars.gregorian import MON, TUE, WED, THU, FRI, SAT, SUN, _timedelta
 from holidays.holiday_base import DateArg, HolidayBase
 
 
+<<<<<<< HEAD
 class ObservedRule(dict[int, int | None]):
+=======
+class ObservedRule(dict[int, Optional[int]]):
+>>>>>>> develop
     __slots__ = ()
 
     def __add__(self, other):
@@ -149,9 +157,14 @@ class ObservedHolidayBase(HolidayBase):
         rule: ObservedRule | None = None,
         force_observed: bool = False,
         show_observed_label: bool = True,
+<<<<<<< HEAD
     ) -> tuple[bool, date | None]:
         if dt is None:
             return False, None
+=======
+    ) -> tuple[bool, Optional[date]]:
+        dt = dt if isinstance(dt, date) else date(self._year, *dt)
+>>>>>>> develop
 
         # Use as is if already a date.
         # Convert to date: (m, d) → use self._year; (y, m, d) → use directly.
@@ -198,6 +211,7 @@ class ObservedHolidayBase(HolidayBase):
         return True, dt_observed
 
     def _move_holiday(
+<<<<<<< HEAD
         self,
         dt: date,
         *,
@@ -205,6 +219,10 @@ class ObservedHolidayBase(HolidayBase):
         force_observed: bool = False,
         show_observed_label: bool = True,
     ) -> tuple[bool, date | None]:
+=======
+        self, dt: date, rule: Optional[ObservedRule] = None, show_observed_label: bool = True
+    ) -> tuple[bool, Optional[date]]:
+>>>>>>> develop
         is_observed, dt_observed = self._add_observed(
             dt, rule=rule, force_observed=force_observed, show_observed_label=show_observed_label
         )
@@ -212,12 +230,16 @@ class ObservedHolidayBase(HolidayBase):
             self.pop(dt)
         return is_observed, dt_observed if is_observed else dt
 
+<<<<<<< HEAD
     def _move_holiday_forced(
         self, dt: date, rule: ObservedRule | None = None
     ) -> tuple[bool, date | None]:
         return self._move_holiday(dt, rule=rule, force_observed=True, show_observed_label=False)
 
     def _populate_observed(self, dts: set[date], *, multiple: bool = False) -> None:
+=======
+    def _populate_observed(self, dts: set[date], multiple: bool = False) -> None:
+>>>>>>> develop
         """
         When multiple is True, each holiday from a given date has its own observed date.
         """

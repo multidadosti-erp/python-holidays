@@ -11,6 +11,10 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
+<<<<<<< HEAD
+=======
+from typing import Optional
+>>>>>>> develop
 
 from holidays.calendars.gregorian import JAN, APR, MAY, JUN, JUL, SEP, OCT, DEC
 from holidays.groups import ChristianHolidays, InternationalHolidays, StaticHolidays
@@ -27,6 +31,7 @@ class Jersey(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, Stat
     """Jersey holidays.
 
     References:
+<<<<<<< HEAD
         * <https://en.wikipedia.org/wiki/Public_holidays_in_Jersey>
         * [2010 Revision](https://web.archive.org/web/20250403173914/https://www.jerseylaw.je/laws/current/Pages/15.560.20.aspx)
         * [1952 Revision](https://web.archive.org/web/20250427181051/https://www.jerseylaw.je/laws/superseded/Pages/2006/15.560.20.aspx)
@@ -34,6 +39,14 @@ class Jersey(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, Stat
         * [Bank Holidays](https://web.archive.org/web/20250427181011/https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%205331.aspx)
         * [May Bank Holiday](https://web.archive.org/web/20250427181126/https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%206795.aspx)
 
+=======
+      - https://en.wikipedia.org/wiki/Public_holidays_in_Jersey
+      - https://www.jerseylaw.je/laws/current/Pages/15.560.20.aspx # 2010 Revision
+      - https://www.jerseylaw.je/laws/superseded/Pages/2006/15.560.20.aspx # 1952 Revision
+      - https://www.jerseylaw.je/laws/enacted/Pages/RO-3038.aspx # 1952 as enacted
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%205331.aspx # Bank Holidays
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%206795.aspx # May Bank Holiday
+>>>>>>> develop
     Checked with:
         * [From 2010 onwards](https://web.archive.org/web/20241013001943/https://www.gov.je/Leisure/Events/WhatsOn/Pages/BankHolidayDates.aspx)
 
@@ -49,8 +62,11 @@ class Jersey(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, Stat
 
     country = "JE"
     observed_label = "%s (substitute day)"
+<<<<<<< HEAD
     # Earliest available piece of law available is from 1952.
     start_year = 1952
+=======
+>>>>>>> develop
 
     def __init__(self, *args, **kwargs):
         ChristianHolidays.__init__(self)
@@ -59,7 +75,11 @@ class Jersey(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, Stat
         kwargs.setdefault("observed_rule", SAT_SUN_TO_NEXT_WORKDAY)
         ObservedHolidayBase.__init__(self, *args, **kwargs)
 
+<<<<<<< HEAD
     def _add_observed(self, dt: date, **kwargs) -> tuple[bool, date | None]:
+=======
+    def _add_observed(self, dt: date, **kwargs) -> tuple[bool, Optional[date]]:
+>>>>>>> develop
         # Prior to 2004, in-lieu are only given for Sundays.
         # https://web.archive.org/web/20250414072718/https://www.jerseylaw.je/laws/enacted/Pages/RO-123-2004.aspx
         kwargs.setdefault(
@@ -161,6 +181,7 @@ class JerseyStaticHolidays:
     """Jersey special holidays.
 
     References:
+<<<<<<< HEAD
         * <https://web.archive.org/web/20250421204040/https://www.gov.je/News/2019/Pages/VEDayPublicHoliday8May.aspx>
         * <https://web.archive.org/web/20250418060211/https://www.gov.je/News/2021/pages/cornriots.aspx>
         * <https://web.archive.org/web/20250414072751/https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20R%20%20O%209288.aspx>
@@ -177,6 +198,24 @@ class JerseyStaticHolidays:
         * <https://web.archive.org/web/20250427181138/https://www.jerseylaw.je/laws/enacted/Pages/RO-108-2009.aspx>
         * <https://web.archive.org/web/20241224061844/http://www.jerseylaw.je/laws/enacted/Pages/RO-3038.aspx>
         * <https://web.archive.org/web/20241224005230/http://www.jerseylaw.je/laws/enacted/Pages/RO-036-2024.aspx>
+=======
+      - https://www.gov.je/News/2019/pages/vedaypublicholiday8may.aspx
+      - https://www.gov.je/news/2021/pages/cornriots.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20R%20%20O%209288.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20R%20%20O%209317.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%2042-2001.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%206350.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%206514.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%206924.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%207689.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%207877.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%208451.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/Jersey%20RO%208596.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/RO-050-2021.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/RO-108-2009.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/RO-3038.aspx
+      - https://www.jerseylaw.je/laws/enacted/Pages/RO-036-2024.aspx
+>>>>>>> develop
     """
 
     # Mostly a direct copy of UnitedKingdomStaticHolidays.

@@ -14,11 +14,18 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.76\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2024-02-28 09:55-0800\n"
 "PO-Revision-Date: 2025-06-26 17:55+0300\n"
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
+=======
+"Project-Id-Version: Holidays 0.47\n"
+"POT-Creation-Date: 2024-02-28 09:55-0800\n"
+"PO-Revision-Date: 2024-02-28 09:55-0800\n"
+"Last-Translator: Firas Kafri <firas.alkafri@gmail.com>\n"
+>>>>>>> develop
 "Language-Team: Holidays Localization Team\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +44,7 @@ msgstr ""
 msgid "رأس السنة الميلادية"
 msgstr ""
 
+<<<<<<< HEAD
 #. Labor Day.
 msgid "عيد العمال"
 msgstr ""
@@ -57,6 +65,8 @@ msgstr ""
 msgid "عيد المولد النبوي"
 msgstr ""
 
+=======
+>>>>>>> develop
 #. Isra' and Mi'raj.
 msgid "ليلة المعراج"
 msgstr ""

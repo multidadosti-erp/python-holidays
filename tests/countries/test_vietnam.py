@@ -106,7 +106,11 @@ class TestVietnam(CommonCountryTests, WorkingDayTests, TestCase):
             "Ngày Giỗ Tổ Hùng Vương",
             "2007-04-26",
             "2008-04-15",
+<<<<<<< HEAD
             "2009-04-04",
+=======
+            "2009-04-05",
+>>>>>>> develop
             "2010-04-23",
             "2011-04-12",
             "2012-03-31",
@@ -196,6 +200,24 @@ class TestVietnam(CommonCountryTests, WorkingDayTests, TestCase):
         self.assertHoliday(observed_holidays)
         self.assertNoNonObservedHoliday(observed_holidays)
 
+<<<<<<< HEAD
+=======
+    def test_substituted_holidays(self):
+        self.assertHoliday(
+            "2010-02-19",
+            "2012-01-27",
+            "2013-04-29",
+            "2014-05-02",
+            "2014-09-01",
+            "2015-01-02",
+            "2015-02-16",
+            "2015-04-29",
+            "2018-12-31",
+            "2019-04-29",
+            "2024-04-29",
+        )
+
+>>>>>>> develop
     def test_l10n_default(self):
         self.assertLocalizedHolidays(
             ("2022-01-01", "Tết Dương lịch"),

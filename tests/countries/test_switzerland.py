@@ -76,6 +76,7 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             f"missing: {all_h - y_2018 or 'no'}, extra: {y_2018 - all_h or 'no'}",
         )
 
+<<<<<<< HEAD
     def test_new_years_day(self):
         self.assertHolidayName("Neujahrstag", (f"{year}-01-01" for year in self.full_range))
 
@@ -111,6 +112,15 @@ class TestSwitzerland(CommonCountryTests, TestCase):
 
     def test_christmas_day(self):
         self.assertHolidayName("Weihnachten", (f"{year}-12-25" for year in self.full_range))
+=======
+    def test_fixed_holidays(self):
+        # New Year's Day.
+        self.assertHolidayName("Neujahrstag", (f"{year}-01-01" for year in range(1970, 2050)))
+        # National Day.
+        self.assertHolidayName("Nationalfeiertag", (f"{year}-08-01" for year in range(1970, 2050)))
+        # Christmas Day.
+        self.assertHolidayName("Weihnachten", (f"{year}-12-25" for year in range(1970, 2050)))
+>>>>>>> develop
 
     def test_berchtolds_day(self):
         name = "Berchtoldstag"
@@ -871,6 +881,7 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-01-06", "Heilige Drei Könige"),
             ("2023-03-01", "Jahrestag der Ausrufung der Republik"),
             ("2023-03-19", "Josefstag"),
+<<<<<<< HEAD
             ("2023-04-06", "Vortag vor Karfreitag"),
             ("2023-04-07", "Karfreitag"),
             ("2023-04-10", "Ostermontag"),
@@ -878,6 +889,12 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-04-17", "Sechseläuten"),
             ("2023-05-01", "Tag der Arbeit"),
             ("2023-05-17", "Vortag vor Auffahrt"),
+=======
+            ("2023-04-07", "Karfreitag"),
+            ("2023-04-10", "Ostermontag"),
+            ("2023-04-13", "Näfelser Fahrt"),
+            ("2023-05-01", "Tag der Arbeit"),
+>>>>>>> develop
             ("2023-05-18", "Auffahrt"),
             ("2023-05-29", "Pfingstmontag"),
             ("2023-06-08", "Fronleichnam"),
@@ -886,13 +903,17 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-08-01", "Nationalfeiertag"),
             ("2023-08-15", "Mariä Himmelfahrt"),
             ("2023-09-07", "Genfer Bettag"),
+<<<<<<< HEAD
             ("2023-09-09", "Knabenschiessen"),
             ("2023-09-10", "Knabenschiessen"),
             ("2023-09-11", "Knabenschiessen"),
+=======
+>>>>>>> develop
             ("2023-09-18", "Bettagsmontag"),
             ("2023-09-25", "Bruder Klaus"),
             ("2023-11-01", "Allerheiligen"),
             ("2023-12-08", "Mariä Empfängnis"),
+<<<<<<< HEAD
             ("2023-12-24", "Heiligabend"),
             ("2023-12-25", "Weihnachten"),
             ("2023-12-26", "Stephanstag"),
@@ -900,12 +921,18 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-12-28", "Brückentag"),
             ("2023-12-29", "Brückentag"),
             ("2023-12-31", "Vortag vor Neujahr; Wiederherstellung der Republik"),
+=======
+            ("2023-12-25", "Weihnachten"),
+            ("2023-12-26", "Stephanstag"),
+            ("2023-12-31", "Wiederherstellung der Republik"),
+>>>>>>> develop
         )
 
     def test_l10n_en_us(self):
         self.assertLocalizedHolidays(
             "en_US",
             ("2023-01-01", "New Year's Day"),
+<<<<<<< HEAD
             ("2023-01-02", "Saint Berchtold's Day"),
             ("2023-01-06", "Epiphany"),
             ("2023-03-01", "Republic Day"),
@@ -917,6 +944,16 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-04-17", "Sechseläuten"),
             ("2023-05-01", "Labor Day"),
             ("2023-05-17", "Day before Ascension Day"),
+=======
+            ("2023-01-02", "Berchtold's Day"),
+            ("2023-01-06", "Epiphany"),
+            ("2023-03-01", "Republic Day"),
+            ("2023-03-19", "Saint Joseph's Day"),
+            ("2023-04-07", "Good Friday"),
+            ("2023-04-10", "Easter Monday"),
+            ("2023-04-13", "Battle of Naefels Victory Day"),
+            ("2023-05-01", "Labor Day"),
+>>>>>>> develop
             ("2023-05-18", "Ascension Day"),
             ("2023-05-29", "Whit Monday"),
             ("2023-06-08", "Corpus Christi"),
@@ -925,13 +962,17 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-08-01", "National Day"),
             ("2023-08-15", "Assumption Day"),
             ("2023-09-07", "Genevan Fast"),
+<<<<<<< HEAD
             ("2023-09-09", "Knabenschiessen"),
             ("2023-09-10", "Knabenschiessen"),
             ("2023-09-11", "Knabenschiessen"),
+=======
+>>>>>>> develop
             ("2023-09-18", "Prayer Monday"),
             ("2023-09-25", "Saint Nicholas of Flüe"),
             ("2023-11-01", "All Saints' Day"),
             ("2023-12-08", "Immaculate Conception"),
+<<<<<<< HEAD
             ("2023-12-24", "Christmas Eve"),
             ("2023-12-25", "Christmas Day"),
             ("2023-12-26", "Saint Stephen's Day"),
@@ -939,6 +980,11 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-12-28", "Bridge Holiday"),
             ("2023-12-29", "Bridge Holiday"),
             ("2023-12-31", "New Year's Eve; Restoration Day"),
+=======
+            ("2023-12-25", "Christmas Day"),
+            ("2023-12-26", "Saint Stephen's Day"),
+            ("2023-12-31", "Restoration Day"),
+>>>>>>> develop
         )
 
     def test_l10n_fr(self):
@@ -949,6 +995,7 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-01-06", "Épiphanie"),
             ("2023-03-01", "Instauration de la République"),
             ("2023-03-19", "Saint-Joseph"),
+<<<<<<< HEAD
             ("2023-04-06", "Veille du Vendredi saint"),
             ("2023-04-07", "Vendredi saint"),
             ("2023-04-10", "Lundi de Pâques"),
@@ -956,6 +1003,12 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-04-17", "Sechseläuten"),
             ("2023-05-01", "Fête du Travail"),
             ("2023-05-17", "Veille de l'Ascension"),
+=======
+            ("2023-04-07", "Vendredi saint"),
+            ("2023-04-10", "Lundi de Pâques"),
+            ("2023-04-13", "Fahrtsfest"),
+            ("2023-05-01", "Fête du Travail"),
+>>>>>>> develop
             ("2023-05-18", "Ascension"),
             ("2023-05-29", "Lundi de Pentecôte"),
             ("2023-06-08", "Fête-Dieu"),
@@ -964,13 +1017,17 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-08-01", "Fête nationale"),
             ("2023-08-15", "Assomption"),
             ("2023-09-07", "Jeûne genevois"),
+<<<<<<< HEAD
             ("2023-09-09", "Knabenschiessen"),
             ("2023-09-10", "Knabenschiessen"),
             ("2023-09-11", "Knabenschiessen"),
+=======
+>>>>>>> develop
             ("2023-09-18", "Lundi du Jeûne fédéral"),
             ("2023-09-25", "Fête de Saint-Nicolas-de-Flüe"),
             ("2023-11-01", "Toussaint"),
             ("2023-12-08", "Immaculée Conception"),
+<<<<<<< HEAD
             ("2023-12-24", "Veille de Noël"),
             ("2023-12-25", "Noël"),
             ("2023-12-26", "Saint-Étienne"),
@@ -978,6 +1035,11 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-12-28", "Jour pont"),
             ("2023-12-29", "Jour pont"),
             ("2023-12-31", "Restauration de la République; Réveillon du Nouvel An"),
+=======
+            ("2023-12-25", "Noël"),
+            ("2023-12-26", "Saint-Étienne"),
+            ("2023-12-31", "Restauration de la République"),
+>>>>>>> develop
         )
 
     def test_l10n_it(self):
@@ -988,6 +1050,7 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-01-06", "Epifania"),
             ("2023-03-01", "Giorno della Repubblica"),
             ("2023-03-19", "San Giuseppe"),
+<<<<<<< HEAD
             ("2023-04-06", "Vigilia del Venerdì Santo"),
             ("2023-04-07", "Venerdì Santo"),
             ("2023-04-10", "Lunedì dell'Angelo"),
@@ -995,6 +1058,12 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-04-17", "Sechseläuten"),
             ("2023-05-01", "Festa del lavoro"),
             ("2023-05-17", "Vigilia dell'Ascensione di Gesù"),
+=======
+            ("2023-04-07", "Venerdì Santo"),
+            ("2023-04-10", "Lunedì dell'Angelo"),
+            ("2023-04-13", "Battaglia di Näfels"),
+            ("2023-05-01", "Festa del lavoro"),
+>>>>>>> develop
             ("2023-05-18", "Ascensione di Gesù"),
             ("2023-05-29", "Lunedì di Pentecoste"),
             ("2023-06-08", "Corpus Domini"),
@@ -1002,6 +1071,7 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-06-29", "Santi Pietro e Paolo"),
             ("2023-08-01", "Festa nazionale"),
             ("2023-08-15", "Assunzione di Maria"),
+<<<<<<< HEAD
             ("2023-09-07", "Digiuno ginevrino"),
             ("2023-09-09", "Knabenschiessen"),
             ("2023-09-10", "Knabenschiessen"),
@@ -1056,6 +1126,16 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-12-28", "วันหยุดเพิ่มเติม"),
             ("2023-12-29", "วันหยุดเพิ่มเติม"),
             ("2023-12-31", "วันกอบกู้เอกราชสาธารณรัฐเจนีวา; วันสิ้นปี"),
+=======
+            ("2023-09-07", "Jeûne genevois"),
+            ("2023-09-18", "Digiuno Ginevrino"),
+            ("2023-09-25", "Nicolao della Flüe"),
+            ("2023-11-01", "Ognissanti"),
+            ("2023-12-08", "Immacolata Concezione"),
+            ("2023-12-25", "Natale"),
+            ("2023-12-26", "Giorno di Santo Stefano"),
+            ("2023-12-31", "Restauration genevoise"),
+>>>>>>> develop
         )
 
     def test_l10n_uk(self):
@@ -1066,6 +1146,7 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-01-06", "Богоявлення"),
             ("2023-03-01", "Річниця проголошення Республіки"),
             ("2023-03-19", "День Святого Йосипа"),
+<<<<<<< HEAD
             ("2023-04-06", "Переддень Страсної пʼятниці"),
             ("2023-04-07", "Страсна пʼятниця"),
             ("2023-04-10", "Великодній понеділок"),
@@ -1073,6 +1154,12 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-04-17", "Зексельйотен"),
             ("2023-05-01", "День праці"),
             ("2023-05-17", "Переддень Вознесіння Господнього"),
+=======
+            ("2023-04-07", "Страсна пʼятниця"),
+            ("2023-04-10", "Великодній понеділок"),
+            ("2023-04-13", "Свято перемоги під Нефельсом"),
+            ("2023-05-01", "День праці"),
+>>>>>>> develop
             ("2023-05-18", "Вознесіння Господнє"),
             ("2023-05-29", "День Святого Духа"),
             ("2023-06-08", "Свято Тіла і Крові Христових"),
@@ -1081,13 +1168,17 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-08-01", "Національне свято"),
             ("2023-08-15", "Внебовзяття Пресвятої Діви Марії"),
             ("2023-09-07", "Женевський піст"),
+<<<<<<< HEAD
             ("2023-09-09", "Кнабеншісен"),
             ("2023-09-10", "Кнабеншісен"),
             ("2023-09-11", "Кнабеншісен"),
+=======
+>>>>>>> develop
             ("2023-09-18", "Молитовний понеділок"),
             ("2023-09-25", "День Святого Ніклауса з Флюе"),
             ("2023-11-01", "День усіх святих"),
             ("2023-12-08", "Непорочне зачаття Діви Марії"),
+<<<<<<< HEAD
             ("2023-12-24", "Святий вечір"),
             ("2023-12-25", "Різдво Христове"),
             ("2023-12-26", "День Святого Стефана"),
@@ -1095,4 +1186,9 @@ class TestSwitzerland(CommonCountryTests, TestCase):
             ("2023-12-28", "Проміжний вихідний"),
             ("2023-12-29", "Проміжний вихідний"),
             ("2023-12-31", "День відновлення республіки; Переддень Нового року"),
+=======
+            ("2023-12-25", "Різдво Христове"),
+            ("2023-12-26", "День Святого Стефана"),
+            ("2023-12-31", "День відновлення республіки"),
+>>>>>>> develop
         )

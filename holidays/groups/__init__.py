@@ -17,7 +17,10 @@ from holidays.groups.chinese import ChineseCalendarHolidays
 from holidays.groups.christian import ChristianHolidays
 from holidays.groups.custom import StaticHolidays
 from holidays.groups.eastern import EasternCalendarHolidays
+<<<<<<< HEAD
 from holidays.groups.hebrew import HebrewCalendarHolidays
+=======
+>>>>>>> develop
 from holidays.groups.hindu import HinduCalendarHolidays
 from holidays.groups.international import InternationalHolidays
 from holidays.groups.islamic import IslamicHolidays
