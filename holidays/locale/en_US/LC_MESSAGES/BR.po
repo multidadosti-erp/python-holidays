@@ -267,3 +267,11 @@ msgstr "Autonomy Day"
 #. Our Lady of Nativity.
 msgid "Nossa Senhora da Natividade"
 msgstr "Our Lady of Nativity"
+
+#. Our Lady of Conception.
+msgid "Nossa Senhora da Conceição"
+msgstr "Our Lady of Conception"
+
+#. Our Lady of Rocio.
+msgid "Nossa Senhora do Rocio"
+msgstr "Our Lady of Rocio"

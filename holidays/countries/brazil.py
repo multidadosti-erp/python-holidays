@@ -243,6 +243,9 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
             # Black Awareness Day.
             self._add_holiday_nov_20(tr("Consciência Negra"))
 
+        # Our Lady of Conception.
+        self._add_immaculate_conception_day(tr("Nossa Senhora da Conceição"))
+
     def _populate_subdiv_ap_public_holidays(self):
         if self._year >= 2003:
             # Saint Joseph's Day.
@@ -285,6 +288,9 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
             # Our Lady of Penha.
             self._add_holiday_8_days_past_easter(tr("Nossa Senhora da Penha"))
 
+        # Evangelical Day.
+        self._add_holiday_nov_30(tr("Dia do Evangélico"))
+
     def _populate_subdiv_go_public_holidays(self):
         # Foundation of Goiás city.
         self._add_holiday_jul_26(tr("Fundação da cidade de Goiás"))
@@ -318,6 +324,9 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         self._add_holiday_aug_5(tr("Fundação do Estado"))
 
     def _populate_subdiv_pe_public_holidays(self):
+        # Saint John's Day.
+        self._add_saint_johns_day(tr("São João"))
+
         if self._year >= 2008:
             # Pernambuco Revolution.
             self._add_holiday_1st_sun_of_mar(tr("Revolução Pernambucana"))
@@ -327,11 +336,19 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         self._add_holiday_oct_19(tr("Dia do Piauí"))
 
     def _populate_subdiv_pr_public_holidays(self):
-        # Political Emancipation of Paraná.
-        self._add_holiday_dec_19(tr("Emancipação do Paraná"))
+        if self._year <= 2014:
+            # Political Emancipation of Paraná.
+            self._add_holiday_dec_19(tr("Emancipação do Paraná"))
+
+        if self._year >= 2014:
+            # Our Lady of Rocio.
+            self._add_holiday_nov_15(tr("Nossa Senhora do Rocio"))
 
     def _populate_subdiv_rj_public_holidays(self):
         if self._year >= 2008:
+            # Carnival Tuesday.
+            self._add_carnival_tuesday(tr("Carnaval"))
+
             # Saint George's Day.
             self._add_saint_georges_day(tr("São Jorge"))
 
@@ -396,6 +413,10 @@ class Brazil(ObservedHolidayBase, ChristianHolidays, InternationalHolidays):
         if self._year >= 1968:
             # São Paulo City Anniversary.
             self._add_holiday_jan_25(tr("Aniversário da Cidade de São Paulo"))
+
+        if 2004 <= self._year <= 2023:
+            # Black Awareness Day.
+            self._add_holiday_nov_20(tr("Consciência Negra"))
 
     def _populate_subdiv_to_public_holidays(self):
         if self._year >= 1998:

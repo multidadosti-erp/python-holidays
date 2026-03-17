@@ -118,6 +118,7 @@ class TestBrazil(CommonCountryTests, TestCase):
             "AP": 2008,
             "MT": 2003,
             "RJ": 2002,
+            "São Paulo Capital": 2004,
         }
         for subdiv, holidays in self.subdiv_holidays.items():
             if start_year := subdiv_start_years.get(subdiv):
@@ -228,6 +229,10 @@ class TestBrazil(CommonCountryTests, TestCase):
                 self.assertHolidayName(
                     name, holidays, (f"{year}-11-30" for year in range(1996, self.end_year))
                 )
+            elif subdiv == "ES":
+                self.assertHolidayName(
+                    name, holidays, (f"{year}-11-30" for year in range(1996, self.end_year))
+                )
             elif subdiv == "RO":
                 self.assertHolidayName(
                     name, holidays, (f"{year}-06-18" for year in range(2002, self.end_year))
@@ -315,7 +320,7 @@ class TestBrazil(CommonCountryTests, TestCase):
         name = "São João"
         self.assertNoHolidayName(name)
         for subdiv, holidays in self.subdiv_holidays.items():
-            if subdiv == "AL":
+            if subdiv in {"AL", "PE"}:
                 self.assertHolidayName(
                     name, holidays, (f"{year}-06-24" for year in range(1996, self.end_year))
                 )
@@ -458,6 +463,17 @@ class TestBrazil(CommonCountryTests, TestCase):
             else:
                 self.assertNoHolidayName(name, holidays)
 
+    def test_our_lady_of_conception(self):
+        name = "Nossa Senhora da Conceição"
+        self.assertNoHolidayName(name)
+        for subdiv, holidays in self.subdiv_holidays.items():
+            if subdiv == "AM":
+                self.assertHolidayName(
+                    name, holidays, (f"{year}-12-08" for year in range(1996, self.end_year))
+                )
+            else:
+                self.assertNoHolidayName(name, holidays)
+
     def test_foundation_of_goias_city(self):
         name = "Fundação da cidade de Goiás"
         self.assertNoHolidayName(name)
@@ -583,10 +599,39 @@ class TestBrazil(CommonCountryTests, TestCase):
         for subdiv, holidays in self.subdiv_holidays.items():
             if subdiv == "PR":
                 self.assertHolidayName(
-                    name, holidays, (f"{year}-12-19" for year in range(1996, self.end_year))
+                    name, holidays, (f"{year}-12-19" for year in range(1996, 2015))
                 )
+                self.assertNoHolidayName(name, holidays, range(2015, self.end_year))
             else:
                 self.assertNoHolidayName(name, holidays)
+
+    def test_our_lady_of_rocio(self):
+        name = "Nossa Senhora do Rocio"
+        self.assertNoHolidayName(name)
+        for subdiv, holidays in self.subdiv_holidays.items():
+            if subdiv == "PR":
+                self.assertHolidayName(
+                    name, holidays, (f"{year}-11-15" for year in range(2014, self.end_year))
+                )
+                self.assertNoHolidayName(name, holidays, range(1996, 2014))
+            else:
+                self.assertNoHolidayName(name, holidays)
+
+    def test_rj_carnival_tuesday(self):
+        name = "Carnaval"
+        for subdiv, holidays in self.subdiv_holidays.items():
+            if subdiv == "RJ":
+                self.assertHolidayName(
+                    name,
+                    holidays,
+                    "2020-02-25",
+                    "2021-02-16",
+                    "2022-03-01",
+                    "2023-02-21",
+                    "2024-02-13",
+                )
+                self.assertHolidayName(name, holidays, range(2008, self.end_year))
+                self.assertNoHolidayName(name, holidays, range(1996, 2008))
 
     def test_saint_georges_day(self):
         name = "São Jorge"
@@ -796,12 +841,12 @@ class TestBrazil(CommonCountryTests, TestCase):
             ("2023-10-24", "Pedra fundamental de Goiânia"),
             ("2023-10-28", "Dia do Servidor Público"),
             ("2023-11-02", "Finados"),
-            ("2023-11-15", "Proclamação da República"),
+            ("2023-11-15", "Nossa Senhora do Rocio; Proclamação da República"),
             ("2023-11-17", "Assinatura do Tratado de Petrópolis"),
             ("2023-11-20", "Consciência Negra"),
             ("2023-11-26", "Dia de Santa Catarina de Alexandria"),
             ("2023-11-30", "Dia do Evangélico"),
-            ("2023-12-19", "Emancipação do Paraná"),
+            ("2023-12-08", "Nossa Senhora da Conceição"),
             ("2023-12-24", "Véspera de Natal"),
             ("2023-12-25", "Natal"),
             ("2023-12-31", "Véspera de Ano-Novo"),
@@ -856,12 +901,12 @@ class TestBrazil(CommonCountryTests, TestCase):
             ("2023-10-24", "Foundation of Goiânia"),
             ("2023-10-28", "Public Servant's Day"),
             ("2023-11-02", "All Souls' Day"),
-            ("2023-11-15", "Republic Proclamation Day"),
+            ("2023-11-15", "Our Lady of Rocio; Republic Proclamation Day"),
             ("2023-11-17", "Signing of the Petropolis Treaty"),
             ("2023-11-20", "Black Awareness Day"),
             ("2023-11-26", "Saint Catherine of Alexandria Day"),
             ("2023-11-30", "Evangelical Day"),
-            ("2023-12-19", "Political Emancipation of Paraná"),
+            ("2023-12-08", "Our Lady of Conception"),
             ("2023-12-24", "Christmas Eve"),
             ("2023-12-25", "Christmas Day"),
             ("2023-12-31", "New Year's Eve"),
@@ -919,12 +964,12 @@ class TestBrazil(CommonCountryTests, TestCase):
             ("2023-10-24", "День заснування Гоянії"),
             ("2023-10-28", "День громадського службовця"),
             ("2023-11-02", "День усіх померлих"),
-            ("2023-11-15", "День проголошення республіки"),
+            ("2023-11-15", "День Богоматері Росіо; День проголошення республіки"),
             ("2023-11-17", "День підписання Петрополіського договору"),
             ("2023-11-20", "День свідомості темношкірих"),
             ("2023-11-26", "День Святої Катерини Александрійської"),
             ("2023-11-30", "Євангельський день"),
-            ("2023-12-19", "День політичного звільнення Парани"),
+            ("2023-12-08", "День Богоматері Непорочного Зачаття"),
             ("2023-12-24", "Святий вечір"),
             ("2023-12-25", "Різдво Христове"),
             ("2023-12-31", "Переддень Нового року"),

@@ -267,3 +267,11 @@ msgstr "День автономії"
 #. Our Lady of Nativity.
 msgid "Nossa Senhora da Natividade"
 msgstr "День Богоматері Різдва"
+
+#. Our Lady of Conception.
+msgid "Nossa Senhora da Conceição"
+msgstr "День Богоматері Непорочного Зачаття"
+
+#. Our Lady of Rocio.
+msgid "Nossa Senhora do Rocio"
+msgstr "День Богоматері Росіо"
