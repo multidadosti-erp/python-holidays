@@ -50,6 +50,7 @@ class Spain(
         * [2025](https://web.archive.org/web/20241226214918/https://www.boe.es/buscar/doc.php?id=BOE-A-2024-21316)
         * [2026](https://web.archive.org/web/20251028115438/https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667)
 
+<<<<<<< HEAD
     Subdivisions Holidays References:
         * Ceuta:
             * [2018](https://web.archive.org/web/20251029132255/https://sede.ceuta.es/controlador/controlador?modulo=info&cmd=calendario&year=2018)
@@ -93,6 +94,25 @@ class Spain(
             * [2026](https://web.archive.org/web/20251028120003/https://www.lexnavarra.navarra.es/detalle.asp?r=57937)
 
     Holidays checked with official sources for 2008-2026 only.
+=======
+     Labor Holidays:
+     2010: https://www.boe.es/buscar/doc.php?id=BOE-A-2009-18477
+     2011: https://www.boe.es/buscar/doc.php?id=BOE-A-2010-15722
+     2012: https://www.boe.es/buscar/doc.php?id=BOE-A-2011-16116
+     2013: https://www.boe.es/buscar/doc.php?id=BOE-A-2012-13644
+     2014: https://www.boe.es/buscar/doc.php?id=BOE-A-2013-12147
+     2015: https://www.boe.es/buscar/doc.php?id=BOE-A-2014-10823
+     2016: https://www.boe.es/buscar/doc.php?id=BOE-A-2015-11348
+     2017: https://www.boe.es/buscar/doc.php?id=BOE-A-2016-9244
+     2018: https://www.boe.es/buscar/doc.php?id=BOE-A-2017-11639
+     2019: https://www.boe.es/buscar/doc.php?id=BOE-A-2018-14369
+     2020: https://www.boe.es/buscar/doc.php?id=BOE-A-2019-14552
+     2021: https://www.boe.es/buscar/doc.php?id=BOE-A-2020-13343
+     2022: https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17113
+     2023: https://www.boe.es/buscar/doc.php?id=BOE-A-2022-16755
+     2024: https://www.boe.es/buscar/doc.php?id=BOE-A-2023-22014
+     2025: https://www.boe.es/buscar/doc.php?id=BOE-A-2024-21316
+>>>>>>> develop
     """
 
     country = "ES"
@@ -186,7 +206,11 @@ class Spain(
             rule=SUN_TO_NONE,
         )
 
+<<<<<<< HEAD
         self._add_observed(
+=======
+        if self._year not in {2014, 2025}:
+>>>>>>> develop
             # National Day.
             self._add_holiday_oct_12(tr("Fiesta Nacional de España")),
             rule=SUN_TO_NONE,
@@ -229,8 +253,13 @@ class Spain(
         # Assumption Day.
         self._move_holiday(self._add_assumption_of_mary_day(tr("Asunción de la Virgen")))
 
+<<<<<<< HEAD
         # National Day.
         self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+=======
+        if self._year in {2014, 2025}:
+            self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+>>>>>>> develop
 
         # All Saints' Day.
         self._move_holiday(self._add_all_saints_day(tr("Todos los Santos")))
@@ -263,8 +292,13 @@ class Spain(
         # Assumption Day.
         self._move_holiday(self._add_assumption_of_mary_day(tr("Asunción de la Virgen")))
 
+<<<<<<< HEAD
         # National Day.
         self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+=======
+        if self._year in {2014, 2025}:
+            self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+>>>>>>> develop
 
         # All Saints' Day.
         self._move_holiday(self._add_all_saints_day(tr("Todos los Santos")))
@@ -297,8 +331,13 @@ class Spain(
         # Asturias Day.
         self._move_holiday(self._add_holiday_sep_8(tr("Día de Asturias")))
 
+<<<<<<< HEAD
         # National Day.
         self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+=======
+        if self._year in {2014, 2025}:
+            self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+>>>>>>> develop
 
         # All Saints' Day.
         self._move_holiday(self._add_all_saints_day(tr("Todos los Santos")))
@@ -387,7 +426,11 @@ class Spain(
             # Santa Maria of Africa.
             self._add_holiday_aug_5(tr("Nuestra Señora de África"))
 
+<<<<<<< HEAD
         if self._year not in {2011, 2015, 2025}:
+=======
+        if self._year not in {2011, 2012, 2015, 2018, 2025}:
+>>>>>>> develop
             # Ceuta Day.
             self._add_observed(self._add_holiday_sep_2(tr("Día de Ceuta")), rule=SUN_TO_NONE)
 
@@ -451,8 +494,13 @@ class Spain(
             # Assumption Day.
             self._move_holiday(self._add_assumption_of_mary_day(tr("Asunción de la Virgen")))
 
+<<<<<<< HEAD
         # National Day.
         self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+=======
+        if self._year in {2014, 2025}:
+            self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+>>>>>>> develop
 
         # All Saints' Day.
         self._move_holiday(self._add_all_saints_day(tr("Todos los Santos")))
@@ -584,8 +632,13 @@ class Spain(
             # Extremadura Day.
             self._move_holiday(self._add_holiday_sep_8(tr("Día de Extremadura")))
 
+<<<<<<< HEAD
         # National Day.
         self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+=======
+        if self._year in {2014, 2025}:
+            self._move_holiday(self._add_holiday_oct_12(tr("Fiesta Nacional de España")))
+>>>>>>> develop
 
         # All Saints' Day.
         self._move_holiday(self._add_all_saints_day(tr("Todos los Santos")))
@@ -627,8 +680,25 @@ class Spain(
             # All Saints' Day.
             self._move_holiday(self._add_all_saints_day(tr("Todos los Santos")))
 
+<<<<<<< HEAD
         if self._year == 2009:
             # Constitution Day.
+=======
+    def _populate_subdiv_ib_public_holidays(self):
+        if self._year not in {2015, 2020}:
+            # Day of the Balearic Islands.
+            self._add_holiday_mar_1(tr("Día de las Islas Baleares"))
+
+        self._add_holy_thursday(tr("Jueves Santo"))
+
+        if self._year not in {2014, 2025}:
+            self._add_easter_monday(tr("Lunes de Pascua"))
+
+        if self._year == 2015:
+            self._move_holiday(self._add_all_saints_day(tr("Todos los Santos")))
+
+        if self._year in {2015, 2020}:
+>>>>>>> develop
             self._move_holiday(self._add_holiday_dec_6(tr("Día de la Constitución Española")))
 
     def _populate_subdiv_ib_public_holidays(self):
@@ -639,6 +709,7 @@ class Spain(
         else:
             self._add_observed(mar_1, rule=SUN_TO_NONE)
 
+<<<<<<< HEAD
         # Maundy Thursday.
         self._add_holy_thursday(tr("Jueves Santo"))
 
@@ -663,6 +734,9 @@ class Spain(
 
         if self._year in {2008, 2009, 2013, 2014, 2019, 2020, 2025, 2026}:
             # Saint Stephen's Day.
+=======
+        if self._year in {2013, 2014, 2019, 2020, 2025}:
+>>>>>>> develop
             self._add_christmas_day_two(tr("San Esteban"))
 
     def _populate_subdiv_mc_public_holidays(self):
@@ -674,9 +748,14 @@ class Spain(
             # Epiphany.
             self._move_holiday(self._add_epiphany_day(tr("Epifanía del Señor")))
 
+<<<<<<< HEAD
         if self._year != 2022:
             # Saint Joseph's Day.
             self._add_observed(self._add_saint_josephs_day(tr("San José")), rule=SUN_TO_NONE)
+=======
+        if (self._year <= 2021 and self._year != 2017) or self._year in {2024, 2025}:
+            self._move_holiday(self._add_saint_josephs_day(tr("San José")))
+>>>>>>> develop
 
         # Maundy Thursday.
         self._add_holy_thursday(tr("Jueves Santo"))
@@ -728,9 +807,13 @@ class Spain(
             # Corpus Christi.
             self._add_corpus_christi_day(tr("Corpus Christi"))
 
+<<<<<<< HEAD
         # Add when Labor Day falls on Sunday.
         if self._is_sunday(MAY, 1) or self._year in {2008, 2024, 2025}:
             # Saint James' Day.
+=======
+        if self._year in {2011, 2016, 2022, 2024, 2025}:
+>>>>>>> develop
             self._add_saint_james_day(tr("Santiago Apóstol"))
 
         if self._year >= 2020:
@@ -797,7 +880,11 @@ class Spain(
         # Christmas Day.
         self._move_holiday(self._add_christmas_day(tr("Natividad del Señor")))
 
+<<<<<<< HEAD
         if self._year >= 2022:
+=======
+        if self._year in {2022, 2023, 2025}:
+>>>>>>> develop
             # Eid al-Fitr.
             self._add_eid_al_fitr_day(tr("Fiesta del Eid Fitr"))
 
@@ -900,8 +987,13 @@ class Spain(
             self._move_holiday(self._add_christmas_day(tr("Natividad del Señor")))
 
     def _populate_subdiv_vc_public_holidays(self):
+<<<<<<< HEAD
         # Saint Joseph's Day.
         self._add_observed(self._add_saint_josephs_day(tr("San José")), rule=SUN_TO_NONE)
+=======
+        if (self._year <= 2022 and self._year != 2017) or self._year in {2024, 2025}:
+            self._add_saint_josephs_day(tr("San José"))
+>>>>>>> develop
 
         # Add when Saint Joseph's Day (until 2017) or Valencian Community Day falls on Sunday.
         if (
@@ -957,11 +1049,16 @@ class SpainIslamicHolidays(_CustomIslamicHolidays):
         2019: (AUG, 12),
         2023: (JUN, 29),
         2024: (JUN, 17),
+        2025: (JUN, 6),
     }
 
     EID_AL_FITR_DATES_CONFIRMED_YEARS = (2022, 2026)
     EID_AL_FITR_DATES = {
         2022: (MAY, 3),
+<<<<<<< HEAD
+=======
+        2023: (APR, 21),
+>>>>>>> develop
         2025: (MAR, 31),
     }
 

@@ -10,7 +10,13 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
+<<<<<<< HEAD
 from __future__ import annotations
+=======
+import warnings
+from datetime import date
+from gettext import gettext as tr
+>>>>>>> develop
 
 import warnings
 from gettext import gettext as tr
@@ -588,12 +594,15 @@ class SouthKoreaStaticHolidays:
         2023: (OCT, 2, temporary_public_holiday),
         # 76th Anniversary of the Armed Forces of Korea.
         2024: (OCT, 1, armed_forces_day),
+<<<<<<< HEAD
         2025: (
             # Added to create a 6-day long holiday period.
             (JAN, 27, temporary_public_holiday),
             # Special Presidential Election (21st) due to Yoon Seok-yeol's impeachment.
             (JUN, 3, presidential_election_day),
         ),
+=======
+>>>>>>> develop
     }
     # Pre-2014 Alternate Holidays
     # https://namu.wiki/w/대체%20휴일%20제도#s-4.2.1

@@ -22,6 +22,7 @@ class China(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays,
     """China holidays.
 
     References:
+<<<<<<< HEAD
         * <https://en.wikipedia.org/wiki/Public_holidays_in_China>
         * [Festivals and Public Holidays](https://zh.wikipedia.org/wiki/中华人民共和国节日与公众假期)
         * [2026](https://web.archive.org/web/20251111205945/https://www.gov.cn/zhengce/content/202511/content_7047090.htm)
@@ -53,6 +54,37 @@ class China(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays,
         * [2003](https://web.archive.org/web/20210302090553/https://zh.wikisource.org/wiki/国务院办公厅关于2003年部分节假日休息安排的通知)
         * [2002](https://web.archive.org/web/20180122201149/https://zh.wikisource.org/wiki/国务院办公厅关于2002年部分节假日休息安排的通知)
         * [2001](https://web.archive.org/web/20180123032517/https://zh.wikisource.org/wiki/国务院办公厅关于2001年春节、“五一”、“十一”放假安排的通知)
+=======
+        - https://en.wikipedia.org/wiki/Public_holidays_in_China
+        - `Festivals and Public Holidays <https://zh.wikipedia.org/wiki/中华人民共和国节日与公众假期>`_
+        - 2024 changes (Order #795) `<https://www.gov.cn/zhengce/content/202411/content_6986380.htm>`_
+        - `2025 <https://www.gov.cn/zhengce/content/202411/content_6986382.htm>`_
+        - `2024 <https://www.gov.cn/zhengce/content/202310/content_6911527.htm>`_
+        - `2023 <https://www.gov.cn/gongbao/content/2023/content_5736714.htm>`_
+        - `2022 <https://www.gov.cn/gongbao/content/2021/content_5651728.htm>`_
+        - `2021 <https://www.gov.cn/gongbao/content/2020/content_5567750.htm>`_
+        - `2020 Extensions <https://www.gov.cn/zhengce/zhengceku/2020-01/27/content_5472352.htm>`_
+        - `2020 <https://www.gov.cn/gongbao/content/2019/content_5459138.htm>`_
+        - `2019 <https://www.gov.cn/gongbao/content/2018/content_5350046.htm>`_
+        - `2018 <https://www.gov.cn/gongbao/content/2017/content_5248221.htm>`_
+        - `2017 <https://www.gov.cn/gongbao/content/2016/content_5148793.htm>`_
+        - `2016 <https://www.gov.cn/gongbao/content/2016/content_2979719.htm>`_
+        - `2015 <https://www.gov.cn/gongbao/content/2015/content_2799019.htm>`_
+        - `2014 <https://www.gov.cn/gongbao/content/2014/content_2561299.htm>`_
+        - `2013 <https://www.gov.cn/gongbao/content/2012/content_2292057.htm>`_
+        - `2012 <https://www.gov.cn/gongbao/content/2011/content_2020918.htm>`_
+        - `2011 <https://www.gov.cn/gongbao/content/2010/content_1765282.htm>`_
+        - `2010 <https://www.gov.cn/gongbao/content/2009/content_1487011.htm>`_
+        - `2009 <https://www.gov.cn/gongbao/content/2008/content_1175823.htm>`_
+        - `2008 <https://www.gov.cn/gongbao/content/2008/content_859870.htm>`_
+        - `2007 <https://www.gov.cn/gongbao/content/2007/content_503397.htm>`_
+        - `2006 <https://zh.wikisource.org/wiki/国务院办公厅关于2006年部分节假日安排的通知>`_
+        - `2005 <https://zh.wikisource.org/wiki/国务院办公厅关于2005年部分节假日安排的通知>`_
+        - `2004 <https://zh.wikisource.org/wiki/国务院办公厅关于2004年部分节假日安排的通知>`_
+        - `2003 <https://zh.wikisource.org/wiki/国务院办公厅关于2003年部分节假日休息安排的通知>`_
+        - `2002 <https://zh.wikisource.org/wiki/国务院办公厅关于2002年部分节假日休息安排的通知>`_
+        - `2001 <https://zh.wikisource.org/wiki/国务院办公厅关于2001年春节、“五一”、“十一”放假安排的通知>`_
+>>>>>>> develop
 
     Checked With:
         * <https://web.archive.org/web/20250213085558/https://www.officeholidays.com/countries/china/2023>
@@ -456,6 +488,7 @@ class ChinaStaticHolidays:
             (OCT, 7, SEP, 28),  # National Day
             (OCT, 8, OCT, 11),  # National Day
         ),
+<<<<<<< HEAD
         2026: (
             (JAN, 2, JAN, 4),  # New Year's Day
             (FEB, 20, FEB, 14),  # Spring Festival
@@ -464,6 +497,8 @@ class ChinaStaticHolidays:
             (OCT, 6, SEP, 20),  # National Day
             (OCT, 7, OCT, 10),  # National Day
         ),
+=======
+>>>>>>> develop
     }
 
     special_public_holidays_observed = {

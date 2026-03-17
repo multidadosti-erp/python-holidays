@@ -48,10 +48,23 @@ class Laos(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiCalen
     Although in-lieus has been de facto observed since at least 2012.
 
     Limitations:
+<<<<<<< HEAD
         - Laotian holidays only works from 1976 onwards, and are only 100% accurate from 2018
             onwards.
         - Laotian Lunar Calendar Holidays only work from 1941 (B.E. 2485) onwards until 2157
             (B.E. 2701) as we only have Thai year-type data for cross-checking until then.
+=======
+
+    - Laotian holidays only works from 1976 onwards, and are only 100% accurate from 2018 onwards.
+
+    - Laotian Lunar Calendar Holidays only work from 1941 (B.E. 2485) onwards until 2157
+      (B.E. 2701) as we only have Thai year-type data for cross-checking until then.
+
+
+    Country created by: `PPsyrius <https://github.com/PPsyrius>`__
+
+    Country maintained by: `PPsyrius <https://github.com/PPsyrius>`__
+>>>>>>> develop
     """
 
     country = "LA"
@@ -167,6 +180,11 @@ class Laos(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiCalen
         # As such, no in lieu observance are in place for these holidays.
 
         # Laotian Lunar Calendar Holidays only work from 1941 to 2157.
+<<<<<<< HEAD
+=======
+        if self._year <= 1975:
+            return None
+>>>>>>> develop
 
         # ວັນບຸນມາຂະບູຊາ
         # Status: In-Use.

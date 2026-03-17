@@ -12,14 +12,41 @@
 
 from unittest import TestCase
 
+<<<<<<< HEAD
 from holidays.countries.canada import Canada
+=======
+from holidays.constants import GOVERNMENT, OPTIONAL, PUBLIC
+from holidays.countries.canada import Canada, CA, CAN
+>>>>>>> develop
 from tests.common import CommonCountryTests
 
 
 class TestCanada(CommonCountryTests, TestCase):
     @classmethod
     def setUpClass(cls):
+<<<<<<< HEAD
         super().setUpClass(Canada, with_subdiv_categories=True)
+=======
+        years = range(1867, 2050)
+        years_non_observed = range(2000, 2024)
+        super().setUpClass(Canada, years=years, years_non_observed=years_non_observed)
+        cls.prov_hols = {prov: CA(subdiv=prov, years=years) for prov in CA.subdivisions}
+        cls.prov_hols_nonobs = {
+            prov: CA(subdiv=prov, years=years_non_observed, observed=False)
+            for prov in CA.subdivisions
+        }
+        cls.gov_hols = CA(years=years, categories=GOVERNMENT)
+        cls.opt_hols = CA(years=years, categories=OPTIONAL)
+        cls.prov_opt_hols = {
+            prov: CA(subdiv=prov, years=years, categories=OPTIONAL) for prov in CA.subdivisions
+        }
+
+    def test_country_aliases(self):
+        self.assertAliases(Canada, CA, CAN)
+
+    def test_no_holidays(self):
+        self.assertNoHolidays(Canada(categories=(GOVERNMENT, OPTIONAL, PUBLIC), years=1866))
+>>>>>>> develop
 
     def test_new_years_day(self):
         name = "New Year's Day"
@@ -36,12 +63,21 @@ class TestCanada(CommonCountryTests, TestCase):
             "2022-01-03",
             "2023-01-02",
         )
+<<<<<<< HEAD
         self.assertHolidayName(name_observed, obs_dts)
         self.assertGovernmentHolidayName(name_observed, obs_dts)
         for subdiv, holidays in self.subdiv_holidays.items():
             self.assertHolidayName(name_observed, holidays, obs_dts)
             self.assertNoNonObservedHoliday(self.subdiv_holidays_non_observed[subdiv], obs_dts)
         self.assertNoNonObservedHoliday(obs_dts)
+=======
+        self.assertHolidayName(name_observed, dts)
+        self.assertHolidayName(name_observed, self.gov_hols, dts)
+        for prov, holidays in self.prov_hols.items():
+            self.assertHolidayName(name_observed, holidays, dts)
+            self.assertNoNonObservedHoliday(self.prov_hols_nonobs[prov], dts)
+        self.assertNoNonObservedHoliday(dts)
+>>>>>>> develop
 
     def test_good_friday(self):
         name = "Good Friday"
@@ -101,10 +137,15 @@ class TestCanada(CommonCountryTests, TestCase):
             elif subdiv in {"NL", "PE", "SK", "YT"}:
                 self.assertHoliday(holidays, obs_dts_sat, obs_dts_sun)
             else:
+<<<<<<< HEAD
                 self.assertNoHoliday(holidays, obs_dts_sat, obs_dts_sun)
             self.assertNoNonObservedHoliday(
                 self.subdiv_holidays_non_observed[subdiv], obs_dts_sat, obs_dts_sun
             )
+=======
+                self.assertNoHoliday(self.prov_hols[prov], dts_sat, dts_sun)
+            self.assertNoNonObservedHoliday(self.prov_hols_nonobs[prov], dts_sat, dts_sun)
+>>>>>>> develop
 
     def test_labor_day(self):
         name = "Labour Day"
@@ -161,6 +202,7 @@ class TestCanada(CommonCountryTests, TestCase):
         self.assertHolidayName(name_observed, obs_dts_sat, obs_dts_sun_without_boxing)
         self.assertNoHoliday(obs_dts_sun_with_boxing)
         self.assertNoNonObservedHoliday(
+<<<<<<< HEAD
             obs_dts_sat, obs_dts_sun_with_boxing, obs_dts_sun_without_boxing
         )
         self.assertGovernmentHolidayName(name_observed, obs_dts_sat, obs_dts_sun_with_boxing)
@@ -174,6 +216,19 @@ class TestCanada(CommonCountryTests, TestCase):
             self.assertNoHoliday(holidays, obs_dts_sun_with_boxing)
             self.assertNoNonObservedHoliday(
                 self.subdiv_holidays_non_observed[subdiv], obs_dts_sat, obs_dts_sun_with_boxing
+=======
+            CA(observed=False, categories=GOVERNMENT), dts_sat, dts_sun_with_boxing
+        )
+        self.assertHolidayName(name_observed, self.opt_hols, dts_sat, dts_sun_with_boxing)
+        self.assertNoNonObservedHoliday(
+            CA(observed=False, categories=OPTIONAL), dts_sat, dts_sun_with_boxing
+        )
+        for prov, holidays in self.prov_hols.items():
+            self.assertHolidayName(name_observed, holidays, dts_sat, dts_sun_without_boxing)
+            self.assertNoHoliday(holidays, dts_sun_with_boxing)
+            self.assertNoNonObservedHoliday(
+                self.prov_hols_nonobs[prov], dts_sat, dts_sun_with_boxing
+>>>>>>> develop
             )
 
     def test_victoria_day(self):
@@ -254,11 +309,18 @@ class TestCanada(CommonCountryTests, TestCase):
                 self.assertNoHolidayName(name, holidays, range(self.start_year, start_year))
             else:
                 self.assertNoHolidayName(name, holidays)
+<<<<<<< HEAD
             self.assertNoNonObservedHoliday(self.subdiv_holidays_non_observed[subdiv], obs_dts)
 
         obs_dts = (
             "2028-10-02",
             "2029-10-01",
+=======
+            self.assertNoNonObservedHoliday(self.prov_hols_nonobs[prov], dts)
+
+        self.assertHolidayName(
+            name, self.prov_opt_hols["AB"], (f"{year}-09-30" for year in range(2021, 2050))
+>>>>>>> develop
         )
         self.assertSubdivMbHolidayName(name_observed, obs_dts)
         self.assertNoSubdivMbNonObservedHoliday(obs_dts)
@@ -312,6 +374,7 @@ class TestCanada(CommonCountryTests, TestCase):
         self.assertGovernmentHolidayName(name_1931, range(1931, self.end_year))
         self.assertNoGovernmentHolidayName(name_1931, range(self.start_year, 1931))
 
+<<<<<<< HEAD
         for subdiv, holidays in self.subdiv_holidays.items():
             if subdiv in {"AB", "BC", "MB", "NT", "NU", "ON", "QC", "SK", "YT"}:
                 self.assertHolidayName(name_1931, holidays, dts_1931)
@@ -328,6 +391,10 @@ class TestCanada(CommonCountryTests, TestCase):
         for subdiv in ("NB", "NL"):
             self.assertHolidayName(name_1921, self.subdiv_optional_holidays[subdiv], dts_1921)
             self.assertHolidayName(name_1931, self.subdiv_optional_holidays[subdiv], dts_1931)
+=======
+        for prov in ("NB", "NL"):
+            self.assertHolidayName(name, self.prov_opt_hols[prov], dts)
+>>>>>>> develop
 
     def test_remembrance_day(self):
         name = "Remembrance Day"
@@ -359,14 +426,25 @@ class TestCanada(CommonCountryTests, TestCase):
             else:
                 self.assertNoHolidayName(name, holidays)
 
+<<<<<<< HEAD
             if subdiv in {"AB", "NL", "NS", "PE", "SK", "YT"}:
                 self.assertHolidayName(name_observed, holidays, obs_dts)
                 self.assertNoNonObservedHoliday(self.subdiv_holidays_non_observed[subdiv], obs_dts)
+=======
+            if prov in {"AB", "NL", "NS", "PE", "SK", "YT"}:
+                self.assertHolidayName(name_observed, holidays, dts)
+                self.assertNoNonObservedHoliday(self.prov_hols_nonobs[prov], dts)
+>>>>>>> develop
             else:
                 self.assertNoHoliday(holidays, obs_dts)
 
+<<<<<<< HEAD
         self.assertSubdivMbOptionalHolidayName(
             name, (f"{year}-11-11" for year in range(1931, self.end_year))
+=======
+        self.assertHolidayName(
+            name, self.prov_opt_hols["MB"], (f"{year}-11-11" for year in range(1931, 2050))
+>>>>>>> develop
         )
 
     def test_boxing_day(self):
@@ -375,7 +453,13 @@ class TestCanada(CommonCountryTests, TestCase):
         self.assertNoHolidayName(name)
         self.assertGovernmentHolidayName(name, (f"{year}-12-26" for year in self.full_range))
 
+<<<<<<< HEAD
         self.assertOptionalHolidayName(name, (f"{year}-12-26" for year in self.full_range))
+=======
+        self.assertHolidayName(
+            name, self.opt_hols, (f"{year}-12-26" for year in range(1867, 2050))
+        )
+>>>>>>> develop
 
         obs_dts = (
             "2004-12-28",
@@ -385,22 +469,36 @@ class TestCanada(CommonCountryTests, TestCase):
             "2020-12-28",
             "2021-12-28",
         )
+<<<<<<< HEAD
         self.assertOptionalHolidayName(name_observed, obs_dts)
         self.assertNoOptionalNonObservedHoliday(obs_dts)
+=======
+        self.assertHolidayName(name_observed, self.opt_hols, dts)
+        self.assertNoNonObservedHoliday(CA(observed=False, categories=OPTIONAL), dts)
+>>>>>>> develop
 
         obs_dts = (
             "2004-12-28",
             "2010-12-28",
             "2021-12-28",
         )
+<<<<<<< HEAD
         self.assertSubdivOnHolidayName(name_observed, obs_dts)
         self.assertNoSubdivOnNonObservedHoliday(obs_dts)
+=======
+        self.assertHolidayName(name_observed, self.prov_hols["ON"], dts)
+        self.assertNoNonObservedHoliday(self.prov_hols_nonobs["ON"], dts)
+>>>>>>> develop
 
         for subdiv in ("AB", "NB", "NL"):
             self.assertHolidayName(
+<<<<<<< HEAD
                 name,
                 self.subdiv_optional_holidays[subdiv],
                 (f"{year}-12-26" for year in self.full_range),
+=======
+                name, self.prov_opt_hols[prov], (f"{year}-12-26" for year in range(1867, 2050))
+>>>>>>> develop
             )
 
     def test_family_day(self):
@@ -499,12 +597,22 @@ class TestCanada(CommonCountryTests, TestCase):
             self.assertNoHoliday(holidays, dts)
             self.assertNoHolidayName(name, holidays)
 
+<<<<<<< HEAD
             if subdiv in {"AB", "QC"}:
                 self.assertHolidayName(name, self.subdiv_optional_holidays[subdiv], dts)
 
     def test_civic_holiday_ab(self):
         name = "Heritage Day"
         self.assertNoSubdivAbHolidayName(name)
+=======
+            if prov in {"AB", "QC"}:
+                self.assertHolidayName(name, self.prov_opt_hols[prov], dts)
+
+    def test_civic_holiday_ab(self):
+        name = "Heritage Day"
+        self.assertNoHolidayName(name, self.prov_hols["AB"])
+        ab_opt_holidays = self.prov_opt_hols["AB"]
+>>>>>>> develop
         dts = (
             "1974-08-05",
             "1999-08-02",
@@ -541,7 +649,12 @@ class TestCanada(CommonCountryTests, TestCase):
         self.assertNoSubdivMbHolidayName(old_name)
         self.assertNoSubdivMbHolidayName(new_name)
 
+<<<<<<< HEAD
         dts_old = (
+=======
+        mb_opt_holidays = self.prov_opt_hols["MB"]
+        dts = (
+>>>>>>> develop
             "1900-08-06",
             "1999-08-02",
             "2000-08-07",
@@ -584,7 +697,12 @@ class TestCanada(CommonCountryTests, TestCase):
 
     def test_civic_holiday_ns(self):
         name = "Natal Day"
+<<<<<<< HEAD
         self.assertNoSubdivNsHolidayName(name)
+=======
+        self.assertNoHolidayName(name, self.prov_hols["NS"])
+        ns_opt_holidays = self.prov_opt_hols["NS"]
+>>>>>>> develop
         dts = (
             "1996-08-05",
             "1999-08-02",
@@ -601,8 +719,15 @@ class TestCanada(CommonCountryTests, TestCase):
 
     def test_civic_holiday_nt_nu_on_sk(self):
         name = "Civic Holiday"
+<<<<<<< HEAD
         name_sk = "Saskatchewan Day"
 
+=======
+        nt_holidays = self.prov_hols["NT"]
+        nu_holidays = self.prov_hols["NU"]
+        on_opt_holidays = self.prov_opt_hols["ON"]
+        sk_holidays = self.prov_hols["SK"]
+>>>>>>> develop
         dts = (
             "1900-08-06",
             "1999-08-02",
@@ -640,7 +765,12 @@ class TestCanada(CommonCountryTests, TestCase):
 
     def test_st_patricks_day(self):
         name = "Saint Patrick's Day"
+<<<<<<< HEAD
         self.assertNoSubdivNlHolidayName(name)
+=======
+        self.assertNoHolidayName(name, self.prov_hols["NL"])
+        nl_opt_holidays = self.prov_opt_hols["NL"]
+>>>>>>> develop
         dts = (
             "1900-03-19",
             "1999-03-15",
@@ -660,7 +790,12 @@ class TestCanada(CommonCountryTests, TestCase):
 
     def test_st_georges_day(self):
         name = "Saint George's Day"
+<<<<<<< HEAD
         self.assertNoSubdivNlHolidayName(name)
+=======
+        self.assertNoHolidayName(name, self.prov_hols["NL"])
+        nl_opt_holidays = self.prov_opt_hols["NL"]
+>>>>>>> develop
         dts = (
             "1990-04-23",
             "1999-04-26",
@@ -676,7 +811,12 @@ class TestCanada(CommonCountryTests, TestCase):
 
     def test_discovery_day_nl(self):
         name = "Discovery Day"
+<<<<<<< HEAD
         self.assertNoSubdivNlHolidayName(name)
+=======
+        self.assertNoHolidayName(name, self.prov_hols["NL"])
+        nl_opt_holidays = self.prov_opt_hols["NL"]
+>>>>>>> develop
         dts = (
             "1997-06-23",
             "1999-06-21",
@@ -693,7 +833,12 @@ class TestCanada(CommonCountryTests, TestCase):
 
     def test_orangemans_day(self):
         name = "Orangemen's Day"
+<<<<<<< HEAD
         self.assertNoSubdivNlHolidayName(name)
+=======
+        self.assertNoHolidayName(name, self.prov_hols["NL"])
+        nl_opt_holidays = self.prov_opt_hols["NL"]
+>>>>>>> develop
         dts = (
             "1900-07-09",
             "1999-07-12",
@@ -740,6 +885,7 @@ class TestCanada(CommonCountryTests, TestCase):
     def test_nunavut_day(self):
         name = "Nunavut Day"
         self.assertNoHolidayName(name)
+<<<<<<< HEAD
         self.assertNoHoliday(f"{year}-07-09" for year in range(2001, self.end_year))
         self.assertSubdivNuHolidayName(
             name, (f"{year}-07-09" for year in range(2020, self.end_year))
@@ -754,6 +900,14 @@ class TestCanada(CommonCountryTests, TestCase):
         self.assertNoSubdivNuOptionalHolidayName(
             name, range(self.start_year, 2000), range(2020, self.end_year)
         )
+=======
+        self.assertNoHoliday(f"{year}-07-09" for year in range(2001, 2050))
+        self.assertNoHolidayName(name, self.prov_hols["NU"])
+        nu_opt_holidays = self.prov_opt_hols["NU"]
+        self.assertNoHoliday(nu_opt_holidays, "1999-07-09", "2000-07-09")
+        self.assertHoliday(nu_opt_holidays, "2000-04-01")
+        self.assertHoliday(nu_opt_holidays, (f"{year}-07-09" for year in range(2001, 2050)))
+>>>>>>> develop
 
     def test_national_patriots_day(self):
         name = "National Patriots' Day"
@@ -772,16 +926,29 @@ class TestCanada(CommonCountryTests, TestCase):
     def test_st_jean_baptiste_day(self):
         name = "Saint Jean Baptiste Day"
         self.assertNoHolidayName(name)
+<<<<<<< HEAD
         self.assertSubdivQcHoliday(f"{year}-06-24" for year in range(1925, self.end_year))
         self.assertNoSubdivQcHoliday(f"{year}-06-24" for year in range(self.start_year, 1925))
         self.assertNoHoliday(f"{year}-06-24" for year in range(1925, self.end_year))
         self.assertSubdivQcHoliday("2001-06-25")
         self.assertNoSubdivQcNonObservedHoliday("2001-06-25")
+=======
+        qc_holidays = self.prov_hols["QC"]
+        self.assertHoliday(qc_holidays, (f"{year}-06-24" for year in range(1925, 2050)))
+        self.assertNoHoliday(qc_holidays, (f"{year}-06-24" for year in range(1867, 1925)))
+        self.assertNoHoliday(f"{year}-06-24" for year in range(1925, 2050))
+        self.assertHoliday(qc_holidays, "2001-06-25")
+        self.assertNoNonObservedHoliday(self.prov_hols_nonobs["QC"], "2001-06-25")
+>>>>>>> develop
 
     def test_yukon_heritage_day(self):
         name = "Heritage Day"
         self.assertNoHolidayName(name)
+<<<<<<< HEAD
         self.assertNoSubdivYtHolidayName(name)
+=======
+        self.assertNoHolidayName(name, self.prov_hols["YT"])
+>>>>>>> develop
         dts = (
             "2017-02-24",
             "2018-02-23",
@@ -790,9 +957,13 @@ class TestCanada(CommonCountryTests, TestCase):
             "2021-02-26",
             "2022-02-25",
         )
+<<<<<<< HEAD
         self.assertSubdivYtOptionalHolidayName(name, dts)
         self.assertSubdivYtOptionalHolidayName(name, range(1976, self.end_year))
         self.assertNoSubdivYtOptionalHolidayName(name, range(self.start_year, 1976))
+=======
+        self.assertHolidayName(name, self.prov_opt_hols["YT"], dts)
+>>>>>>> develop
 
     def test_queens_funeral(self):
         for subdiv, holidays in self.subdiv_holidays.items():
@@ -913,7 +1084,11 @@ class TestCanada(CommonCountryTests, TestCase):
         self.assertLocalizedHolidays(
             "ar",
             ("2022-01-01", "يوم السنة الجديدة"),
+<<<<<<< HEAD
             ("2022-01-03", "يوم السنة الجديدة (ملاحظة)"),
+=======
+            ("2022-01-03", "(تمت ملاحظته) يوم السنة الجديدة"),
+>>>>>>> develop
             ("2022-02-21", "يوم التراث; يوم الجزيرة; يوم العائلة; يوم لويس رئيل"),
             ("2022-02-25", "يوم التراث"),
             ("2022-03-14", "عيد القديس باتريك"),
@@ -1032,7 +1207,11 @@ class TestCanada(CommonCountryTests, TestCase):
             ("2022-05-23", "วันรำลึกกลุ่มแปตรีออต (ควิเบก); วันวิคตอเรีย"),
             ("2022-06-21", "วันชนพื้นเมือง (นอร์ทเวสต์เทร์ริทอรีส์)"),
             ("2022-06-24", "วันแซงต์-ฌ็อง-บาติสต์ (ควิเบก)"),
+<<<<<<< HEAD
             ("2022-06-27", "วันค้นพบ"),
+=======
+            ("2022-06-27", "วันแห่งการค้นภพ"),
+>>>>>>> develop
             ("2022-07-01", "วันชาติแคนาดา; วันรำลึก (นิวฟันด์แลนด์และแลบราดอร์)"),
             ("2022-07-09", "วันนูนาวุต"),
             ("2022-07-11", "วันออเรนจ์เมนส์"),
@@ -1041,7 +1220,11 @@ class TestCanada(CommonCountryTests, TestCase):
                 "วันซัสแคตเชวัน; วันนิวบรันสวิก; วันบริติชโคลัมเบีย; วันมรดก; วันสถาปนา; "
                 "วันหยุดราชการ; วันเทร์รี ฟอกซ์",
             ),
+<<<<<<< HEAD
             ("2022-08-15", "วันค้นพบ"),
+=======
+            ("2022-08-15", "วันแห่งการค้นภพ"),
+>>>>>>> develop
             ("2022-09-05", "วันแรงงาน"),
             ("2022-09-19", "พระราชพิธีพระบรมศพของสมเด็จพระราชินีนาถเอลิซาเบธที่ 2"),
             ("2022-09-30", "วันชาติแห่งความจริงและการปรองดอง"),

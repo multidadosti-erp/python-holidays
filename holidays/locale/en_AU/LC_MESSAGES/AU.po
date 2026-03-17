@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -14,10 +18,16 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.89\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2024-09-05 12:21+0700\n"
 "PO-Revision-Date: 2026-01-14 04:15+0000\n"
+=======
+"Project-Id-Version: Holidays 0.57\n"
+"POT-Creation-Date: 2024-09-05 12:21+0700\n"
+"PO-Revision-Date: 2024-09-05 12:28+0700\n"
+>>>>>>> develop
 "Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
 "Language-Team: Holidays Localization Team\n"
 "Language: en_AU\n"
@@ -26,7 +36,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingva 5.0.3\n"
 "X-Generator: Poedit 3.5\n"
+<<<<<<< HEAD
 "X-Source-Language: en_AU\n"
+=======
+>>>>>>> develop
 
 #. %s (observed).
 #, c-format
@@ -93,7 +106,11 @@ msgstr ""
 msgid "Family & Community Day"
 msgstr ""
 
+<<<<<<< HEAD
 #. Labor Day.
+=======
+#. Labour Day.
+>>>>>>> develop
 msgid "Labour Day"
 msgstr ""
 
@@ -126,11 +143,14 @@ msgstr ""
 msgid "The Royal Queensland Show"
 msgstr ""
 
+<<<<<<< HEAD
 #. %s (from 6pm).
 #, c-format
 msgid "%s (from 6pm)"
 msgstr ""
 
+=======
+>>>>>>> develop
 #. Adelaide Cup Day.
 msgid "Adelaide Cup Day"
 msgstr ""

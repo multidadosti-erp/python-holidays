@@ -11,6 +11,10 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
+<<<<<<< HEAD
+=======
+from typing import Optional
+>>>>>>> develop
 
 from holidays.calendars.custom import _CustomCalendar
 from holidays.calendars.gregorian import JAN, FEB, MAR, APR, MAY, JUN, SEP, OCT, NOV, DEC
@@ -1246,6 +1250,7 @@ class _ChineseLunisolar:
         2100: (SEP, 18),
     }
 
+<<<<<<< HEAD
     KOREAN_CALENDAR_BUDDHA_BIRTHDAY_DATES = {
         1905: (MAY, 12),
         1908: (MAY, 8),
@@ -1366,6 +1371,9 @@ class _ChineseLunisolar:
         confirmed_years = getattr(
             self, f"{holiday}_DATES_CONFIRMED_YEARS_{_CustomCalendar.CUSTOM_ATTR_POSTFIX}", (0, 0)
         )
+=======
+    def _get_holiday(self, holiday: str, year: int) -> tuple[Optional[date], bool]:
+>>>>>>> develop
         estimated_dates = getattr(self, f"{holiday}_DATES", {})
         custom_calendar_dates = getattr(self, f"{calendar}_{holiday}_DATES", {})
         dt = confirmed_dates.get(
@@ -1376,6 +1384,7 @@ class _ChineseLunisolar:
         )
         return date(year, *dt) if dt else None, not is_confirmed
 
+<<<<<<< HEAD
     def buddha_birthday_date(self, year: int, calendar=None) -> tuple[date | None, bool]:
         return self._get_holiday(BUDDHA_BIRTHDAY, year, calendar)
 
@@ -1433,6 +1442,25 @@ class _ChineseLunisolar:
             day = 22
 
         return date(year, DEC, day), not (1901 <= year <= 2099)
+=======
+    def buddha_birthday_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(BUDDHA_BIRTHDAY, year)
+
+    def double_ninth_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(DOUBLE_NINTH, year)
+
+    def dragon_boat_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(DRAGON_BOAT, year)
+
+    def hung_kings_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(HUNG_KINGS, year)
+
+    def lunar_new_year_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(LUNAR_NEW_YEAR, year)
+
+    def mid_autumn_date(self, year: int) -> tuple[Optional[date], bool]:
+        return self._get_holiday(MID_AUTUMN, year)
+>>>>>>> develop
 
 
 class _CustomChineseHolidays(_CustomCalendar, _ChineseLunisolar):

@@ -57,6 +57,7 @@ class Czechia(HolidayBase, ChristianHolidays, InternationalHolidays):
 
         if self._year >= 2004:
             # Victory Day.
+<<<<<<< HEAD
             name = tr("Den vítězství")
         elif self._year >= 2001:
             # Liberation Day.
@@ -64,6 +65,15 @@ class Czechia(HolidayBase, ChristianHolidays, InternationalHolidays):
         else:
             # Day of liberation from Fascism.
             name = tr("Den osvobození od fašismu")
+=======
+            self._add_world_war_two_victory_day(tr("Den vítězství"))
+        elif self._year >= 1947:
+            self._add_world_war_two_victory_day(
+                # Day of Victory over Fascism.
+                tr("Den vítězství nad hitlerovským fašismem"),
+                is_western=False,
+            )
+>>>>>>> develop
 
         self._add_world_war_two_victory_day(name, is_western=(self._year >= 1992))
 

@@ -47,6 +47,7 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
     """Thailand holidays.
 
     References:
+<<<<<<< HEAD
         * <https://en.wikipedia.org/wiki/Public_holidays_in_Thailand>
         * [Holidays Act (MAR 1914)](https://web.archive.org/web/20231021231154/https://ratchakitcha.soc.go.th/documents/1044125.pdf)
         * [Special Extension for MoJ (In-effect 1915 onwards)](https://web.archive.org/web/20250428123805/https://ratchakitcha.soc.go.th/documents/1046008.pdf)
@@ -88,6 +89,78 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
         * [Holidays Act (No. 23), B.E. 2560 (2017); Rama X's Birthday added](https://web.archive.org/web/20250428134706/https://ratchakitcha.soc.go.th/documents/2104467.pdf)
         * [HM Queen Suthida's Birthday added](https://web.archive.org/web/20250428134748/https://ratchakitcha.soc.go.th/documents/17081602.pdf)
         * [Holidays Act, B.E. 2562 (2019)](https://web.archive.org/web/20250428134835/https://ratchakitcha.soc.go.th/documents/17082311.pdf)
+=======
+        - Based on: https://en.wikipedia.org/wiki/Public_holidays_in_Thailand
+        - Checked with: `Bank of Thailand lists <http://tiny.cc/wa_bot_2023>`_
+        - [In Lieus]
+            - `isranews.org <http://tiny.cc/wa_isranews_inlieu_hist>`_
+            - https://resolution.soc.go.th/?prep_id=99159317
+            - https://resolution.soc.go.th/?prep_id=196007
+            - https://github.com/vacanza/holidays/pull/929
+            - https://www.thairath.co.th/lifestyle/life/2812118
+            - https://www.thaipbs.or.th/news/content/346216
+        - [New Year's Day]
+            `wikisource.org <http://tiny.cc/wa_wiki_thai_newyear_2483>`_
+        - [National Children's Day]
+            https://thainews.prd.go.th/banner/th/children'sday/
+        - [Chakri Memorial Day]
+            `ocac.got.th <http://tiny.cc/wa_ocac_chakri>`_
+        - [Songkran Festival]
+            - `museumsiam.org <http://tiny.cc/wa_museumsiam_songkran>`_
+            - https://resolution.soc.go.th/?prep_id=123659
+        - [National Labour Day]
+            https://www.thairath.co.th/lifestyle/culture/1832869
+        - [National Day (24 June: Defunct)]
+            `Ministry of Culture <http://tiny.cc/wa_mincul_nat_day>`_
+        - [Coronation Day]
+            https://www.matichon.co.th/politics/news_526200
+            https://workpointtoday.com/news1-5/
+        - [HM Queen Suthida's Birthday]
+            https://www.thairath.co.th/news/politic/1567418
+        - [HM Maha Vajiralongkorn's Birthday]
+            https://www.matichon.co.th/politics/news_526200
+        - [HM Queen Sirikit the Queen Mother's Birthday]
+            https://hilight.kapook.com/view/14164
+        - [National Mother's Day]
+            https://www.brh.go.th/index.php/2019-02-27-04-11-52/542-12-2564
+        - [HM King Bhumibol Adulyadej Memorial Day]
+            https://www.matichon.co.th/politics/news_526200
+        - [HM King Chulalongkorn Memorial Day]
+            `<https://th.wikipedia.org/wiki/วันปิยมหาราช>`_
+        - [HM King Bhumibol Adulyadej's Birthday]
+            - `Ministry of Culture <http://tiny.cc/wa_mincul_nat_day>`_
+            - https://hilight.kapook.com/view/148862
+        - [National Father's Day]
+            https://www.brh.go.th/index.php/2019-02-27-04-12-21/594-5-5
+        - [Constitution Day]
+            - https://hilight.kapook.com/view/18208
+            - `Bank of Thailand <http://tiny.cc/wa_bot_1992>`_
+            - `<https://www.myhora.com/ปฏิทิน/ปฏิทิน-พ.ศ.2475.aspx>`_
+        - [New Year's Eve]
+            - `Bank of Thailand`_
+            - https://resolution.soc.go.th/?prep_id=205799
+            - https://resolution.soc.go.th/?prep_id=210744
+        - [Makha Bucha]
+            https://www.onab.go.th/th/content/category/detail/id/73/iid/3403
+        - [Visakha Bucha]
+            https://www.onab.go.th/th/content/category/detail/id/73/iid/3401
+        - [Asarnha Bucha]
+            https://www.onab.go.th/th/content/category/detail/id/73/iid/3397
+        - [Buddhist Lent Day]
+            https://www.onab.go.th/th/content/category/detail/id/73/iid/3395
+        - [Royal Ploughing Ceremony]
+            https://en.wikipedia.org/wiki/Royal_Ploughing_Ceremony
+            https://www.lib.ru.ac.th/journal/may/may_phauchmongkol.html
+            https://dl.parliament.go.th/handle/20.500.13072/103428
+            https://dl.parliament.go.th/handle/20.500.13072/92816
+            https://e-manage.mju.ac.th/timeline_detail.aspx?key=MTk4
+            https://resolution.soc.go.th/PDF_UPLOAD/2510/932141.pdf
+            https://www.myhora.com/ปฏิทิน/วันพืชมงคล.aspx
+        - [Royal Thai Armed Forces Day]
+            `<https://th.wikipedia.org/wiki/วันกองทัพไทย>`_
+        - [Teacher's Day]
+            https://www.cabinet.soc.go.th/doc_image/2500/718941.pdf
+>>>>>>> develop
 
     Checked with:
         * [Bank of Thailand](https://web.archive.org/web/20230205072056/https://www.bot.or.th/Thai/FinancialInstitutions/FIholiday/Pages/2023.aspx)
@@ -175,12 +248,32 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
         Applied Automatically for Workday if on Weekends: 2001-Present
 
     Limitations:
+<<<<<<< HEAD
         * This is only 100% accurate for 1997-2025; any future dates are up to the
             Royal Thai Government Gazette which updates on a year-by-year basis.
         * Thai Lunar Calendar Holidays only work until 2157 (B.E. 2700) as we only
             have Thai year-type data for cross-checking until then.
         * Royal Ploughing Ceremony Day is date is announced on an annual basis
             by the Court Astrologers, thus need an annual update to the library here
+=======
+        - This is only 100% accurate for 1997-2025; any future dates are up to the
+          Royal Thai Government Gazette which updates on a year-by-year basis.
+
+        - Approx. date only goes as far back as 1941 (B.E. 2484) as the Thai
+          calendar for B.E. 2483 as we only have nine months from switching
+          New Year Date (April 1st to January 1st).
+
+        - Thai Lunar Calendar Holidays only work from 1941 (B.E. 2484) onwards
+          until 2157 (B.E. 2700) as we only have Thai year-type data for
+          cross-checking until then.
+
+        - Royal Ploughing Ceremony Day is date is announced on an annual basis
+          by the Court Astrologers, thus need an annual update to the library here
+
+    Country created by: `arkid15r <https://github.com/arkid15r>`__
+
+    Country maintained by: `PPsyrius <https://github.com/PPsyrius>`__
+>>>>>>> develop
     """
 
     country = "TH"
@@ -681,6 +774,7 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
         # For historical purpose, pre-1925 entry uses the old spelling.
         # **For pre-1941 data, Buddhist Era year starts on APR 1st.
 
+<<<<<<< HEAD
         if 1915 <= self._year <= 1925 or self._year >= 1938:
             self._add_observed(
                 self._add_makha_bucha(
@@ -691,6 +785,10 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
                     else tr("มาฆบูชา จาตุรงฅ์สันนิบาต")
                 )
             )
+=======
+        # Makha Bucha.
+        self._add_observed(self._add_makha_bucha(tr("วันมาฆบูชา")))
+>>>>>>> develop
 
         # วันวิสาขบูชา
         # Status: In-Use.
@@ -699,6 +797,7 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
         # For historical purpose, pre-1957 entry uses the old spelling.
         # Note that the ones during Rama VII era uses ศ instead of ส.
 
+<<<<<<< HEAD
         if self._year >= 1957:
             # Visakha Bucha.
             name = tr("วันวิสาขบูชา")
@@ -711,6 +810,10 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
         else:
             # Visakha Bucha.
             name = tr("วิสาขะบูชา")
+=======
+        # Visakha Bucha.
+        self._add_observed(self._add_visakha_bucha(tr("วันวิสาขบูชา")))
+>>>>>>> develop
 
         dt = self._add_visakha_bucha(name)
         if self._year <= 1953:
@@ -732,6 +835,7 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
         #  - CASE 2: SAT-SUN -> 1 in-lieu on MON
         #  - CASE 3: SUN-MON -> 1 in-lieu on TUE
 
+<<<<<<< HEAD
         name = (
             # Buddhist Lent Day.
             tr("วันเข้าพรรษา")
@@ -757,6 +861,22 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
                     self._add_asarnha_bucha(tr("วันอาสาฬหบูชา")),
                     rule=SAT_SUN_TO_NEXT_MON_TUE,
                 )
+=======
+        self._add_observed(
+            # Asarnha Bucha.
+            self._add_asarnha_bucha(tr("วันอาสาฬหบูชา")),
+            rule=SAT_SUN_TO_NEXT_MON_TUE,
+        )
+
+        # วันเข้าพรรษา
+        # Status: In-Use.
+        #  - CASE 1: FRI-SAT -> 1 in-lieu on MON
+        #  - CASE 2: SAT-SUN -> 1 in-lieu on MON
+        #  - CASE 3: SUN-MON -> 1 in-lieu on TUE
+
+        # Buddhist Lent Day.
+        self._add_observed(self._add_khao_phansa(tr("วันเข้าพรรษา")), rule=SAT_TO_NEXT_MON)
+>>>>>>> develop
 
     def _populate_armed_forces_holidays(self):
         # วันกองทัพไทย
@@ -818,7 +938,11 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
         #   this from 1966 onwards. For earlier records the date was refered as วันแรกนาขวัญ.
         # This isn't even fixed even by the Thai Lunar Calendar besides being in Month 6
         #   to concides with the rainy season, but instead by Court Astrologers; All chosen dates
+<<<<<<< HEAD
         #   so far are all in the first three weeks of MAY.
+=======
+        #   so far are all in the first three weeks of May.
+>>>>>>> develop
         # *** NOTE: only observed by government sectors.
         # TODO: Update this annually around Dec of each year.
 
@@ -890,9 +1014,14 @@ class Thailand(ObservedHolidayBase, InternationalHolidays, StaticHolidays, ThaiC
             2023: (MAY, 17),
             2024: (MAY, 10),
             2025: (MAY, 9),
+<<<<<<< HEAD
             2026: (MAY, 13),
         }
         if 1960 <= self._year <= 2026 and self._year != 1999:
+=======
+        }
+        if 1960 <= self._year <= 2025 and self._year != 1999:
+>>>>>>> develop
             self._add_observed(
                 # Royal Ploughing Ceremony.
                 self._add_holiday(tr("วันพืชมงคล"), raeknakhwan_dates.get(self._year))

@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -12,14 +16,20 @@
 
 from unittest import TestCase
 
+<<<<<<< HEAD
 from holidays.constants import PUBLIC, WORKDAY
 from holidays.countries.saint_kitts_and_nevis import SaintKittsAndNevis
+=======
+from holidays.constants import HALF_DAY, PUBLIC, WORKDAY
+from holidays.countries.saint_kitts_and_nevis import SaintKittsAndNevis, KN, KNA
+>>>>>>> develop
 from tests.common import CommonCountryTests
 
 
 class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
     @classmethod
     def setUpClass(cls):
+<<<<<<< HEAD
         super().setUpClass(SaintKittsAndNevis)
 
     def test_no_holidays(self):
@@ -27,10 +37,26 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
 
         self.assertNoHolidays(
             SaintKittsAndNevis(categories=WORKDAY, years=range(self.start_year, 2003))
+=======
+        super().setUpClass(
+            SaintKittsAndNevis, years=range(1983, 2051), years_non_observed=range(1983, 2051)
+        )
+
+    def test_country_aliases(self):
+        self.assertAliases(SaintKittsAndNevis, KN, KNA)
+
+    def test_no_holidays(self):
+        self.assertNoHolidays(
+            SaintKittsAndNevis(categories=(HALF_DAY, PUBLIC, WORKDAY), years=1982)
+>>>>>>> develop
         )
 
     def test_special_public_holidays(self):
         self.assertHoliday(
+<<<<<<< HEAD
+=======
+            SaintKittsAndNevis(categories=PUBLIC),
+>>>>>>> develop
             "2015-02-18",
             "2017-09-20",
             "2017-12-19",
@@ -39,7 +65,12 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
         )
 
     def test_special_half_day_holidays(self):
+<<<<<<< HEAD
         self.assertHalfDayHoliday(
+=======
+        self.assertHoliday(
+            SaintKittsAndNevis(categories=HALF_DAY),
+>>>>>>> develop
             "2017-03-23",
             "2017-04-10",
             "2018-12-31",
@@ -50,6 +81,7 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
             "2024-08-01",
         )
 
+<<<<<<< HEAD
     def test_carnival_day(self):
         name = "Carnival Day"
         name_lastlap = f"{name} - Last Lap"
@@ -103,11 +135,27 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
         name = "Labour Day"
         self.assertHolidayName(
             name,
+=======
+    def test_labour_day(self):
+        # 1st Monday of May.
+        dt = (
+            "2010-05-03",
+            "2011-05-02",
+            "2012-05-07",
+            "2013-05-06",
+            "2014-05-05",
+            "2015-05-04",
+            "2016-05-02",
+            "2017-05-01",
+            "2018-05-07",
+            "2019-05-06",
+>>>>>>> develop
             "2020-05-04",
             "2021-05-03",
             "2022-05-02",
             "2023-05-01",
             "2024-05-06",
+<<<<<<< HEAD
             "2025-05-05",
         )
         self.assertHolidayName(name, self.full_range)
@@ -130,11 +178,32 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
         name_1998 = "Emancipation Day"
         self.assertHolidayName(
             name_1998,
+=======
+        )
+        self.assertHolidayName("Labour Day", dt)
+
+    def test_first_monday_of_august_holiday(self):
+        name_first_mon_aug = "First Monday of August"
+        name_emancipation_day = "Emancipation Day"
+
+        dt = (
+            "2010-08-02",
+            "2011-08-01",
+            "2012-08-06",
+            "2013-08-05",
+            "2014-08-04",
+            "2015-08-03",
+            "2016-08-01",
+            "2017-08-07",
+            "2018-08-06",
+            "2019-08-05",
+>>>>>>> develop
             "2020-08-03",
             "2021-08-02",
             "2022-08-01",
             "2023-08-07",
             "2024-08-05",
+<<<<<<< HEAD
             "2025-08-04",
         )
         self.assertHolidayName(name_1983, range(self.start_year, 1998))
@@ -146,11 +215,33 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
         name = "Culturama Day - Last Lap"
         self.assertHolidayName(
             name,
+=======
+        )
+        self.assertHolidayName(name_emancipation_day, dt)
+        self.assertNoHolidayName(name_first_mon_aug, range(1998, 2051))
+        self.assertNoHolidayName(name_emancipation_day, range(1983, 1998))
+
+    def test_culturama_day_last_lap(self):
+        name_culturama_day_last_lap = "Culturama Day - Last Lap"
+
+        dt = (
+            "2010-08-03",
+            "2011-08-02",
+            "2012-08-07",
+            "2013-08-06",
+            "2014-08-05",
+            "2015-08-04",
+            "2016-08-02",
+            "2017-08-08",
+            "2018-08-07",
+            "2019-08-06",
+>>>>>>> develop
             "2020-08-04",
             "2021-08-03",
             "2022-08-02",
             "2023-08-08",
             "2024-08-06",
+<<<<<<< HEAD
             "2025-08-05",
         )
         self.assertHolidayName(name, self.full_range)
@@ -160,10 +251,25 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
         self.assertHolidayName(name, (f"{year}-09-16" for year in range(1998, self.end_year)))
         self.assertNoHolidayName(name, range(self.start_year, 1998))
         obs_dts = (
+=======
+        )
+        self.assertHolidayName(name_culturama_day_last_lap, dt)
+
+    def test_national_heroes_day(self):
+        name_national_heroes_day = "National Heroes Day"
+
+        self.assertNoHolidayName(name_national_heroes_day, range(1983, 1998))
+        self.assertHolidayName(
+            name_national_heroes_day, (f"{year}-09-16" for year in range(1998, 2051))
+        )
+
+        self.assertNoNonObservedHoliday(
+>>>>>>> develop
             "2001-09-17",
             "2007-09-17",
             "2012-09-17",
             "2018-09-17",
+<<<<<<< HEAD
         )
         self.assertHolidayName(f"{name} (observed)", obs_dts)
         self.assertNoNonObservedHoliday(obs_dts)
@@ -214,6 +320,20 @@ class TestSaintKittsAndNevis(CommonCountryTests, TestCase):
             name, (f"{year}-08-25" for year in range(2003, self.end_year))
         )
         self.assertNoWorkdayHolidayName(name, range(self.start_year, 2003))
+=======
+            "2029-09-17",
+            "2034-09-17",
+            "2040-09-17",
+            "2045-09-17",
+        )
+
+    def test_kim_collins_day(self):
+        self.assertNoHoliday(SaintKittsAndNevis(categories=WORKDAY), 2002)
+        self.assertHoliday(
+            SaintKittsAndNevis(categories=WORKDAY),
+            (f"{year}-08-25" for year in range(2003, 2051)),
+        )
+>>>>>>> develop
 
     def test_2015_holidays(self):  # ?
         # https://web.archive.org/web/20221102224614/https://www.gov.kn/in-skn-national-public-holidays/

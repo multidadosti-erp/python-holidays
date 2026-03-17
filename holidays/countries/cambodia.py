@@ -29,6 +29,7 @@ class Cambodia(HolidayBase, InternationalHolidays, StaticHolidays, ThaiCalendarH
         * <http://archive.today/2026.01.22-052218/https://www.khmertimeskh.com/501424903/24-public-holidays-for-2024-peace-day-now-included/>
         * <http://archive.today/2026.01.22-051938/https://www.khmertimeskh.com/501551204/govt-announces-22-public-holidays-for-next-year/>
 
+<<<<<<< HEAD
     Checked with:
         * <https://web.archive.org/web/20250414071145/https://asean.org/wp-content/uploads/2021/12/ASEAN-National-Holidays-2022.pdf>
         * <https://web.archive.org/web/20250414071156/https://asean.org/wp-content/uploads/2022/12/ASEAN-Public-Holidays-2023.pdf>
@@ -40,6 +41,31 @@ class Cambodia(HolidayBase, InternationalHolidays, StaticHolidays, ThaiCalendarH
             from 2015 onwards.
         * Cambodian Lunar Calendar Holidays only work from 1941 (B.E. 2485) onwards until 2157
             (B.E. 2701) as we only have Thai year-type data for cross-checking until then.
+=======
+    - Based on: https://www.nbc.gov.kh/english/news_and_events/official_holiday.php
+                https://www.nbc.gov.kh/news_and_events/official_holiday.php
+                https://en.wikipedia.org/wiki/Public_holidays_in_Cambodia
+                https://admin.taftac-cambodia.org/public/pdf_file/regulation_1704245695_Z7IALJjE.pdf
+
+    - Checked with: https://asean.org/wp-content/uploads/2021/12/ASEAN-National-Holidays-2022.pdf
+                    https://asean.org/wp-content/uploads/2022/12/ASEAN-Public-Holidays-2023.pdf
+                    https://www.timeanddate.com/holidays/cambodia/
+
+    Limitations:
+
+    - Cambodian holidays only works from 1993 onwards.
+
+    - Exact Public Holidays as per Cambodia's Official Gazette are only
+      available from 2015 onwards.
+
+    - Cambodian Lunar Calendar Holidays only work from 1941 (B.E. 2485) onwards until 2157
+      (B.E. 2701) as we only have Thai year-type data for cross-checking until then.
+
+
+    Country created by: `PPsyrius <https://github.com/PPsyrius>`__
+
+    Country maintained by: `PPsyrius <https://github.com/PPsyrius>`__
+>>>>>>> develop
     """
 
     country = "KH"
@@ -218,7 +244,11 @@ class Cambodia(HolidayBase, InternationalHolidays, StaticHolidays, ThaiCalendarH
             self._add_holiday_dec_10(tr("ទិវាសិទ្ធិមនុស្សអន្តរជាតិ"))
 
         # Cambodian Lunar Calendar Holidays
+<<<<<<< HEAD
         # See `_ThaiLunisolar` in holidays/calendars/thai.py for more details.
+=======
+        # See `_ThaiLunisolar` in holidays/utils.py for more details.
+>>>>>>> develop
         # Cambodian Lunar Calendar Holidays only work from 1941 to 2157.
 
         # ពិធីបុណ្យមាឃបូជា
@@ -272,6 +302,11 @@ class Cambodia(HolidayBase, InternationalHolidays, StaticHolidays, ThaiCalendarH
         # ទិវាសន្តិភាពនៅកម្ពុជា
         # Status: In-Use.
         # Dec 29, added from 2024 onwards.
+<<<<<<< HEAD
+=======
+        #  - https://www.khmertimeskh.com/501424903/24-public-holidays-for-2024-peace-day-now-included/
+        #  - https://www.khmertimeskh.com/501551204/govt-announces-22-public-holidays-for-next-year/
+>>>>>>> develop
 
         if self._year >= 2024:
             # Peace Day in Cambodia.

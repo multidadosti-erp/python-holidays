@@ -4,14 +4,23 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
+<<<<<<< HEAD
 from collections.abc import Iterable
 from datetime import date
+=======
+from datetime import date
+from typing import Optional
+>>>>>>> develop
 
 from holidays.calendars.gregorian import _timedelta
 
@@ -24,6 +33,7 @@ class EasternCalendarHolidays:
     def _add_eastern_calendar_holiday(
         self,
         name: str,
+<<<<<<< HEAD
         dt_estimated: tuple[date | None, bool],
         *,
         show_estimated: bool = True,
@@ -35,12 +45,30 @@ class EasternCalendarHolidays:
         Adds customizable estimation label to holiday name if holiday date is an estimation.
         """
         dt, is_estimated = dt_estimated
+=======
+        dt_estimated: tuple[Optional[date], bool],
+        show_estimated: bool = True,
+        days_delta: int = 0,
+    ) -> Optional[date]:
+        """
+        Add Eastern (Buddhist, Chinese, Hindu, Islamic) calendar holiday.
+
+        Adds customizable estimation label to holiday name if holiday date is an estimation.
+        """
+        estimated_label = getattr(self, "estimated_label", "%s (estimated)")
+        dt, is_estimated = dt_estimated
+
+>>>>>>> develop
         if days_delta and dt:
             dt = _timedelta(dt, days_delta)
 
         return (
             self._add_holiday(
+<<<<<<< HEAD
                 self.tr(self.estimated_label) % self.tr(name)
+=======
+                self.tr(estimated_label) % self.tr(name)
+>>>>>>> develop
                 if is_estimated and show_estimated
                 else name,
                 dt,
@@ -48,6 +76,7 @@ class EasternCalendarHolidays:
             if dt
             else None
         )
+<<<<<<< HEAD
 
     def _add_eastern_calendar_holiday_set(
         self,
@@ -72,3 +101,5 @@ class EasternCalendarHolidays:
                 )
             )
         }
+=======
+>>>>>>> develop

@@ -222,6 +222,7 @@ class TestSingapore(CommonCountryTests, TestCase):
         self.assertNoNonObservedHoliday("2023-01-02")
 
     def test_special_holidays(self):
+<<<<<<< HEAD
         self.assertHoliday(
             "2001-11-03",
             "2006-05-06",
@@ -232,6 +233,9 @@ class TestSingapore(CommonCountryTests, TestCase):
             "2023-09-01",
             "2025-05-03",
         )
+=======
+        self.assertHoliday("2015-08-07")
+>>>>>>> develop
 
     def test_l10n_default(self):
         self.assertLocalizedHolidays(

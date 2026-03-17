@@ -465,7 +465,11 @@ class TestBosniaAndHerzegovina(CommonCountryTests, TestCase):
         self.assertLocalizedHolidays(
             ("2022-01-01", "Nova godina"),
             ("2022-01-02", "Nova godina"),
+<<<<<<< HEAD
             ("2022-01-03", "Nova godina (slobodan dan)"),
+=======
+            ("2022-01-03", "Nova godina (preneseno)"),
+>>>>>>> develop
             ("2022-01-06", "Badnji dan (Pravoslavni)"),
             ("2022-01-07", "Božić (Pravoslavni)"),
             ("2022-01-14", "Pravoslavna Nova godina"),
@@ -479,7 +483,11 @@ class TestBosniaAndHerzegovina(CommonCountryTests, TestCase):
             ("2022-04-25", "Uskrsni ponedjeljak (Pravoslavni)"),
             ("2022-05-01", "Međunarodni praznik rada"),
             ("2022-05-02", "Međunarodni praznik rada; Ramazanski Bajram"),
+<<<<<<< HEAD
             ("2022-05-03", "Međunarodni praznik rada (slobodan dan); Ramazanski Bajram"),
+=======
+            ("2022-05-03", "Međunarodni praznik rada (preneseno); Ramazanski Bajram"),
+>>>>>>> develop
             ("2022-05-09", "Dan pobjede nad fašizmom"),
             ("2022-07-09", "Kurban Bajram"),
             ("2022-07-10", "Kurban Bajram"),
@@ -487,7 +495,11 @@ class TestBosniaAndHerzegovina(CommonCountryTests, TestCase):
             ("2022-11-25", "Dan državnosti"),
             ("2022-12-24", "Badnji dan (Katolički)"),
             ("2022-12-25", "Božić (Katolički)"),
+<<<<<<< HEAD
             ("2022-12-26", "Božić (Katolički) (slobodan dan)"),
+=======
+            ("2022-12-26", "Božić (Katolički) (preneseno)"),
+>>>>>>> develop
         )
 
     def test_l10n_en_us(self):
@@ -525,7 +537,11 @@ class TestBosniaAndHerzegovina(CommonCountryTests, TestCase):
             "sr",
             ("2022-01-01", "Нова година"),
             ("2022-01-02", "Нова година"),
+<<<<<<< HEAD
             ("2022-01-03", "Нова година (слободан дан)"),
+=======
+            ("2022-01-03", "Нова година (пренешено)"),
+>>>>>>> develop
             ("2022-01-06", "Бадњи дан (Православни)"),
             ("2022-01-07", "Божић (Православни)"),
             ("2022-01-14", "Православна Нова година"),
@@ -539,7 +555,11 @@ class TestBosniaAndHerzegovina(CommonCountryTests, TestCase):
             ("2022-04-25", "Ускршњи понедељак (Православни)"),
             ("2022-05-01", "Међународни празник рада"),
             ("2022-05-02", "Међународни празник рада; Рамазански Бајрам"),
+<<<<<<< HEAD
             ("2022-05-03", "Међународни празник рада (слободан дан); Рамазански Бајрам"),
+=======
+            ("2022-05-03", "Међународни празник рада (пренешено); Рамазански Бајрам"),
+>>>>>>> develop
             ("2022-05-09", "Дан побједе над фашизмом"),
             ("2022-07-09", "Курбан Бајрам"),
             ("2022-07-10", "Курбан Бајрам"),
@@ -547,7 +567,11 @@ class TestBosniaAndHerzegovina(CommonCountryTests, TestCase):
             ("2022-11-25", "Дан државности"),
             ("2022-12-24", "Бадњи дан (Католички)"),
             ("2022-12-25", "Божић (Католички)"),
+<<<<<<< HEAD
             ("2022-12-26", "Божић (Католички) (слободан дан)"),
+=======
+            ("2022-12-26", "Божић (Католички) (пренешено)"),
+>>>>>>> develop
         )
 
     def test_l10n_uk(self):

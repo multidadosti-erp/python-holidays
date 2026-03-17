@@ -139,9 +139,23 @@ class TimorLeste(
         else:
             self._add_holiday_dec_7(name)
 
+<<<<<<< HEAD
         # Eid al-Fitr.
         self._add_eid_al_fitr_day(tr("Idul Fitri"))
 
+=======
+        # Variable Date Public Holidays.
+
+        # Holy Friday.
+        self._add_good_friday(tr("Sexta-Feira Santa"))
+
+        # Eid al-Fitr.
+        self._add_eid_al_fitr_day(tr("Idul Fitri"))
+
+        # Corpus Christi.
+        self._add_corpus_christi_day(tr("Festa do Corpo de Deus"))
+
+>>>>>>> develop
         # Eid al-Adha.
         self._add_eid_al_adha_day(tr("Idul Adha"))
 
@@ -422,11 +436,19 @@ class TimorLesteStaticHolidays:
             (APR, 18, presidential_election),
             (APR, 19, presidential_election),
             (APR, 20, presidential_election),
+<<<<<<< HEAD
             # https://web.archive.org/web/20250414070557/https://timor-leste.gov.tl/?p=31107&lang=en
             (AUG, 29, special_national_holidays),
             # https://web.archive.org/web/20250414070537/https://timor-leste.gov.tl/?p=31152&lang=en
             (SEP, 6, special_national_holidays),
             # https://web.archive.org/web/20250414070629/https://timor-leste.gov.tl/?p=31404&lang=en
+=======
+            # https://timor-leste.gov.tl/?p=31107&lang=en
+            (AUG, 29, special_national_holidays),
+            # https://timor-leste.gov.tl/?p=31152&lang=en
+            (SEP, 6, special_national_holidays),
+            # http://timor-leste.gov.tl/?p=31404&lang=en
+>>>>>>> develop
             (OCT, 31, special_national_holidays),
             # https://web.archive.org/web/20250427130438/https://timor-leste.gov.tl/?p=31574&lang=en
             (DEC, 9, special_national_holidays),
@@ -440,6 +462,7 @@ class TimorLesteStaticHolidays:
             (JAN, 23, special_national_holidays),
             # https://web.archive.org/web/20250414070730/https://timor-leste.gov.tl/?p=32191&lang=en
             (FEB, 22, special_national_holidays),
+<<<<<<< HEAD
             # https://web.archive.org/web/20250414070922/https://timor-leste.gov.tl/?p=32561&lang=en
             (APR, 6, special_national_holidays),
             (APR, 10, special_national_holidays),
@@ -484,5 +507,39 @@ class TimorLesteStaticHolidays:
             (JAN, 29, special_national_holidays),
             # https://web.archive.org/web/20250414070934/https://timor-leste.gov.tl/?p=42076&lang=en
             (MAR, 5, special_national_holidays),
+=======
+            # https://timor-leste.gov.tl/?p=32561&lang=en
+            (APR, 6, special_national_holidays),
+            (APR, 10, special_national_holidays),
+            # https://timor-leste.gov.tl/?p=32590&lang=en
+            (APR, 20, special_national_holidays),
+            (APR, 21, special_national_holidays),
+            # https://timor-leste.gov.tl/?p=32617&lang=en
+            (MAY, 19, parliamentary_election),
+            (MAY, 22, parliamentary_election),
+            # https://timor-leste.gov.tl/?p=34792&lang=en
+            (OCT, 27, local_election),
+            # https://timor-leste.gov.tl/?p=35060&lang=en
+            (NOV, 13, local_election),
+            # https://timor-leste.gov.tl/?p=35627&lang=en&
+            (DEC, 26, special_national_holidays),
+        ),
+        2024: (
+            # https://timor-leste.gov.tl/?p=35627&lang=en
+            (JAN, 2, special_national_holidays),
+            # http://timor-leste.gov.tl/?p=36002&lang=en
+            (FEB, 14, special_national_holidays),
+            # https://timor-leste.gov.tl/?p=36859&lang=en
+            (MAR, 28, special_national_holidays),
+            # https://timor-leste.gov.tl/?p=39062&lang=en
+            (AUG, 28, popular_consultation_25th),
+            (AUG, 29, popular_consultation_25th),
+            # https://timor-leste.gov.tl/?p=39068&lang=en
+            (SEP, 9, pope_francis_visit),
+            (SEP, 10, pope_francis_visit),
+            (SEP, 11, pope_francis_visit),
+            # https://timor-leste.gov.tl/?p=40592&lang=en
+            (OCT, 31, special_national_holidays),
+>>>>>>> develop
         ),
     }

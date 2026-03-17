@@ -47,8 +47,13 @@ class Kuwait(HolidayBase, InternationalHolidays, IslamicHolidays):
 
     def _get_weekend(self, dt: date) -> set[int]:
         # The resting days are Friday and Saturday since Sep 1, 2007.
+<<<<<<< HEAD
         # https://web.archive.org/web/20250414072729/https://www.arabnews.com/node/298933
         return {FRI, SAT} if dt >= date(2007, SEP, 1) else {THU, FRI}
+=======
+        # https://www.arabnews.com/node/298933
+        self.weekend = {THU, FRI} if self._year <= 2006 else {FRI, SAT}
+>>>>>>> develop
 
     def _populate_public_holidays(self):
         # New Year's Day.

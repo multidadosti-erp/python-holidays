@@ -34,9 +34,12 @@ class TestAzerbaijan(CommonCountryTests, WorkingDayTests, TestCase):
             "2018-04-11",
             "2019-12-27",
             "2024-02-07",
+<<<<<<< HEAD
             "2025-01-29",
             "2025-03-27",
             "2025-03-28",
+=======
+>>>>>>> develop
             "2072-01-05",
         )
 
@@ -64,9 +67,12 @@ class TestAzerbaijan(CommonCountryTests, WorkingDayTests, TestCase):
             "2024-04-12",
             "2024-11-12",
             "2024-11-13",
+<<<<<<< HEAD
             "2024-12-30",
             "2025-01-03",
             "2025-06-27",
+=======
+>>>>>>> develop
         )
 
     def test_workdays(self):

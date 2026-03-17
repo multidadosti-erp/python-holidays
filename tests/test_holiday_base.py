@@ -1305,6 +1305,7 @@ class TestWorkdays(unittest.TestCase):
         self.assertFalse(self.hb.is_working_day("2024-05-02"))
         self.assertTrue(self.hb.is_working_day("2024-05-03"))
 
+<<<<<<< HEAD
         self.assertFalse(self.hb.is_working_day("2024-10-07"))  # substituted from Oct 12 (SAT).
         self.assertFalse(self.hb.is_working_day("2024-10-12"))  # Columbus Day holiday.
 
@@ -1345,10 +1346,46 @@ class TestWorkdays(unittest.TestCase):
         self.assertEqual(self.hb.get_working_days_count("2024-02-15", "2024-02-22"), 5)
         self.assertEqual(self.hb.get_working_days_count("2024-02-22", "2024-02-29"), 7)
 
+=======
+    def test_get_nth_working_day(self):
+        self.assertEqual(self.hb.get_nth_working_day("2024-01-04", 0), date(2024, 1, 4))
+        self.assertEqual(self.hb.get_nth_working_day("2024-01-04", +1), date(2024, 1, 5))
+        self.assertEqual(self.hb.get_nth_working_day("2024-01-04", +3), date(2024, 1, 9))
+        self.assertEqual(self.hb.get_nth_working_day("2024-01-06", +1), date(2024, 1, 8))
+        self.assertEqual(self.hb.get_nth_working_day("2024-01-26", -10), date(2024, 1, 12))
+        self.assertEqual(self.hb.get_nth_working_day("2024-01-21", -1), date(2024, 1, 19))
+
+        self.assertEqual(self.hb.get_nth_working_day("2024-02-15", +4), date(2024, 2, 22))
+        self.assertEqual(self.hb.get_nth_working_day("2024-02-15", +5), date(2024, 2, 23))
+        self.assertEqual(self.hb.get_nth_working_day("2024-02-15", +6), date(2024, 2, 24))
+        self.assertEqual(self.hb.get_nth_working_day("2024-02-15", +7), date(2024, 2, 26))
+        self.assertEqual(self.hb.get_nth_working_day("2024-02-26", -7), date(2024, 2, 15))
+        self.assertEqual(self.hb.get_nth_working_day("2024-02-25", -7), date(2024, 2, 15))
+
+        self.assertEqual(self.hb.get_nth_working_day("2024-04-29", +1), date(2024, 4, 30))
+        self.assertEqual(self.hb.get_nth_working_day("2024-04-29", +2), date(2024, 5, 3))
+        self.assertEqual(self.hb.get_nth_working_day("2024-04-29", +3), date(2024, 5, 6))
+        self.assertEqual(self.hb.get_nth_working_day("2024-04-29", +4), date(2024, 5, 7))
+        self.assertEqual(self.hb.get_nth_working_day("2024-05-10", -10), date(2024, 4, 24))
+        self.assertEqual(self.hb.get_nth_working_day("2024-05-10", -7), date(2024, 4, 29))
+        self.assertEqual(self.hb.get_nth_working_day("2024-05-10", -5), date(2024, 5, 3))
+
+    def test_get_working_days_count(self):
+        self.assertEqual(self.hb.get_working_days_count("2024-01-03", "2024-01-23"), 15)
+        self.assertEqual(self.hb.get_working_days_count("2024-01-23", "2024-01-03"), 15)
+        self.assertEqual(self.hb.get_working_days_count("2024-01-06", "2024-01-07"), 0)
+        self.assertEqual(self.hb.get_working_days_count("2024-01-16", "2024-01-16"), 1)
+
+        self.assertEqual(self.hb.get_working_days_count("2024-02-08", "2024-02-15"), 6)
+        self.assertEqual(self.hb.get_working_days_count("2024-02-15", "2024-02-22"), 5)
+        self.assertEqual(self.hb.get_working_days_count("2024-02-22", "2024-02-29"), 7)
+
+>>>>>>> develop
         self.assertEqual(self.hb.get_working_days_count("2024-04-29", "2024-05-03"), 3)
         self.assertEqual(self.hb.get_working_days_count("2024-04-29", "2024-05-04"), 3)
         self.assertEqual(self.hb.get_working_days_count("2024-04-29", "2024-05-05"), 3)
         self.assertEqual(self.hb.get_working_days_count("2024-04-29", "2024-05-06"), 4)
+<<<<<<< HEAD
 
 
 class TestClosestHoliday(unittest.TestCase):
@@ -1458,3 +1495,5 @@ class TestClosestHoliday(unittest.TestCase):
         self.assertRaises(
             AttributeError, lambda: HolidayBase().get_closest_holiday(direction="invalid")
         )
+=======
+>>>>>>> develop

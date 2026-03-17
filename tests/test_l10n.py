@@ -103,6 +103,7 @@ class TestLocalization(unittest.TestCase):
                 f"The {entity_code} {language} localization is incomplete ({coverage}% < 100%)",
             )
 
+<<<<<<< HEAD
             for entry in po_file:
                 self.assertEqual(
                     Counter(placeholder_re.findall(entry.msgid)),
@@ -111,3 +112,12 @@ class TestLocalization(unittest.TestCase):
                     f"mismatch in line {entry.linenum}: msgid `{entry.msgid}`, "
                     f"msgstr `{entry.msgstr}`.",
                 )
+=======
+            # Make sure no obsolete entries left.
+            obsolete_entries = po_file.obsolete_entries()
+            self.assertFalse(
+                obsolete_entries,
+                f"The {entity_code} {language} localization contains obsolete entries: "
+                f"{', '.join(oe.msgid for oe in obsolete_entries)}",
+            )
+>>>>>>> develop

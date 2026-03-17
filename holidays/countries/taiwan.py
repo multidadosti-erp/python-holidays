@@ -10,11 +10,17 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
+<<<<<<< HEAD
 from __future__ import annotations
 
 from gettext import gettext as tr
 from typing import TYPE_CHECKING
 
+=======
+from datetime import date
+from gettext import gettext as tr
+
+>>>>>>> develop
 from holidays.calendars.gregorian import (
     JAN,
     FEB,
@@ -33,7 +39,10 @@ from holidays.calendars.gregorian import (
     SAT,
     SUN,
 )
+<<<<<<< HEAD
 from holidays.constants import GOVERNMENT, OPTIONAL, PUBLIC, SCHOOL, WORKDAY
+=======
+>>>>>>> develop
 from holidays.groups import ChineseCalendarHolidays, InternationalHolidays, StaticHolidays
 from holidays.observed_holiday_base import (
     ObservedHolidayBase,
@@ -43,9 +52,12 @@ from holidays.observed_holiday_base import (
     SAT_SUN_TO_NEXT_WORKDAY,
 )
 
+<<<<<<< HEAD
 if TYPE_CHECKING:
     from datetime import date
 
+=======
+>>>>>>> develop
 CHILDRENS_DAY_RULE = ObservedRule({MON: +1, TUE: -1, WED: -1, THU: +1, FRI: -1, SAT: -1, SUN: -2})
 
 
@@ -53,6 +65,7 @@ class Taiwan(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays
     """Taiwan holidays.
 
     References:
+<<<<<<< HEAD
         * <https://zh.wikipedia.org/wiki/中華民國節日與歲時列表>
         * <https://en.wikipedia.org/wiki/Public_holidays_in_Taiwan>
 
@@ -73,6 +86,25 @@ class Taiwan(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays
     Checked With:
         * [DGPA Work Calendar (1998-2025; Chinese)](https://web.archive.org/web/20250307201828/https://www.dgpa.gov.tw/informationlist?uid=30)
         * [DGPA Work Calendar (2001-2025; English)](https://web.archive.org/web/20240606012108/http://www.dgpa.gov.tw/en/informationlist?uid=353)
+=======
+        - https://en.wikipedia.org/wiki/Public_holidays_in_Taiwan
+        - `2025 <https://www.dgpa.gov.tw/en/information?uid=353&pid=11979>`_
+        - `2024 <https://www.dgpa.gov.tw/en/information?uid=353&pid=11402>`_
+        - `2023 <https://www.dgpa.gov.tw/en/information?uid=353&pid=11016>`_
+        - `2022 <https://www.dgpa.gov.tw/en/information?uid=353&pid=10659>`_
+        - `2021 <https://www.dgpa.gov.tw/en/information?uid=353&pid=10181>`_
+        - `2020 <https://www.dgpa.gov.tw/en/information?uid=353&pid=9724>`_
+        - `2019 <https://www.dgpa.gov.tw/en/information?uid=353&pid=8178>`_
+        - `2018 <https://www.dgpa.gov.tw/en/information?uid=353&pid=7730>`_
+        - `2017 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6178>`_
+        - `2016 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6180>`_
+        - `2015 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6182>`_
+        - `2014 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6183>`_
+        - `2013 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6186>`_
+        - `2012 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6187>`_
+        - `2011 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6188>`_
+        - `2010 <https://www.dgpa.gov.tw/en/information?uid=353&pid=6189>`_
+>>>>>>> develop
     """
 
     country = "TW"
@@ -109,7 +141,11 @@ class Taiwan(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays
         return weekend
 
     def _populate_observed(
+<<<<<<< HEAD
         self, dts: set[date], rule: ObservedRule | None = None, since: int = 2015
+=======
+        self, dts: set[date], rule: ObservedRule = None, since: int = 2015
+>>>>>>> develop
     ) -> None:
         """
         Taiwan's General Observance Rule first started in 2015 as per
@@ -122,7 +158,10 @@ class Taiwan(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays
         if self._year < since:
             return None
 
+<<<<<<< HEAD
         # Children's Day.
+=======
+>>>>>>> develop
         childrens_day = self.tr("兒童節")
         for dt in sorted(dts):
             names = self.get_list(dt)
@@ -130,8 +169,13 @@ class Taiwan(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays
                 self._add_observed(
                     dt,
                     name,
+<<<<<<< HEAD
                     # Children's Day falls on the same day as Tomb-Sweeping Day.
                     rule=CHILDRENS_DAY_RULE if name == childrens_day and len(names) > 1 else rule,
+=======
+                    # Children's Day falls on the same day as Tomb Sweeping Day.
+                    CHILDRENS_DAY_RULE if name == childrens_day and len(names) > 1 else rule,
+>>>>>>> develop
                 )
 
     def _populate_public_holidays(self):

@@ -4,15 +4,51 @@ requires = [ "setuptools>=61", "wheel" ]
 
 [project]
 name = "holidays"
+<<<<<<< HEAD
 description = "Open World Holidays Framework"
 readme = "README.md"
 keywords = [ "calendar", "holidays", "l10n", "vacation", "worldwide" ]
 license = "MIT"
 license-files = [ "CONTRIBUTORS", "LICENSE" ]
+=======
+description = "World Holidays Framework"
+license = { "text" = "MIT" }
+readme = "README.rst"
+requires-python = ">=3.8"
+dynamic = ["version"]
+
+authors = [{ name = "Vacanza Team" }]
+dependencies = ["python-dateutil"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: File Formats :: JSON",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Topic :: Office/Business :: Financial :: Investment",
+  "Topic :: Office/Business :: Scheduling",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["holidays", "calendar", "l10n", "worldwide", "vacation"]
+>>>>>>> develop
 maintainers = [
   { name = "Arkadii Yakovets" },
   { name = "Panpakorn Siripanich" },
   { name = "Serhii Murza" },
+<<<<<<< HEAD
 ]
 authors = [ { name = "Vacanza Team" } ]
 requires-python = ">=3.10"
@@ -75,6 +111,14 @@ tests = [
 [tool.setuptools]
 dynamic.version = { file = "VERSION" }
 packages.find.include = [ "holidays*" ]
+=======
+]
+
+[project.urls]
+Documentation = "https://holidays.readthedocs.io/en/latest/"
+Repository = "https://github.com/vacanza/holidays/"
+Changelog = "https://github.com/vacanza/holidays/releases/"
+>>>>>>> develop
 
 [tool.ruff]
 target-version = "py310"
@@ -111,10 +155,39 @@ profile = "black"
 skip = [ "docs" ]
 
 [tool.mypy]
+<<<<<<< HEAD
 overrides = [
   { module = "holidays.countries.*", disable_error_code = [ "override" ] },
   { module = "holidays.financial.*", disable_error_code = [ "override" ] },
   { module = "holidays.groups.*", disable_error_code = [ "attr-defined" ] },
+=======
+strict = false
+
+[tool.ruff]
+extend-exclude = ["docs"]
+line-length = 99
+
+[tool.ruff.lint]
+select = ["E4", "E5", "E7", "E9", "F", "N", "PLE", "T", "W"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"scripts/generate_release_notes.py" = ["T201"]
+
+[tool.ruff.lint.flake8-errmsg]
+max-string-length = 99
+
+[[tool.mypy.overrides]]
+module = "holidays.countries.*"
+disable_error_code = ["override"]
+
+[[tool.mypy.overrides]]
+module = "holidays.groups.*"
+disable_error_code = "attr-defined"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  "ignore::DeprecationWarning:holidays.deprecations.v1_incompatibility",
+>>>>>>> develop
 ]
 
 [tool.pytest]
@@ -126,9 +199,17 @@ ini_options.filterwarnings = [
 ]
 ini_options.testpaths = [ "tests" ]
 
+<<<<<<< HEAD
 [tool.coverage]
 run.branch = true
 run.omit = [ "scripts/*", "tests/*" ]
 report.exclude_lines = [
   "^if TYPE_CHECKING:",
 ]
+=======
+[tool.setuptools.dynamic]
+version = { attr = "holidays.version.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["holidays*"]
+>>>>>>> develop

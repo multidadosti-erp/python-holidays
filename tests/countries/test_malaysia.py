@@ -1140,7 +1140,11 @@ class TestMalaysia(CommonCountryTests, TestCase):
             ("2023-11-12", "Hari Deepavali"),
             ("2023-11-13", "Cuti Hari Deepavali"),
             ("2023-12-11", "Hari Keputeraan Sultan Selangor"),
+<<<<<<< HEAD
             ("2023-12-24", "Krismas (Eve)"),
+=======
+            ("2023-12-24", "Christmas Eve"),
+>>>>>>> develop
             ("2023-12-25", "Hari Krismas"),
         )
 

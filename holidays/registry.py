@@ -13,7 +13,11 @@
 import importlib
 from collections.abc import Iterable
 from threading import RLock
+<<<<<<< HEAD
 from typing import Any
+=======
+from typing import Any, Optional, Union
+>>>>>>> develop
 
 from holidays.holiday_base import HolidayBase
 
@@ -70,9 +74,13 @@ COUNTRIES: RegistryDict = {
     "christmas_island": ("ChristmasIsland", "CX", "CXR"),
     "cocos_islands": ("CocosIslands", "CC", "CCK"),
     "colombia": ("Colombia", "CO", "COL"),
+<<<<<<< HEAD
     "comoros": ("Comoros", "KM", "COM"),
     "congo": ("Congo", "CG", "COG"),
     "cook_islands": ("CookIslands", "CK", "COK"),
+=======
+    "congo": ("Congo", "CG", "COG"),
+>>>>>>> develop
     "costa_rica": ("CostaRica", "CR", "CRI"),
     "croatia": ("Croatia", "HR", "HRV"),
     "cuba": ("Cuba", "CU", "CUB"),
@@ -204,6 +212,7 @@ COUNTRIES: RegistryDict = {
     "reunion": ("Reunion", "RE", "REU", "HolidaysRE"),
     "romania": ("Romania", "RO", "ROU"),
     "russia": ("Russia", "RU", "RUS"),
+<<<<<<< HEAD
     "rwanda": ("Rwanda", "RW", "RWA"),
     "saint_barthelemy": ("SaintBarthelemy", "BL", "BLM", "HolidaysBL"),
     "saint_helena_ascension_and_tristan_da_cunha": (
@@ -216,6 +225,9 @@ COUNTRIES: RegistryDict = {
     "saint_martin": ("SaintMartin", "MF", "MAF", "HolidaysMF"),
     "saint_pierre_and_miquelon": ("SaintPierreAndMiquelon", "PM", "SPM", "HolidaysPM"),
     "saint_vincent_and_the_grenadines": ("SaintVincentAndTheGrenadines", "VC", "VCT"),
+=======
+    "saint_kitts_and_nevis": ("SaintKittsAndNevis", "KN", "KNA"),
+>>>>>>> develop
     "samoa": ("Samoa", "WS", "WSM"),
     "san_marino": ("SanMarino", "SM", "SMR"),
     "sao_tome_and_principe": ("SaoTomeAndPrincipe", "ST", "STP"),
@@ -286,6 +298,7 @@ COUNTRIES: RegistryDict = {
 }
 
 FINANCIAL: RegistryDict = {
+<<<<<<< HEAD
     "bombay_stock_exchange": ("BombayStockExchange", "XBOM", "BSE"),
     "brasil_bolsa_balcao": ("BrasilBolsaBalcao", "BVMF", "B3"),
     "european_central_bank": ("EuropeanCentralBank", "XECB", "ECB", "TAR"),
@@ -294,6 +307,12 @@ FINANCIAL: RegistryDict = {
     "japan_exchange": ("JapanExchange", "XJPX", "JPX", "TSE", "OSE"),
     "national_stock_exchange_of_india": ("NationalStockExchangeOfIndia", "XNSE", "NSE"),
     "ny_stock_exchange": ("NewYorkStockExchange", "XNYS", "NYSE"),
+=======
+    "european_central_bank": ("EuropeanCentralBank", "ECB", "TAR"),
+    "ice_futures_europe": ("ICEFuturesEurope", "IFEU"),
+    "ny_stock_exchange": ("NewYorkStockExchange", "NYSE", "XNYS"),
+    "brasil_bolsa_balcao": ("BrasilBolsaBalcao", "BVMF", "B3"),
+>>>>>>> develop
 }
 
 # A re-entrant lock. Once a thread has acquired a re-entrant lock,

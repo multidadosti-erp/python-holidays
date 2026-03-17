@@ -13,7 +13,11 @@
 from gettext import gettext as tr
 
 from holidays.calendars import _CustomIslamicHolidays
+<<<<<<< HEAD
 from holidays.calendars.gregorian import JAN, MAR, APR, MAY, JUL, AUG, SEP, OCT, DEC
+=======
+from holidays.calendars.gregorian import JAN, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
+>>>>>>> develop
 from holidays.calendars.julian import JULIAN_CALENDAR
 from holidays.groups import (
     ChristianHolidays,
@@ -27,6 +31,7 @@ from holidays.observed_holiday_base import ObservedHolidayBase, SAT_SUN_TO_NEXT_
 class Kazakhstan(
     ObservedHolidayBase, ChristianHolidays, InternationalHolidays, IslamicHolidays, StaticHolidays
 ):
+<<<<<<< HEAD
     """Kazakhstan holidays.
 
     References:
@@ -37,6 +42,55 @@ class Kazakhstan(
 
     Islamic holidays:
         * [2025](https://web.archive.org/web/20250429084936/https://qazinform.com/news/first-day-of-ramadan-to-fall-on-march-1-2025-ca393f)
+=======
+    """
+    References:
+        - https://en.wikipedia.org/wiki/Public_holidays_in_Kazakhstan
+        - https://egov.kz/cms/en/articles/holidays-calend
+        - https://adilet.zan.kz/kaz/docs/Z010000267%5F/history
+        - https://adilet.zan.kz/kaz/docs/Z990000493%5F#z63
+
+    Substituted holidays:
+        - `2000 <https://adilet.zan.kz/kaz/docs/P000000642%5F>`_
+        - 2001: `<https://adilet.zan.kz/kaz/docs/P010000282%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P010000515%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P010001604%5F>`_
+        - `2002 <https://adilet.zan.kz/kaz/docs/P020000466%5F>`_
+        - 2003: `<https://adilet.zan.kz/kaz/docs/P030000338%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P030001166%5F>`_
+        - 2005: `<https://adilet.zan.kz/kaz/docs/P050000142%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P050000751%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P050000949%5F>`_
+        - 2006: `<https://adilet.zan.kz/kaz/docs/P050001309%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P060000277%5F>`_
+        - 2007: `<https://adilet.zan.kz/kaz/docs/P070000148%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P070000165%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P070000713%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P070000925%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P070001113%5F>`_
+        - `2008 <https://adilet.zan.kz/kaz/docs/P080000364%5F>`_
+        - `2009 <https://adilet.zan.kz/kaz/docs/P090001936%5F>`_
+        - 2010: `<https://adilet.zan.kz/kaz/docs/P090002216%5F>`_,
+                `<https://adilet.zan.kz/kaz/docs/P100000637%5F>`_
+        - 2011: `<https://adilet.zan.kz/kaz/docs/P1100000167>`_,
+                `<https://adilet.zan.kz/kaz/docs/P1100000948>`_
+        - 2012: `<https://adilet.zan.kz/kaz/docs/P1200000268>`_,
+                `<https://adilet.zan.kz/kaz/docs/P1200000458>`_,
+                `<https://adilet.zan.kz/kaz/docs/P1200001538>`_
+        - 2013: `<https://adilet.zan.kz/kaz/docs/P1300000345>`_,
+                `<https://adilet.zan.kz/kaz/docs/P1300001068>`_,
+                `<https://adilet.zan.kz/kaz/docs/P1300001322>`_
+        - `2014 <https://adilet.zan.kz/kaz/docs/P1400000365>`_
+        - `2016 <https://adilet.zan.kz/kaz/docs/P1600000067>`_
+        - `2017 <https://adilet.zan.kz/kaz/docs/P1700000005>`_
+        - `2018 <https://adilet.zan.kz/kaz/docs/P1700000864>`_
+        - `2019 <https://adilet.zan.kz/kaz/docs/P1800000888>`_
+        - `2020 <https://adilet.zan.kz/kaz/docs/P1900000820>`_
+        - `2021 <https://adilet.zan.kz/kaz/docs/P2000000930>`_
+        - `2022 <https://adilet.zan.kz/kaz/docs/P2200000796>`_
+        - `2023 <https://adilet.zan.kz/kaz/docs/P2300000326>`_
+        - `2024 <https://adilet.zan.kz/kaz/docs/G24G0000109>`_
+>>>>>>> develop
     """
 
     country = "KZ"
@@ -48,8 +102,11 @@ class Kazakhstan(
     # %s (observed, estimated).
     observed_estimated_label = tr("%s (қайта белгіленген демалыс, бағаланған)")
     supported_languages = ("en_US", "kk", "uk")
+<<<<<<< HEAD
     # Kazakhstan declared its sovereignty on 25 October 1990.
     start_year = 1991
+=======
+>>>>>>> develop
 
     def __init__(self, *args, islamic_show_estimated: bool = True, **kwargs):
         """
@@ -60,9 +117,13 @@ class Kazakhstan(
         """
         ChristianHolidays.__init__(self, JULIAN_CALENDAR)
         InternationalHolidays.__init__(self)
+<<<<<<< HEAD
         IslamicHolidays.__init__(
             self, cls=KazakhstanIslamicHolidays, show_estimated=islamic_show_estimated
         )
+=======
+        IslamicHolidays.__init__(self, KazakhstanIslamicHolidays)
+>>>>>>> develop
         StaticHolidays.__init__(self, KazakhstanStaticHolidays)
         kwargs.setdefault("observed_rule", SAT_SUN_TO_NEXT_WORKDAY)
         kwargs.setdefault("observed_since", 2002)
@@ -84,7 +145,11 @@ class Kazakhstan(
         dts_observed.add(self._add_womens_day(tr("Халықаралық әйелдер күні")))
 
         if self._year >= 2002:
+<<<<<<< HEAD
             # Nowruz Holiday.
+=======
+            # Nowruz holiday.
+>>>>>>> develop
             name = tr("Наурыз мейрамы")
             dts_observed.add(self._add_holiday_mar_22(name))
             if self._year >= 2010:
@@ -99,7 +164,13 @@ class Kazakhstan(
             dts_observed.add(self._add_holiday_may_7(tr("Отан Қорғаушы күні")))
 
         # Victory Day.
+<<<<<<< HEAD
         dts_observed.add(self._add_world_war_two_victory_day(tr("Жеңіс күні"), is_western=False))
+=======
+        dt = self._add_world_war_two_victory_day(tr("Жеңіс күні"), is_western=False)
+        if self._year != 2020:
+            dts_observed.add(dt)
+>>>>>>> develop
 
         if self._year >= 2009:
             # Capital Day.
@@ -144,15 +215,39 @@ class KAZ(Kazakhstan):
 
 
 class KazakhstanIslamicHolidays(_CustomIslamicHolidays):
+<<<<<<< HEAD
     EID_AL_ADHA_DATES_CONFIRMED_YEARS = (2006, 2025)
     EID_AL_ADHA_DATES = {
         2006: (JAN, 10),
         2015: (SEP, 24),
         2016: (SEP, 12),
+=======
+    EID_AL_ADHA_DATES = {
+        2006: (JAN, 10),
+        2007: (DEC, 20),
+        2008: (DEC, 8),
+        2009: (NOV, 27),
+        2010: (NOV, 16),
+        2011: (NOV, 6),
+        2012: (OCT, 26),
+        2013: (OCT, 15),
+        2014: (OCT, 4),
+        2015: (SEP, 24),
+        2016: (SEP, 12),
+        2017: (SEP, 1),
+        2018: (AUG, 21),
+        2019: (AUG, 11),
+        2020: (JUL, 31),
+        2021: (JUL, 20),
+        2022: (JUL, 9),
+        2023: (JUN, 28),
+        2024: (JUN, 16),
+>>>>>>> develop
     }
 
 
 class KazakhstanStaticHolidays:
+<<<<<<< HEAD
     """Kazakhstan special holidays.
 
     References:
@@ -207,6 +302,8 @@ class KazakhstanStaticHolidays:
         * [2025](https://web.archive.org/web/20250428203311/https://adilet.zan.kz/kaz/docs/G24G0000436)
     """
 
+=======
+>>>>>>> develop
     # Substituted date format.
     substituted_date_format = tr("%d.%m.%Y")
     # Day off (substituted from %s).
@@ -292,5 +389,12 @@ class KazakhstanStaticHolidays:
         ),
         2023: (JUL, 7, JUL, 1),
         2024: (MAY, 8, MAY, 4),
+<<<<<<< HEAD
         2025: (JAN, 3, JAN, 5),
+=======
+    }
+
+    special_public_holidays_observed = {
+        2020: (MAY, 8, MAY, 11),
+>>>>>>> develop
     }

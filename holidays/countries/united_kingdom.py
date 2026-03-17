@@ -10,7 +10,11 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
+<<<<<<< HEAD
 from gettext import gettext as tr
+=======
+from typing import Union
+>>>>>>> develop
 
 from holidays.calendars.gregorian import APR, MAY, JUN, JUL, SEP, DEC
 from holidays.groups import ChristianHolidays, InternationalHolidays, StaticHolidays
@@ -38,10 +42,15 @@ class UnitedKingdom(ObservedHolidayBase, ChristianHolidays, InternationalHoliday
     """
 
     country = "GB"
+<<<<<<< HEAD
     default_language = "en_GB"
     # %s (observed).
     observed_label = tr("%s (observed)")
     subdivisions: tuple[()] | tuple[str, ...] = (
+=======
+    observed_label = "%s (observed)"
+    subdivisions: Union[tuple[()], tuple[str, ...]] = (
+>>>>>>> develop
         "ENG",  # England
         "NIR",  # Northern Ireland
         "SCT",  # Scotland

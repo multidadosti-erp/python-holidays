@@ -14,11 +14,18 @@
 # This file is distributed under the same license as the Holidays package.
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.66\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2023-11-24 00:14+0100\n"
 "PO-Revision-Date: 2025-01-27 16:42+0200\n"
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
+=======
+"Project-Id-Version: Holidays 0.38\n"
+"POT-Creation-Date: 2023-11-24 00:14+0100\n"
+"PO-Revision-Date: 2023-11-24 00:17+0100\n"
+"Last-Translator: Jose Riha <jose1711@gmail.com>\n"
+>>>>>>> develop
 "Language-Team: Holidays Localization Team\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"

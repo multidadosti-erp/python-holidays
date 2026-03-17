@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -14,16 +18,24 @@
 #
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "Project-Id-Version: Holidays 0.88\n"
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
 "POT-Creation-Date: 2024-10-01 14:12+0700\n"
 "PO-Revision-Date: 2025-11-25 23:05+0200\n"
 "Last-Translator: ~Jhellico <jhellico@gmail.com>\n"
+=======
+"Project-Id-Version: Holidays 0.58\n"
+"POT-Creation-Date: 2024-10-01 14:12+0700\n"
+"PO-Revision-Date: 2024-10-01 14:12+0700\n"
+"Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
+>>>>>>> develop
 "Language-Team: Holidays Localization Team\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+<<<<<<< HEAD
 "Generated-By: Lingva 5.0.3\n"
 "X-Generator: Poedit 3.5\n"
 "X-Source-Language: sv\n"
@@ -32,6 +44,11 @@ msgstr ""
 #, c-format
 msgid "%s (från kl. 14.00)"
 msgstr "%s (ตั้งแต่ 14:00 น.)"
+=======
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Lingva 5.0.3\n"
+"X-Generator: Poedit 3.5\n"
+>>>>>>> develop
 
 #. New Year's Day.
 msgid "Nyårsdagen"
@@ -42,7 +59,11 @@ msgid "Trettondedag jul"
 msgstr "วันสมโภชพระคริสต์แสดงองค์"
 
 #. Feast of the Annunciation.
+<<<<<<< HEAD
 msgid "Marie bebådelsedag"
+=======
+msgid "Jungfru Marie bebådelsedag"
+>>>>>>> develop
 msgstr "วันสมโภชแม่พระรับสาร"
 
 #. Good Friday.
@@ -65,8 +86,13 @@ msgstr "วันเมย์เดย์ (วันแรงงาน)"
 msgid "Kristi himmelsfärdsdag"
 msgstr "วันสมโภชพระเยซูเจ้าเสด็จขึ้นสวรรค์"
 
+<<<<<<< HEAD
 #. National Day.
 msgid "Nationaldagen"
+=======
+#. National Day of Sweden.
+msgid "Sveriges nationaldag"
+>>>>>>> develop
 msgstr "วันชาติสวีเดน"
 
 #. Whit Sunday.
@@ -77,6 +103,13 @@ msgstr "วันสมโภชพระจิตเจ้า"
 msgid "Annandag pingst"
 msgstr "วันจันทร์หลังวันสมโภชพระจิตเจ้า"
 
+<<<<<<< HEAD
+=======
+#. Midsummer Eve.
+msgid "Midsommarafton"
+msgstr "วันก่อนวันกลางฤดูร้อน"
+
+>>>>>>> develop
 #. Midsummer Day.
 msgid "Midsommardagen"
 msgstr "วันกลางฤดูร้อน"
@@ -85,6 +118,13 @@ msgstr "วันกลางฤดูร้อน"
 msgid "Alla helgons dag"
 msgstr "วันสมโภชนักบุญทั้งหลาย"
 
+<<<<<<< HEAD
+=======
+#. Christmas Eve.
+msgid "Julafton"
+msgstr "วันคริสต์มาสอีฟ"
+
+>>>>>>> develop
 #. Christmas Day.
 msgid "Juldagen"
 msgstr "วันคริสต์มาส"
@@ -93,6 +133,7 @@ msgstr "วันคริสต์มาส"
 msgid "Annandag jul"
 msgstr "วันคริสต์มาสวันที่สอง"
 
+<<<<<<< HEAD
 #. Sunday.
 msgid "Söndag"
 msgstr "วันอาทิตย์"
@@ -105,10 +146,13 @@ msgstr "วันก่อนวันกลางฤดูร้อน"
 msgid "Julafton"
 msgstr "วันคริสต์มาสอีฟ"
 
+=======
+>>>>>>> develop
 #. New Year's Eve.
 msgid "Nyårsafton"
 msgstr "วันสิ้นปี"
 
+<<<<<<< HEAD
 #. Twelfth Night.
 msgid "Trettondagsafton"
 msgstr "วันก่อนวันสมโภชพระคริสต์แสดงองค์"
@@ -156,3 +200,8 @@ msgstr "วันหยุดพิเศษ"
 #. Whitsun Eve.
 msgid "Pingstafton"
 msgstr "วันก่อนวันสมโภชพระจิตเจ้า"
+=======
+#. Sunday.
+msgid "Söndag"
+msgstr "วันอาทิตย์"
+>>>>>>> develop

@@ -71,7 +71,10 @@ class TestSouthKorea(CommonCountryTests, TestCase):
             "2020-08-17",
             "2023-10-02",
             "2024-10-01",
+<<<<<<< HEAD
             "2025-01-27",
+=======
+>>>>>>> develop
         )
         # Pre-2014 Observance sans "1960-12-26"
         self.assertNoNonObservedHoliday(

@@ -4,7 +4,11 @@
 #  specific sets of holidays on the fly. It aims to make determining whether a
 #  specific date is a holiday as fast and flexible as possible.
 #
+<<<<<<< HEAD
 #  Authors: Vacanza Team and individual contributors (see CONTRIBUTORS file)
+=======
+#  Authors: Vacanza Team and individual contributors (see AUTHORS file)
+>>>>>>> develop
 #           dr-prodigy <dr.prodigy.github@gmail.com> (c) 2017-2023
 #           ryanss <ryanssdev@icloud.com> (c) 2014-2017
 #  Website: https://github.com/vacanza/holidays
@@ -12,18 +16,36 @@
 
 from unittest import TestCase
 
+<<<<<<< HEAD
 from holidays.financial.brasil_bolsa_balcao import BrasilBolsaBalcao
+=======
+from holidays.financial.brasil_bolsa_balcao import BrasilBolsaBalcao, BVMF, B3
+>>>>>>> develop
 from tests.common import CommonFinancialTests
 
 
 class TestBrasilBolsaBalcao(CommonFinancialTests, TestCase):
     @classmethod
     def setUpClass(cls):
+<<<<<<< HEAD
         super().setUpClass(BrasilBolsaBalcao)
 
     def test_universal_fraternization_day(self):
         name = "Confraternização Universal"
         self.assertHolidayName(name, (f"{year}-01-01" for year in self.full_range))
+=======
+        super().setUpClass(BrasilBolsaBalcao, years=range(1890, 2100))
+
+    def test_market_aliases(self):
+        self.assertAliases(BrasilBolsaBalcao, BVMF, B3)
+
+    def test_no_holidays(self):
+        self.assertNoHolidays(BrasilBolsaBalcao(years=1889))
+
+    def test_universal_fraternization_day(self):
+        name = "Confraternização Universal"
+        self.assertHolidayName(name, (f"{year}-01-01" for year in range(1890, 2100)))
+>>>>>>> develop
 
     def test_carnival(self):
         name = "Carnaval"
@@ -40,10 +62,18 @@ class TestBrasilBolsaBalcao(CommonFinancialTests, TestCase):
             "2024-02-12",
             "2024-02-13",
         )
+<<<<<<< HEAD
         self.assertHolidayNameCount(name, 2, self.full_range)
 
     def test_holy_thursday(self):
         name = "Quinta-feira Santa"
+=======
+        self.assertHolidayName(name, range(1890, 2100))
+
+    def test_holy_thursday(self):
+        name = "Quinta-feira Santa"
+
+>>>>>>> develop
         self.assertHolidayName(
             name,
             "1995-04-13",
@@ -52,8 +82,13 @@ class TestBrasilBolsaBalcao(CommonFinancialTests, TestCase):
             "1998-04-09",
             "1999-04-01",
         )
+<<<<<<< HEAD
         self.assertHolidayName(name, range(self.start_year, 2000))
         self.assertNoHolidayName(name, range(2000, self.end_year))
+=======
+        self.assertHolidayName(name, range(1890, 2000))
+        self.assertNoHolidayName(name, range(2000, 2100))
+>>>>>>> develop
 
     def test_good_friday(self):
         name = "Sexta-feira Santa"
@@ -65,6 +100,7 @@ class TestBrasilBolsaBalcao(CommonFinancialTests, TestCase):
             "2023-04-07",
             "2024-03-29",
         )
+<<<<<<< HEAD
         self.assertHolidayName(name, self.full_range)
 
     def test_tiradentes_day(self):
@@ -79,6 +115,21 @@ class TestBrasilBolsaBalcao(CommonFinancialTests, TestCase):
         name = "Dia do Trabalhador"
         self.assertHolidayName(name, (f"{year}-05-01" for year in range(1925, self.end_year)))
         self.assertNoHolidayName(name, range(self.start_year, 1925))
+=======
+        self.assertHolidayName(name, range(1890, 2100))
+
+    def test_tiradentes_day(self):
+        name = "Tiradentes"
+        self.assertHolidayName(
+            name, (f"{year}-04-21" for year in set(range(1890, 2100)).difference({1931, 1932}))
+        )
+        self.assertNoHolidayName(name, {1931, 1932})
+
+    def test_workers_day(self):
+        name = "Dia do Trabalhador"
+        self.assertHolidayName(name, (f"{year}-05-01" for year in range(1925, 2100)))
+        self.assertNoHolidayName(name, range(1890, 1925))
+>>>>>>> develop
 
     def test_corpus_christi_day(self):
         name = "Corpus Christi"
@@ -90,6 +141,7 @@ class TestBrasilBolsaBalcao(CommonFinancialTests, TestCase):
             "2023-06-08",
             "2024-05-30",
         )
+<<<<<<< HEAD
         self.assertHolidayName(name, self.full_range)
 
     def test_independence_day(self):
@@ -118,6 +170,36 @@ class TestBrasilBolsaBalcao(CommonFinancialTests, TestCase):
         name = "Natal"
         self.assertHolidayName(name, (f"{year}-12-25" for year in range(1922, self.end_year)))
         self.assertNoHolidayName(name, range(self.start_year, 1922))
+=======
+        self.assertHolidayName(name, range(1890, 2100))
+
+    def test_independence_day(self):
+        name = "Independência do Brasil"
+        self.assertHolidayName(name, (f"{year}-09-07" for year in range(1890, 2100)))
+
+    def test_our_lady_of_aparecida(self):
+        name = "Nossa Senhora Aparecida"
+        self.assertHolidayName(name, (f"{year}-10-12" for year in range(1980, 2100)))
+        self.assertNoHolidayName(name, range(1890, 1980))
+
+    def test_all_souls_day(self):
+        name = "Finados"
+        self.assertHolidayName(name, (f"{year}-11-02" for year in range(1890, 2100)))
+
+    def test_republic_proclamation_day(self):
+        name = "Proclamação da República"
+        self.assertHolidayName(name, (f"{year}-11-15" for year in range(1890, 2100)))
+
+    def test_national_day_of_zumbi_and_black_awareness(self):
+        name = "Dia Nacional de Zumbi e da Consciência Negra"
+        self.assertHolidayName(name, (f"{year}-11-20" for year in range(2024, 2100)))
+        self.assertNoHolidayName(name, range(1890, 2024))
+
+    def test_christmas_day(self):
+        name = "Natal"
+        self.assertHolidayName(name, (f"{year}-12-25" for year in range(1922, 2100)))
+        self.assertNoHolidayName(name, range(1890, 1922))
+>>>>>>> develop
 
     def test_2022(self):
         self.assertHolidays(

@@ -10,6 +10,7 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
+<<<<<<< HEAD
 from gettext import gettext as tr
 
 from holidays.calendars.gregorian import (
@@ -37,6 +38,13 @@ from holidays.groups import (
     InternationalHolidays,
     StaticHolidays,
 )
+=======
+from typing import Union
+
+from holidays.calendars.gregorian import MON, TUE, WED, THU, FRI, SAT, SUN
+from holidays.constants import PUBLIC, UNOFFICIAL
+from holidays.groups import ChristianHolidays, InternationalHolidays
+>>>>>>> develop
 from holidays.observed_holiday_base import (
     ObservedHolidayBase,
     ObservedRule,
@@ -51,6 +59,10 @@ from holidays.observed_holiday_base import (
 GA_IN_WASHINGTON_BIRTHDAY = ObservedRule(
     {MON: +1, TUE: -1, WED: -1, THU: +1, FRI: -1, SAT: -2, SUN: -2}
 )
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
 
 
 class UnitedStates(
@@ -62,6 +74,7 @@ class UnitedStates(
 ):
     """United States of America (the) holidays.
 
+<<<<<<< HEAD
     References:
         * <https://en.wikipedia.org/wiki/Public_holidays_in_the_United_States>
         * <https://en.wikipedia.org/wiki/Uniform_Monday_Holiday_Act>
@@ -160,6 +173,32 @@ class UnitedStates(
     # Independence Declared on July 4th, 1776.
     start_year = 1777
     subdivisions: tuple[()] | tuple[str, ...] = (
+=======
+    Columbus Day / Indigenous Peoples' Day history:
+    - https://www.pewresearch.org/short-reads/2023/10/05/working-on-columbus-day-or-indigenous-peoples-day-it-depends-on-where-your-job-is/
+    - https://www.officeholidays.com/holidays/usa/columbus-day-state-guide
+    - https://en.wikipedia.org/wiki/Indigenous_Peoples%27_Day_(United_States)
+    - https://www.sos.ri.gov/divisions/civics-and-education/reference-desk/ri-state-holidays
+    - https://web.archive.org/web/20080831103521/http://www.dpa.ca.gov/personnel-policies/holidays.htm
+
+    Frances Xavier Cabrini Day:
+        - https://leg.colorado.gov/sites/default/files/2020a_1031_signed.pdf
+
+    Washington's Birthday (GA):
+        - https://www.gasupreme.us/court-information/holidays-2/
+
+    Washington's Birthday (IN):
+        - https://www.in.gov/spd/benefits/state-holidays/
+
+    American Samoa holidays:
+        - https://asbar.org/code-annotated/1-0501-public-holidays/
+    """
+
+    country = "US"
+    supported_categories = (PUBLIC, UNOFFICIAL)
+    observed_label = "%s (observed)"
+    subdivisions: Union[tuple[()], tuple[str, ...]] = (
+>>>>>>> develop
         "AK",  # Alaska.
         "AL",  # Alabama.
         "AR",  # Arkansas.
@@ -425,6 +464,7 @@ class UnitedStates(
         )
 
     def _populate_subdiv_holidays(self):
+<<<<<<< HEAD
         if PUBLIC in self.categories:
             if self._year >= 1986 and self.subdiv not in {
                 "AK",
@@ -524,10 +564,63 @@ class UnitedStates(
                     self._add_holiday_4th_mon_of_oct(name)
                 else:
                     self._add_observed(self._add_remembrance_day(name))
+=======
+        if PUBLIC not in self.categories:
+            return None
+
+        # Martin Luther King Jr. Day
+        if self._year >= 1986 and self.subdiv not in {"AL", "AR", "AZ", "GA", "ID", "MS", "NH"}:
+            self._add_holiday_3rd_mon_of_jan("Martin Luther King Jr. Day")
+
+        # Washington's Birthday
+        if self._year >= 1879 and self.subdiv not in {
+            "AL",
+            "AR",
+            "DE",
+            "FL",
+            "GA",
+            "IN",
+            "NM",
+            "PR",
+            "VI",
+        }:
+            name = "Washington's Birthday"
+            if self._year >= 1971:
+                self._add_holiday_3rd_mon_of_feb(name)
+            else:
+                self._add_holiday_feb_22(name)
+
+        # Columbus Day
+        if self._year >= 1937 and self.subdiv in {
+            "AS",
+            "AZ",
+            "CT",
+            "GA",
+            "ID",
+            "IL",
+            "IN",
+            "MA",
+            "MD",
+            "MO",
+            "MT",
+            "NJ",
+            "NY",
+            "OH",
+            "PA",
+            "UT",
+            "WV",
+        }:
+            name = "Columbus Day"
+            if self._year >= 1971:
+                self._add_holiday_2nd_mon_of_oct(name)
+            else:
+                self._add_columbus_day(name)
+>>>>>>> develop
 
         super()._populate_subdiv_holidays()
 
     def _populate_subdiv_ak_public_holidays(self):
+<<<<<<< HEAD
         # Proclamation 3269 from Jan 3, 1959.
         if self._year <= 1958:
             return None
@@ -539,6 +632,16 @@ class UnitedStates(
         else:
             # Lincoln's Birthday.
             self._add_observed(self._add_holiday_feb_12(tr("Lincoln's Birthday")))
+=======
+        # Seward's Day
+        # No observance in 1921: https://chroniclingamerica.loc.gov/lccn/sn86072239/1922-03-29/ed-1/seq-8/
+        if self._year >= 1918 and self._year != 1921:
+            name = "Seward's Day"
+            if self._year >= 1955:
+                self._add_holiday_last_mon_of_mar(name)
+            else:
+                self._add_holiday_mar_30(name)
+>>>>>>> develop
 
         if self._year >= 1971:
             # Chapter 109 SLA 1989.
@@ -550,8 +653,15 @@ class UnitedStates(
                 else tr("Washington's Birthday")
             )
 
+<<<<<<< HEAD
         # Seward's Day.
         self._add_holiday_last_mon_of_mar(tr("Seward's Day"))
+=======
+        # Alaska Day
+        # https://web.archive.org/web/20120502232826/http://www.alaskadispatch.com/article/happy-alaska-day-great-land
+        if self._year >= 1917:
+            self._add_observed(self._add_holiday_oct_18("Alaska Day"))
+>>>>>>> develop
 
         if self._year >= 1971:
             self._add_holiday_2nd_mon_of_oct(
@@ -610,6 +720,7 @@ class UnitedStates(
             )
 
     def _populate_subdiv_as_public_holidays(self):
+<<<<<<< HEAD
         if self._year >= 1901:
             # American Samoa Flag Day.
             self._add_observed(self._add_holiday_apr_17(tr("American Samoa Flag Day")))
@@ -620,6 +731,18 @@ class UnitedStates(
 
         # White Sunday.
         self._add_holiday_2nd_sun_of_oct(tr("White Sunday"))
+=======
+        # American Samoa Flag Day
+        if self._year >= 1901:
+            self._add_observed(self._add_holiday_apr_17("American Samoa Flag Day"))
+
+        # Manu'a Islands Cession Day
+        if self._year >= 1983:
+            self._add_observed(self._add_holiday_jul_16("Manu'a Islands Cession Day"))
+
+        # White Sunday
+        self._add_holiday_2nd_sun_of_oct("White Sunday")
+>>>>>>> develop
 
     def _populate_subdiv_az_public_holidays(self):
         if self._year >= 1986:
@@ -674,6 +797,10 @@ class UnitedStates(
         if self._year >= 2020:
             # Frances Xavier Cabrini Day.
             self._add_holiday_1st_mon_of_oct(tr("Frances Xavier Cabrini Day"))
+
+        # Frances Xavier Cabrini Day
+        if self._year >= 2020:
+            self._add_holiday_1st_mon_of_oct("Frances Xavier Cabrini Day")
 
     def _populate_subdiv_ct_public_holidays(self):
         if self._year >= 1971:
@@ -769,6 +896,7 @@ class UnitedStates(
                 else tr("Robert E. Lee's Birthday")
             )
 
+<<<<<<< HEAD
         if self._year >= 1971:
             self._add_observed(
                 self._christmas_day,
@@ -777,6 +905,13 @@ class UnitedStates(
                 rule=GA_IN_WASHINGTON_BIRTHDAY,
                 show_observed_label=False,
             )
+=======
+        # Washington's Birthday
+        self._add_holiday(
+            "Washington's Birthday",
+            self._get_observed_date(self._christmas_day, rule=GA_IN_WASHINGTON_BIRTHDAY),
+        )
+>>>>>>> develop
 
     def _populate_subdiv_gu_public_holidays(self):
         if self._year >= 1970:
@@ -875,6 +1010,12 @@ class UnitedStates(
                 rule=GA_IN_WASHINGTON_BIRTHDAY,
                 show_observed_label=False,
             )
+
+        # Washington's Birthday
+        self._add_holiday(
+            "Washington's Birthday",
+            self._get_observed_date(self._christmas_day, rule=GA_IN_WASHINGTON_BIRTHDAY),
+        )
 
     def _populate_subdiv_ks_public_holidays(self):
         if self._year >= 2013:

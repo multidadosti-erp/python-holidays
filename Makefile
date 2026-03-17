@@ -48,6 +48,9 @@ pre-commit:
 release-notes:
 	uv run --no-sync scripts/generate_release_notes.py
 
+release-notes:
+	@scripts/generate_release_notes.py
+
 sbom:
 	uv tool run --from cyclonedx-bom cyclonedx-py environment "$(uv python find)"
 

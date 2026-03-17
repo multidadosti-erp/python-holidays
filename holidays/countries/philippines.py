@@ -36,6 +36,7 @@ class Philippines(
     """Philippines holidays.
 
     References:
+<<<<<<< HEAD
         * <https://en.wikipedia.org/wiki/Public_holidays_in_the_Philippines>
         * [Revised Administrative Code of 1987](https://web.archive.org/web/20241203234427/https://www.officialgazette.gov.ph/1987/07/25/executive-order-no-292-book-ichapter-7-regular-holidays-and-nationwide-special-days/)
         * [Republic Act No. 9177](https://web.archive.org/web/20230930164310/https://www.officialgazette.gov.ph/2002/11/13/republic-act-no-9177/)
@@ -54,6 +55,21 @@ class Philippines(
         * [Proclamation No. 878/2025](https://archive.org/details/20250506-proc-878-frm_202506)
         * [Proclamation No. 911/2025](https://archive.org/details/20250521-proc-911-frm_20250606_1800)
         * [Proclamation No. 1006/2025](https://archive.org/details/20250903-proc-1006-frm)
+=======
+      - https://en.wikipedia.org/wiki/Public_holidays_in_the_Philippines
+      - `Revised Administrative Code of 1987 <https://www.officialgazette.gov.ph/1987/07/25/executive-order-no-292-book-ichapter-7-regular-holidays-and-nationwide-special-days/>`_
+      - `Republic Act No. 9177 <https://www.officialgazette.gov.ph/2002/11/13/republic-act-no-9177/>`_
+      - `Republic Act No. 9256 <https://www.officialgazette.gov.ph/2004/02/25/republic-act-no-9256/>`_
+      - `Republic Act No. 9492 <https://www.officialgazette.gov.ph/2007/07/24/republic-act-no-9492/>`_
+      - `Republic Act No. 9645 <https://www.officialgazette.gov.ph/2009/06/12/republic-act-no-9645/>`_
+      - `Republic Act No. 9849 <https://www.officialgazette.gov.ph/2009/12/11/republic-act-no-9849/>`_
+      - `Republic Act No. 10966 <https://www.officialgazette.gov.ph/2017/12/28/republic-act-no-10966/>`_
+      - `Proclamation No. 944/2020` <https://www.officialgazette.gov.ph/2020/05/19/proclamation-no-944-s-2020/>`_
+      - `Proclamation No. 985/2020` <https://www.officialgazette.gov.ph/2020/07/29/proclamation-no-985-s-2020/>`_
+      - `Proclamation No. 665/2024` <https://www.officialgazette.gov.ph/2024/08/15/proclamation-no-665-s-2024/>`_
+      - `Proclamation No. 729/2024` <https://www.officialgazette.gov.ph/2024/10/30/proclamation-no-729-s-2024/>`_
+      - `Nationwide holidays 2018-2025 <https://www.officialgazette.gov.ph/nationwide-holidays/2018/>`_
+>>>>>>> develop
     """
 
     country = "PH"
@@ -62,7 +78,10 @@ class Philippines(
     # %s (estimated).
     estimated_label = tr("%s (estimated)")
     supported_languages = ("en_PH", "en_US", "fil", "th")
+<<<<<<< HEAD
     start_year = 1988
+=======
+>>>>>>> develop
 
     def __init__(self, *args, islamic_show_estimated: bool = True, **kwargs):
         """
@@ -187,7 +206,11 @@ class Philippines(
             self._add_holiday_jul_27(tr("Founding Anniversary of Iglesia ni Cristo"))
 
         # Added from 2025 onwards as first decreed in
+<<<<<<< HEAD
         # https://web.archive.org/web/20250326064645/https://www.officialgazette.gov.ph/downloads/2024/10oct/20241030-PROC-727-FRM.pdf
+=======
+        # https://www.officialgazette.gov.ph/downloads/2024/10oct/20241030-PROC-727-FRM.pdf
+>>>>>>> develop
         if self._year >= 2025:
             # EDSA People Power Revolution Anniversary.
             self._add_holiday_feb_25(tr("EDSA People Power Revolution Anniversary"))
@@ -241,12 +264,17 @@ class PhilippinesIslamicHolidays(_CustomIslamicHolidays):
 class PhilippinesStaticHolidays:
     # Additional special (non-working) day.
     additional_special = tr("Additional special (non-working) day")
+<<<<<<< HEAD
 
     # Elections special (non-working) day.
     election_special = tr("Elections special (non-working) day")
 
     # Christmas Eve.
     christmas_eve = tr("Christmas Eve")
+=======
+    # Elections special (non-working) day.
+    election_special = tr("Elections special (non-working) day")
+>>>>>>> develop
 
     special_public_holidays = {
         2008: (
@@ -310,6 +338,7 @@ class PhilippinesStaticHolidays:
             (DEC, 24, additional_special),
         ),
         2025: (
+<<<<<<< HEAD
             (MAY, 12, election_special),
             (JUL, 27, additional_special),
             # All Saints' Day Eve.
@@ -320,5 +349,12 @@ class PhilippinesStaticHolidays:
             # All Souls' Day.
             (NOV, 2, tr("All Souls' Day")),
             (DEC, 24, christmas_eve),
+=======
+            (JUL, 27, additional_special),
+            # All Saints' Day Eve.
+            (OCT, 31, tr("All Saints' Day Eve")),
+            # Christmas Eve.
+            (DEC, 24, tr("Christmas Eve")),
+>>>>>>> develop
         ),
     }

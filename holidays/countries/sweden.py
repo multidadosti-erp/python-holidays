@@ -68,9 +68,12 @@ class Sweden(HolidayBase, ChristianHolidays, InternationalHolidays):
     begin_time_label = tr("%s (från kl. 14.00)")
     country = "SE"
     default_language = "sv"
+<<<<<<< HEAD
     # Act 1952:48.
     start_year = 1953
     supported_categories = (BANK, DE_FACTO, OPTIONAL, PUBLIC)
+=======
+>>>>>>> develop
     supported_languages = ("en_US", "sv", "th", "uk")
 
     def __init__(self, *args, include_sundays: bool = True, **kwargs):

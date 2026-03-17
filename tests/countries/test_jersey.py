@@ -472,8 +472,13 @@ class TestJersey(CommonCountryTests, TestCase):
 
     def test_2025(self):
         # https://www.gov.je/Leisure/Events/WhatsOn/Pages/BankHolidayDates.aspx
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2025,
+=======
+        self.assertHolidays(
+            Jersey(years=2025),
+>>>>>>> develop
             ("2025-01-01", "New Year's Day"),
             ("2025-04-18", "Good Friday"),
             ("2025-04-21", "Easter Monday"),

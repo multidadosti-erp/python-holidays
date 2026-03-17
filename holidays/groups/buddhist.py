@@ -11,8 +11,14 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
+<<<<<<< HEAD
 
 from holidays.calendars.buddhist import _BuddhistLunisolar
+=======
+from typing import Optional
+
+from holidays.calendars import _BuddhistLunisolar
+>>>>>>> develop
 from holidays.groups.eastern import EasternCalendarHolidays
 
 
@@ -26,8 +32,13 @@ class BuddhistCalendarHolidays(EasternCalendarHolidays):
         self._buddhist_calendar_show_estimated = show_estimated
 
     def _add_buddhist_calendar_holiday(
+<<<<<<< HEAD
         self, name: str, dt_estimated: tuple[date | None, bool]
     ) -> date | None:
+=======
+        self, name: str, dt_estimated: tuple[Optional[date], bool]
+    ) -> Optional[date]:
+>>>>>>> develop
         """
         Add Buddhist calendar holiday.
 
@@ -35,7 +46,11 @@ class BuddhistCalendarHolidays(EasternCalendarHolidays):
         is an estimation.
         """
         return self._add_eastern_calendar_holiday(
+<<<<<<< HEAD
             name, dt_estimated, show_estimated=self._buddhist_calendar_show_estimated
+=======
+            name, dt_estimated, self._buddhist_calendar_show_estimated
+>>>>>>> develop
         )
 
     def _add_vesak(self, name) -> date | None:

@@ -21,7 +21,11 @@ from datetime import date, datetime, timedelta, timezone
 from functools import cached_property
 from gettext import gettext, translation
 from pathlib import Path
+<<<<<<< HEAD
 from typing import Any, Literal, Union, cast
+=======
+from typing import Any, Dict, Optional, Union, cast
+>>>>>>> develop
 
 from dateutil.parser import parse
 
@@ -43,6 +47,7 @@ from holidays.calendars.gregorian import (
 from holidays.constants import HOLIDAY_NAME_DELIMITER, PUBLIC, DEFAULT_START_YEAR, DEFAULT_END_YEAR
 from holidays.helpers import _normalize_arguments, _normalize_tuple
 
+<<<<<<< HEAD
 CategoryArg = str | Iterable[str]
 DateArg = date | tuple[int, int] | tuple[int, int, int]
 DateLike = date | datetime | str | float | int
@@ -58,6 +63,25 @@ YearArg = int | Iterable[int]
 
 class HolidayBase(dict[date, str]):
     """Represent a dictionary-like collection of holidays for a specific country or region.
+=======
+CategoryArg = Union[str, Iterable[str]]
+DateArg = Union[date, tuple[int, int]]
+DateLike = Union[date, datetime, str, float, int]
+SpecialHoliday = Union[tuple[int, int, str], tuple[tuple[int, int, str], ...]]
+SubstitutedHoliday = Union[
+    Union[tuple[int, int, int, int], tuple[int, int, int, int, int]],
+    tuple[Union[tuple[int, int, int, int], tuple[int, int, int, int, int]], ...],
+]
+YearArg = Union[int, Iterable[int]]
+
+
+class HolidayBase(dict[date, str]):
+    """
+    A dict-like object containing the holidays for a specific country (and
+    province or state if so initiated); inherits the dict class (so behaves
+    similarly to a dict). Dates without a key in the Holiday object are not
+    holidays.
+>>>>>>> develop
 
     This class inherits from `dict` and maps holiday dates to their names. It supports
     customization by country and, optionally, by province or state (subdivision). A date
@@ -203,7 +227,11 @@ class HolidayBase(dict[date, str]):
     """Whether dates when public holiday are observed are included."""
     subdiv: str | None = None
     """The subdiv requested as ISO 3166-2 code or one of the aliases."""
+<<<<<<< HEAD
     special_holidays: dict[int, SpecialHoliday | SubstitutedHoliday] = {}
+=======
+    special_holidays: dict[int, Union[SpecialHoliday, SubstitutedHoliday]] = {}
+>>>>>>> develop
     """A list of the country-wide special (as opposite to regular) holidays for
     a specific year."""
     _deprecated_subdivisions: tuple[str, ...] = ()
@@ -211,7 +239,11 @@ class HolidayBase(dict[date, str]):
     ones."""
     weekend: set[int] = {SAT, SUN}
     """Country weekend days."""
+<<<<<<< HEAD
     weekend_workdays: set[date]
+=======
+    weekend_workdays: set[date] = set()
+>>>>>>> develop
     """Working days moved to weekends."""
     default_category: str = PUBLIC
     """The entity category used by default."""
@@ -662,7 +694,11 @@ class HolidayBase(dict[date, str]):
     def __radd__(self, other: Any) -> "HolidayBase":
         return self.__add__(other)
 
+<<<<<<< HEAD
     def __reduce__(self) -> str | tuple[Any, ...]:
+=======
+    def __reduce__(self) -> Union[str, tuple[Any, ...]]:
+>>>>>>> develop
         return super().__reduce__()
 
     def __repr__(self) -> str:
@@ -745,11 +781,15 @@ class HolidayBase(dict[date, str]):
 
     @classmethod
     def get_subdivision_aliases(cls) -> dict[str, list]:
+<<<<<<< HEAD
         """Get subdivision aliases.
 
         Returns:
             A dictionary mapping subdivision aliases to their official ISO 3166-2 codes.
         """
+=======
+        """Get subdivision aliases."""
+>>>>>>> develop
         subdivision_aliases: dict[str, list[str]] = {s: [] for s in cls.subdivisions}
         for alias, subdivision in cls.subdivisions_aliases.items():
             subdivision_aliases[subdivision].append(alias)
@@ -970,6 +1010,7 @@ class HolidayBase(dict[date, str]):
                 for category in self._sorted_categories
             )
 
+<<<<<<< HEAD
     def append(self, *args: dict[DateLike, str] | list[DateLike] | DateLike) -> None:
         """Alias for [update()][holidays.holiday_base.HolidayBase.update] to mimic list type.
 
@@ -981,6 +1022,10 @@ class HolidayBase(dict[date, str]):
                 * A list of dates (without names).
                 * A single date.
         """
+=======
+    def append(self, *args: Union[dict[DateLike, str], list[DateLike], DateLike]) -> None:
+        """Alias for :meth:`update` to mimic list type."""
+>>>>>>> develop
         return self.update(*args)
 
     def copy(self):
@@ -1013,7 +1058,12 @@ class HolidayBase(dict[date, str]):
         return dict.get(self, self.__keytransform__(key), default)
 
     def get_list(self, key: DateLike) -> list[str]:
+<<<<<<< HEAD
         """Retrieve all holiday names for a given date.
+=======
+        """Return a list of all holiday names for a date if date is a holiday,
+        else empty string.
+>>>>>>> develop
 
         Args:
             key:
@@ -1030,12 +1080,20 @@ class HolidayBase(dict[date, str]):
         return [name for name in self.get(key, "").split(HOLIDAY_NAME_DELIMITER) if name]
 
     def get_named(
+<<<<<<< HEAD
         self,
         holiday_name: str,
         lookup: NameLookup = "icontains",
         split_multiple_names: bool = True,
     ) -> list[date]:
         """Find all holiday dates matching a given name.
+=======
+        self, holiday_name: str, lookup="icontains", split_multiple_names=True
+    ) -> list[date]:
+        """Return a list of all holiday dates matching the provided holiday
+        name. The match will be made case insensitively and partial matches
+        will be included by default.
+>>>>>>> develop
 
         The search by default is case-insensitive and includes partial matches.
 
@@ -1090,6 +1148,7 @@ class HolidayBase(dict[date, str]):
 
         raise AttributeError(f"Unknown lookup type: {lookup}")
 
+<<<<<<< HEAD
     def get_closest_holiday(
         self,
         target_date: DateLike | None = None,
@@ -1111,6 +1170,11 @@ class HolidayBase(dict[date, str]):
 
         Returns:
             A tuple containing the holiday date and its name, or None if no holiday is found.
+=======
+    def get_nth_working_day(self, key: DateLike, n: int) -> date:
+        """Return n-th working day from provided date (if n is positive)
+        or n-th working day before provided date (if n is negative).
+>>>>>>> develop
         """
         if direction not in {"backward", "forward"}:
             raise AttributeError(f"Unknown direction: {direction}")
@@ -1152,19 +1216,29 @@ class HolidayBase(dict[date, str]):
         """
         direction = +1 if n >= 0 else -1
         dt = self.__keytransform__(key)
+<<<<<<< HEAD
         for _ in range(abs(n) or 1):
             if n:
                 dt = _timedelta(dt, direction)
+=======
+        for _ in range(abs(n)):
+            dt = _timedelta(dt, direction)
+>>>>>>> develop
             while not self.is_working_day(dt):
                 dt = _timedelta(dt, direction)
         return dt
 
     def get_working_days_count(self, start: DateLike, end: DateLike) -> int:
+<<<<<<< HEAD
         """Calculate the number of working days between two dates.
+=======
+        """Return the number of working days between two dates.
+>>>>>>> develop
 
         The date range works in a closed interval fashion [start, end] so both
         endpoints are included.
 
+<<<<<<< HEAD
         Args:
             start:
                 The range start date.
@@ -1174,6 +1248,13 @@ class HolidayBase(dict[date, str]):
 
         Returns:
             The total count of working days between the given dates.
+=======
+        :param start:
+            The range start date.
+
+        :param end:
+            The range end date.
+>>>>>>> develop
         """
         dt1 = self.__keytransform__(start)
         dt2 = self.__keytransform__(end)
@@ -1182,6 +1263,7 @@ class HolidayBase(dict[date, str]):
         days = (dt2 - dt1).days + 1
         return sum(self.is_working_day(_timedelta(dt1, n)) for n in range(days))
 
+<<<<<<< HEAD
     def is_weekend(self, key: DateLike) -> bool:
         """Check if the given date's week day is a weekend day.
 
@@ -1204,6 +1286,10 @@ class HolidayBase(dict[date, str]):
         Returns:
             True if the date is a working day, False if it is a holiday or weekend.
         """
+=======
+    def is_working_day(self, key: DateLike) -> bool:
+        """Return True if date is a working day (not a holiday or a weekend)."""
+>>>>>>> develop
         dt = self.__keytransform__(key)
         return dt in self.weekend_workdays if self._is_weekend(dt) else dt not in self
 
@@ -1238,13 +1324,21 @@ class HolidayBase(dict[date, str]):
 
         return dict.pop(self, self.__keytransform__(key), default)
 
+<<<<<<< HEAD
     def pop_named(self, holiday_name: str, lookup: NameLookup = "icontains") -> list[date]:
         """Remove all holidays matching the given name.
+=======
+    def pop_named(self, name: str) -> list[date]:
+        """Remove (no longer treat at as holiday) all dates matching the
+        provided holiday name. The match will be made case insensitively and
+        partial matches will be removed.
+>>>>>>> develop
 
         This method removes all dates associated with a holiday name, so they are
         no longer considered holidays. The search by default is case-insensitive and
         includes partial matches.
 
+<<<<<<< HEAD
         Args:
             holiday_name:
                 The holiday's name to try to match.
@@ -1260,11 +1354,15 @@ class HolidayBase(dict[date, str]):
                 * istartswith - case insensitive starts with match;
 
         Returns:
+=======
+        :return:
+>>>>>>> develop
             A list of dates removed.
 
         Raises:
             KeyError: if date is not a holiday.
         """
+<<<<<<< HEAD
         use_exact_name = HOLIDAY_NAME_DELIMITER in holiday_name
         if not (
             dts := self.get_named(
@@ -1272,6 +1370,11 @@ class HolidayBase(dict[date, str]):
             )
         ):
             raise KeyError(holiday_name)
+=======
+        use_exact_name = HOLIDAY_NAME_DELIMITER in name
+        if not (dts := self.get_named(name, split_multiple_names=not use_exact_name)):
+            raise KeyError(name)
+>>>>>>> develop
 
         popped = []
         for dt in dts:
@@ -1287,6 +1390,7 @@ class HolidayBase(dict[date, str]):
                 holiday_names = [
                     name for name in holiday_names if holiday_name_lower not in name.lower()
                 ]
+<<<<<<< HEAD
             elif lookup == "iexact":
                 holiday_name_lower = holiday_name.lower()
                 holiday_names = [
@@ -1309,11 +1413,20 @@ class HolidayBase(dict[date, str]):
                 ]
             if holiday_names:
                 self[dt] = HOLIDAY_NAME_DELIMITER.join(holiday_names)
+=======
+
+                if holiday_names:
+                    self[dt] = HOLIDAY_NAME_DELIMITER.join(holiday_names)
+>>>>>>> develop
 
         return popped
 
     def update(  # type: ignore[override]
+<<<<<<< HEAD
         self, *args: dict[DateLike, str] | list[DateLike] | DateLike
+=======
+        self, *args: Union[dict[DateLike, str], list[DateLike], DateLike]
+>>>>>>> develop
     ) -> None:
         """Update the object, overwriting existing dates.
 
@@ -1356,11 +1469,19 @@ class HolidaySum(HolidayBase):
     * Holidays are generated (expanded) for all years included in the operands.
     """
 
+<<<<<<< HEAD
     country: str | list[str]  # type: ignore[assignment]
     """Countries included in the addition."""
     market: str | list[str]  # type: ignore[assignment]
     """Markets included in the addition."""
     subdiv: str | list[str] | None  # type: ignore[assignment]
+=======
+    country: Union[str, list[str]]  # type: ignore[assignment]
+    """Countries included in the addition."""
+    market: Union[str, list[str]]  # type: ignore[assignment]
+    """Markets included in the addition."""
+    subdiv: Optional[Union[str, list[str]]]  # type: ignore[assignment]
+>>>>>>> develop
     """Subdivisions included in the addition."""
     holidays: list[HolidayBase]
     """The original HolidayBase objects included in the addition."""
@@ -1405,6 +1526,10 @@ class HolidaySum(HolidayBase):
             else:
                 self.holidays.append(operand)
 
+<<<<<<< HEAD
+=======
+        kwargs: dict[str, Any] = {}
+>>>>>>> develop
         # Join years, expand and observed.
         kwargs: dict[str, Any] = {
             "expand": h1.expand or h2.expand,

@@ -33,7 +33,11 @@ jobs:
       - name: Generate snapshots
         run: make snapshot
 
+<<<<<<< HEAD
       - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0
+=======
+      - uses: peter-evans/create-pull-request@v7.0.5
+>>>>>>> develop
         with:
           base: dev
           body: Automatically generated snapshots update.

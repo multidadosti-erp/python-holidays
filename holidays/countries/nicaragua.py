@@ -17,12 +17,20 @@ from holidays.holiday_base import HolidayBase
 
 
 class Nicaragua(HolidayBase, ChristianHolidays, InternationalHolidays):
+<<<<<<< HEAD
     """Nicaragua holidays.
 
     References:
         * <https://en.wikipedia.org/wiki/Public_holidays_in_Nicaragua>
         * <https://web.archive.org/web/20241102092432/http://legislacion.asamblea.gob.ni/Normaweb.nsf/($All)/FA251B3C54F5BAEF062571C40055736C?OpenDocument>
         * <https://web.archive.org/web/20250427125556/http://legislacion.asamblea.gob.ni/normaweb.nsf/($All)/3B28EC51ABE2787706258848005ADBB0?OpenDocument>
+=======
+    """
+    References:
+        - https://en.wikipedia.org/wiki/Public_holidays_in_Nicaragua
+        - http://legislacion.asamblea.gob.ni/Normaweb.nsf/($All)/FA251B3C54F5BAEF062571C40055736C?OpenDocument
+        - http://legislacion.asamblea.gob.ni/normaweb.nsf/($All)/3B28EC51ABE2787706258848005ADBB0?OpenDocument
+>>>>>>> develop
     """
 
     country = "NI"
@@ -62,8 +70,13 @@ class Nicaragua(HolidayBase, ChristianHolidays, InternationalHolidays):
         "Masaya": "MS",
         "Matagalpa": "MT",
         "Nueva Segovia": "NS",
+<<<<<<< HEAD
         "Rivas": "RI",
         "Río San Juan": "SJ",
+=======
+        "Río San Juan": "SJ",
+        "Rivas": "RI",
+>>>>>>> develop
     }
     supported_languages = ("en_US", "es", "uk")
 

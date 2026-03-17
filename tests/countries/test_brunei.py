@@ -75,8 +75,13 @@ class TestBrunei(CommonCountryTests, TestCase):
         )
 
     def test_2024(self):
+<<<<<<< HEAD
         self.assertHolidaysInYear(
             2024,
+=======
+        self.assertHolidays(
+            Brunei(years=2024),
+>>>>>>> develop
             ("2024-01-01", "Awal Tahun Masihi"),
             ("2024-02-08", "Israk dan Mikraj"),
             ("2024-02-10", "Tahun Baru Cina"),
@@ -97,6 +102,36 @@ class TestBrunei(CommonCountryTests, TestCase):
             ("2024-09-16", "Maulidur Rasul"),
             ("2024-12-25", "Hari Natal"),
         )
+<<<<<<< HEAD
+=======
+
+    def test_2025(self):
+        self.assertHolidays(
+            Brunei(years=2025),
+            ("2025-01-01", "Awal Tahun Masihi"),
+            ("2025-01-27", "Israk dan Mikraj"),
+            ("2025-01-29", "Tahun Baru Cina"),
+            ("2025-02-23", "Hari Kebangsaan"),
+            ("2025-02-24", "Hari Kebangsaan (diperhatikan)"),
+            ("2025-03-02", "Hari Pertama Berpuasa"),
+            ("2025-03-03", "Hari Pertama Berpuasa (diperhatikan)"),
+            ("2025-03-18", "Hari Nuzul Al-Quran"),
+            ("2025-03-31", "Hari Raya Aidil Fitri"),
+            ("2025-04-01", "Hari Raya Aidil Fitri"),
+            ("2025-04-02", "Hari Raya Aidil Fitri"),
+            ("2025-05-31", "Hari Angkatan Bersenjata Diraja Brunei"),
+            ("2025-06-07", "Hari Raya Aidil Adha"),
+            ("2025-06-27", "Awal Tahun Hijrah"),
+            ("2025-06-28", "Awal Tahun Hijrah (diperhatikan)"),
+            ("2025-07-15", "Hari Keputeraan KDYMM Sultan Brunei"),
+            ("2025-09-05", "Maulidur Rasul"),
+            ("2025-09-06", "Maulidur Rasul (diperhatikan)"),
+            ("2025-12-25", "Hari Natal"),
+        )
+
+    def test_national_day(self):
+        self.assertHoliday(f"{year}-02-23" for year in range(1984, 2077))
+>>>>>>> develop
 
     def test_2025(self):
         self.assertHolidaysInYear(

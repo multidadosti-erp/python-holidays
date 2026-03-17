@@ -487,8 +487,13 @@ class TestIran(CommonCountryTests, TestCase):
             "en_US",
             ("2023-02-04", "Birthday of Imam Ali"),
             ("2023-02-11", "Islamic Revolution Day"),
+<<<<<<< HEAD
             ("2023-02-18", "Isra' and Mi'raj"),
             ("2023-03-08", "Birthday of Mahdi"),
+=======
+            ("2023-02-18", "Isra' and Mi'raj (estimated)"),
+            ("2023-03-07", "Birthday of Mahdi (estimated)"),
+>>>>>>> develop
             ("2023-03-20", "Iranian Oil Industry Nationalization Day"),
             ("2023-03-21", "Nowruz"),
             ("2023-03-22", "Nowruz Holiday"),

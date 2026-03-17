@@ -226,6 +226,7 @@ class TestFinland(CommonCountryTests, TestCase):
         self.assertHolidayName(name, (f"{year}-11-01" for year in range(self.start_year, 1955)))
         self.assertHolidayName(name, range(1955, self.end_year))
 
+<<<<<<< HEAD
     def test_independence_day(self):
         name = "Itsenäisyyspäivä"
         # PUBLIC.
@@ -242,6 +243,10 @@ class TestFinland(CommonCountryTests, TestCase):
             end_year = self.end_year
         start_year, month, day = (int(p) for p in since.split("-"))
         self.assertNoHolidayName(name)
+=======
+    def _test_unofficial_holiday(self, name, since):
+        start_year, month, day = (int(part) for part in since.split("-"))
+>>>>>>> develop
         self.assertHolidayName(
             name,
             holidays_list,

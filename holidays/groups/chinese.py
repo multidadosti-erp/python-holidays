@@ -11,8 +11,15 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
+<<<<<<< HEAD
 
 from holidays.calendars.chinese import _ChineseLunisolar, CHINESE_CALENDAR
+=======
+from typing import Optional
+
+from holidays.calendars import _ChineseLunisolar
+from holidays.calendars.gregorian import APR
+>>>>>>> develop
 from holidays.groups.eastern import EasternCalendarHolidays
 
 
@@ -71,8 +78,13 @@ class ChineseCalendarHolidays(EasternCalendarHolidays):
         return self._chinese_calendar.double_ninth_date(self._year)[0]
 
     def _add_chinese_calendar_holiday(
+<<<<<<< HEAD
         self, name: str, dt_estimated: tuple[date | None, bool], days_delta: int = 0
     ) -> date | None:
+=======
+        self, name: str, dt_estimated: tuple[Optional[date], bool], days_delta: int = 0
+    ) -> Optional[date]:
+>>>>>>> develop
         """
         Add Chinese calendar holiday.
 
@@ -80,10 +92,14 @@ class ChineseCalendarHolidays(EasternCalendarHolidays):
         is an estimation.
         """
         return self._add_eastern_calendar_holiday(
+<<<<<<< HEAD
             name,
             dt_estimated,
             show_estimated=self._chinese_calendar_show_estimated,
             days_delta=days_delta,
+=======
+            name, dt_estimated, self._chinese_calendar_show_estimated, days_delta
+>>>>>>> develop
         )
 
     def _add_chinese_birthday_of_buddha(self, name) -> date | None:
@@ -164,6 +180,7 @@ class ChineseCalendarHolidays(EasternCalendarHolidays):
             name, self._chinese_calendar.lunar_new_year_date(self._year), days_delta=+3
         )
 
+<<<<<<< HEAD
     def _add_chinese_new_years_day_five(self, name) -> date | None:
         """
         Add Chinese New Year's Day Five.
@@ -175,6 +192,9 @@ class ChineseCalendarHolidays(EasternCalendarHolidays):
         )
 
     def _add_daeboreum_day(self, name) -> date | None:
+=======
+    def _add_qingming_festival(self, name) -> date:
+>>>>>>> develop
         """
         Add Daeboreum Day (15th day of 1st lunar month).
 

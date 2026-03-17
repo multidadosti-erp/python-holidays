@@ -3970,6 +3970,7 @@ class _IslamicLunar:
         2076: (DEC, 5),
     }
 
+<<<<<<< HEAD
     def __init__(self, calendar_delta_days: int = 0) -> None:
         """
         Args:
@@ -4026,6 +4027,15 @@ class _IslamicLunar:
             for (dt, _) in self.ramadan_beginning_dates(year)
         }
 
+=======
+    def _get_holiday(self, holiday: str, year: int) -> Iterable[tuple[date, bool]]:
+        estimated_dates = getattr(self, f"{holiday}_DATES", {})
+        exact_dates = getattr(self, f"{holiday}_DATES_{_CustomCalendar.CUSTOM_ATTR_POSTFIX}", {})
+        for year in (year - 1, year):
+            for dt in _normalize_tuple(exact_dates.get(year, estimated_dates.get(year, ()))):
+                yield date(year, *dt), year not in exact_dates
+
+>>>>>>> develop
     def ali_al_rida_death_dates(self, year: int) -> Iterable[tuple[date, bool]]:
         return self._get_holiday(ALI_AL_RIDA_DEATH, year)
 
@@ -4053,9 +4063,12 @@ class _IslamicLunar:
     def fatima_death_dates(self, year: int) -> Iterable[tuple[date, bool]]:
         return self._get_holiday(FATIMA_DEATH, year)
 
+<<<<<<< HEAD
     def grand_magal_of_touba_dates(self, year: int) -> Iterable[tuple[date, bool]]:
         return self._get_holiday(GRAND_MAGAL_OF_TOUBA, year)
 
+=======
+>>>>>>> develop
     def hari_hol_johor_dates(self, year: int) -> Iterable[tuple[date, bool]]:
         return self._get_holiday(HARI_HOL_JOHOR, year)
 
@@ -4071,9 +4084,12 @@ class _IslamicLunar:
     def isra_and_miraj_dates(self, year: int) -> Iterable[tuple[date, bool]]:
         return self._get_holiday(ISRA_AND_MIRAJ, year)
 
+<<<<<<< HEAD
     def laylat_al_qadr_dates(self, year: int) -> Iterable[tuple[date, bool]]:
         return self._get_holiday(LAYLAT_AL_QADR, year)
 
+=======
+>>>>>>> develop
     def maldives_embraced_islam_day_dates(self, year: int) -> Iterable[tuple[date, bool]]:
         return self._get_holiday(MALDIVES_EMBRACED_ISLAM_DAY, year)
 

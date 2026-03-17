@@ -10,12 +10,18 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
+<<<<<<< HEAD
 from __future__ import annotations
 
 from gettext import gettext as tr
 from typing import TYPE_CHECKING
 
 from holidays.calendars.chinese import VIETNAMESE_CALENDAR
+=======
+from datetime import date
+from gettext import gettext as tr
+
+>>>>>>> develop
 from holidays.calendars.gregorian import (
     JAN,
     FEB,
@@ -41,13 +47,17 @@ from holidays.observed_holiday_base import (
     SAT_SUN_TO_NEXT_WORKDAY,
 )
 
+<<<<<<< HEAD
 if TYPE_CHECKING:
     from datetime import date
 
+=======
+>>>>>>> develop
 NATIONAL_DAY_RULE = ObservedRule({MON: +1, TUE: -1, WED: -1, THU: +1, FRI: -1, SAT: -1, SUN: +1})
 
 
 class Vietnam(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHolidays, StaticHolidays):
+<<<<<<< HEAD
     """Vietnam holidays.
 
     References:
@@ -63,6 +73,22 @@ class Vietnam(ObservedHolidayBase, ChineseCalendarHolidays, InternationalHoliday
     estimated_label = tr("%s (dự kiến)")
     # %s (observed, estimated).
     observed_estimated_label = tr("%s (nghỉ bù, dự kiến)")
+=======
+    """
+    References:
+        - `Labor Code 1994 (Art. 73) (en) <https://vbpl.vn/TW/Pages/vbpqen-toanvan.aspx?ItemID=2835>`_
+        - `Labor Code 2012 (Art. 115) (en) <https://vbpl.vn/TW/Pages/vbpqen-toanvan.aspx?ItemID=11013>`_
+        - `Labor Code 2012 (Art. 115) (vi) <https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=27615>`_
+        - `Labor Code 2019 (Art. 112) (en) <https://vbpl.vn/TW/Pages/vbpqen-toanvan.aspx?ItemID=11135>`_
+        - `Labor Code 2019 (Art. 112) (vi) <https://vbpl.vn/TW/Pages/vbpq-van-ban-goc.aspx?ItemID=139264>`_
+
+    Substituted holidays:
+        - `2018-2019 <https://thuvienphapluat.vn/cong-van/EN/Lao-dong-Tien-luong/Official-Dispatch-6519-VPCP-KGVX-2018-national-holidays-for-public-sector-employees/387625/tieng-anh.aspx>`_
+        - `2024 <https://thuvienphapluat.vn/cong-van/EN/Lao-dong-Tien-luong/Official-Dispatch-2450-VPCP-KGVX-2024-swap-of-working-days-during-the-Reunification-Day/606458/tieng-anh.aspx>`_
+    """
+
+    country = "VN"
+>>>>>>> develop
     # %s (observed).
     observed_label = tr("%s (nghỉ bù)")
     default_language = "vi"
@@ -158,6 +184,7 @@ class VNM(Vietnam):
 
 
 class VietnamStaticHolidays:
+<<<<<<< HEAD
     """Vietnam special holidays.
 
     References:
@@ -165,6 +192,8 @@ class VietnamStaticHolidays:
         * [2024](https://web.archive.org/web/20241002165957/https://thuvienphapluat.vn/cong-van/EN/Lao-dong-Tien-luong/Official-Dispatch-2450-VPCP-KGVX-2024-swap-of-working-days-during-the-Reunification-Day/606458/tieng-anh.aspx)
     """
 
+=======
+>>>>>>> develop
     # Date format (see strftime() Format Codes).
     substituted_date_format = tr("%d/%m/%Y")
     # Day off (substituted from %s).

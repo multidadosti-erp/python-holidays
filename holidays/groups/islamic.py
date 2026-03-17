@@ -13,7 +13,11 @@
 from collections.abc import Iterable
 from datetime import date
 
+<<<<<<< HEAD
 from holidays.calendars.islamic import _IslamicLunar
+=======
+from holidays.calendars import _IslamicLunar
+>>>>>>> develop
 from holidays.groups.eastern import EasternCalendarHolidays
 
 
@@ -226,6 +230,7 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.fatima_death_dates(self._year)
         )
 
+<<<<<<< HEAD
     def _add_grand_magal_of_touba(self, name) -> set[date]:
         """
         Annual religious pilgrimage of Senegalese Mouride brotherhood.
@@ -236,6 +241,8 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.grand_magal_of_touba_dates(self._year)
         )
 
+=======
+>>>>>>> develop
     def _add_hari_hol_johor(self, name) -> set[date]:
         """
         Hari Hol Johor.
@@ -256,6 +263,7 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.hasan_al_askari_death_dates(self._year)
         )
 
+<<<<<<< HEAD
     def _add_holiday_29_ramadan(self, name) -> set[date]:
         """
         Add 29th Ramadan holiday.
@@ -266,6 +274,8 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.ramadan_beginning_dates(self._year), days_delta=+28
         )
 
+=======
+>>>>>>> develop
     def _add_imam_mahdi_birthday_day(self, name) -> set[date]:
         """
         Add birthday of Muhammad al-Mahdi day (15th day of 8th month).
@@ -276,8 +286,13 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.imam_mahdi_birthday_dates(self._year)
         )
 
+<<<<<<< HEAD
     def _add_islamic_calendar_holiday_set(
         self, name: str, dts_estimated: Iterable[tuple[date, bool]], days_delta: int = 0
+=======
+    def _add_islamic_calendar_holiday(
+        self, name: str, dates: Iterable[tuple[date, bool]], days_delta: int = 0
+>>>>>>> develop
     ) -> set[date]:
         """
         Add lunar calendar holiday.
@@ -285,12 +300,21 @@ class IslamicHolidays(EasternCalendarHolidays):
         Appends customizable estimation label at the end of holiday name if
         holiday date is an estimation.
         """
+<<<<<<< HEAD
         return self._add_eastern_calendar_holiday_set(
             name,
             dts_estimated,
             show_estimated=self._islamic_calendar_show_estimated,
             days_delta=days_delta,
         )
+=======
+        added_dates = set()
+        for dts in dates:
+            if dt := self._add_eastern_calendar_holiday(name, dts, days_delta=days_delta):
+                added_dates.add(dt)
+
+        return added_dates
+>>>>>>> develop
 
     def _add_islamic_new_year_day(self, name) -> set[date]:
         """
@@ -317,6 +341,7 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.isra_and_miraj_dates(self._year)
         )
 
+<<<<<<< HEAD
     def _add_laylat_al_qadr_day(self, name):
         """
         Add Laylat al-Qadr Day (27th day of 9th month).
@@ -328,6 +353,8 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.laylat_al_qadr_dates(self._year)
         )
 
+=======
+>>>>>>> develop
     def _add_maldives_embraced_islam_day(self, name) -> set[date]:
         """
         Add Maldives Embraced Islam Day (1st day of 4th month).
@@ -375,6 +402,7 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.nuzul_al_quran_dates(self._year)
         )
 
+<<<<<<< HEAD
     def _add_prophet_baptism_day(self, name) -> set[date]:
         """
         Add Prophet's Baptism.
@@ -392,6 +420,8 @@ class IslamicHolidays(EasternCalendarHolidays):
             name, self._islamic_calendar.mawlid_dates(self._year), days_delta=+7
         )
 
+=======
+>>>>>>> develop
     def _add_prophet_death_day(self, name) -> set[date]:
         """
         Add death of Prophet Muhammad and Hasan ibn Ali day (28th day of 2nd month).

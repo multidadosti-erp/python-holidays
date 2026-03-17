@@ -87,6 +87,7 @@ class InternationalHolidays:
         """
         return self._add_holiday_oct_12(name)
 
+<<<<<<< HEAD
     def _add_ethiopian_new_year(self, name) -> date:
         """
         Add Ethiopian New Year.
@@ -101,6 +102,8 @@ class InternationalHolidays:
             name, _timedelta(dt, +1) if is_ethiopian_leap_year(self._year) else dt
         )
 
+=======
+>>>>>>> develop
     def _add_europe_day(self, name):
         """
         Add Europe Day (May 9th)
@@ -202,7 +205,11 @@ class InternationalHolidays:
         """
         return self._add_holiday_mar_8(name)
 
+<<<<<<< HEAD
     def _add_world_war_two_victory_day(self, name, *, is_western=True):
+=======
+    def _add_world_war_two_victory_day(self, name, is_western=True):
+>>>>>>> develop
         """
         Add Day of Victory in World War II in Europe (May 8).
         https://en.wikipedia.org/wiki/Victory_in_Europe_Day

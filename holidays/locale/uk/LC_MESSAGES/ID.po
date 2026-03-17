@@ -15,7 +15,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Holidays 0.60\n"
+<<<<<<< HEAD
 "Report-Msgid-Bugs-To: l10n@vacanza.dev\n"
+=======
+>>>>>>> develop
 "POT-Creation-Date: 2023-07-23 14:09+0300\n"
 "PO-Revision-Date: 2024-10-30 16:45+0700\n"
 "Last-Translator: PPsyrius <ppsyrius@ppsyrius.dev>\n"
@@ -26,13 +29,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Lingua 4.15.0\n"
 "X-Generator: Poedit 3.5\n"
+<<<<<<< HEAD
 "X-Source-Language: id\n"
+=======
+>>>>>>> develop
 
 #. %s (estimated).
 #, c-format
 msgid "%s (perkiraan)"
 msgstr "%s (приблизна дата)"
 
+<<<<<<< HEAD
 #. %s (observed).
 #, c-format
 msgid "Pegangti %s"
@@ -42,11 +49,87 @@ msgstr "%s (вихідний)"
 #, c-format
 msgid "Pegangti %s (perkiraan)"
 msgstr "%s (вихідний, приблизна дата)"
+=======
+#. General Election Day.
+msgid "Hari Pemilihan Unum"
+msgstr "День загальних виборів"
+
+#. Presidential Election Day.
+msgid "Hari Pemilihan Presiden"
+msgstr "День президентських виборів"
+
+#. Legislative Election Day.
+msgid "Hari Pemilihan Legislatif"
+msgstr "День парламентських виборів"
+
+#. Local Election Day.
+msgid "Hari Pemilihan Kepala Daerah"
+msgstr "День місцевих виборів"
+
+#. Eid al-Fitr Joint Holiday.
+msgid "Cuti Bersama Hari Raya Idul Fitri"
+msgstr "Додатковий вихідний на Курбан-байрам"
+
+#. Christmas Joint Holiday.
+msgid "Cuti Bersama Hari Raya Natal"
+msgstr "Додатковий вихідний на Різдво Христове"
+
+#. Lunar New Year Joint Holiday.
+msgid "Cuti Bersama Tahun Baru Imlek"
+msgstr "Додатковий вихідний на Китайський Новий рік"
+
+#. Day of Silence Joint Holiday.
+msgid "Cuti Bersama Hari Suci Nyepi"
+msgstr "Додатковий вихідний на Священний день тиші"
+>>>>>>> develop
 
 #. New Year's Day.
 msgid "Tahun Baru Masehi"
 msgstr "Новий рік"
 
+<<<<<<< HEAD
+=======
+#. Lunar New Year.
+msgid "Tahun Baru Imlek"
+msgstr "Китайський Новий рік"
+
+#. Day of Silence.
+msgid "Hari Suci Nyepi"
+msgstr "День тиші"
+
+#. Good Friday.
+msgid "Wafat Yesus Kristus"
+msgstr "Страсна пʼятниця"
+
+#. Easter Monday.
+msgid "Hari kedua Paskah"
+msgstr "Великодній понеділок"
+
+#. Vesak Day.
+msgid "Hari Raya Waisak"
+msgstr "День народження Будди"
+
+#. International Labor Day.
+msgid "Hari Buruh Internasional"
+msgstr "Міжнародний день праці"
+
+#. Ascension Day.
+msgid "Kenaikan Yesus Kristus"
+msgstr "Вознесіння Господнє"
+
+#. Whit Monday.
+msgid "Hari kedua Pentakosta"
+msgstr "День Святого Духа"
+
+#. Pancasila Day.
+msgid "Hari Lahir Pancasila"
+msgstr "День Панчасіла"
+
+#. Assumption Day.
+msgid "Mikraj Santa Maria"
+msgstr "Внебовзяття Пресвятої Діви Марії"
+
+>>>>>>> develop
 #. Independence Day.
 msgid "Hari Kemerdekaan Republik Indonesia"
 msgstr "День незалежності Республіки Індонезія"
@@ -103,6 +186,7 @@ msgstr "Ісламський Новий рік"
 msgid "Maulid Nabi Muhammad"
 msgstr "День народження пророка Мухаммада"
 
+<<<<<<< HEAD
 #. Assumption Day.
 msgid "Mikraj Santa Maria"
 msgstr "Внебовзяття Пресвятої Діви Марії"
@@ -154,6 +238,15 @@ msgstr "День місцевих виборів"
 #. Eid al-Fitr Joint Holiday.
 msgid "Cuti Bersama Hari Raya Idul Fitri"
 msgstr "Додатковий вихідний на Курбан-байрам"
+=======
+#. Isra' and Mi'raj.
+msgid "Isra Mikraj Nabi Muhammad"
+msgstr "Вознесіння пророка Мухаммада"
+
+#. Nuzul Al Quran.
+msgid "Nuzululqur'an"
+msgstr "Річниця обʼявлення Корану"
+>>>>>>> develop
 
 #. Eid al-Adha Joint Holiday.
 msgid "Cuti Bersama Hari Raya Idul Adha"
@@ -163,14 +256,18 @@ msgstr "Додатковий вихідний на Курбан-байрам"
 msgid "Cuti Bersama Maulid Nabi Muhammad"
 msgstr "Додатковий вихідний на День народження пророка Мухаммада"
 
+<<<<<<< HEAD
 #. Islamic New Year Joint Holiday.
 msgid "Cuti Bersama Tahun Baru Islam"
 msgstr "Додатковий вихідний на Ісламський Новий рік"
 
+=======
+>>>>>>> develop
 #. Ascension Joint Holiday.
 msgid "Cuti Bersama Kenaikan Yesus Kristus"
 msgstr "Додатковий вихідний на Вознесіння Господнє"
 
+<<<<<<< HEAD
 #. Christmas Joint Holiday.
 msgid "Cuti Bersama Hari Raya Natal"
 msgstr "Додатковий вихідний на Різдво Христове"
@@ -183,10 +280,29 @@ msgstr "Додатковий вихідний на Китайський Нови
 msgid "Cuti Bersama Hari Suci Nyepi"
 msgstr "Додатковий вихідний на Священний день тиші"
 
+=======
+>>>>>>> develop
 #. Vesak Joint Holiday.
 msgid "Cuti Bersama Hari Raya Waisak"
 msgstr "Додатковий вихідний на День народження Будди"
 
+<<<<<<< HEAD
+=======
+#. %s (observed).
+#, c-format
+msgid "Pegangti %s"
+msgstr "%s (вихідний)"
+
+#. %s (observed, estimated).
+#, c-format
+msgid "Pegangti %s (perkiraan)"
+msgstr "%s (вихідний, приблизна дата)"
+
+#. Islamic New Year Joint Holiday.
+msgid "Cuti Bersama Tahun Baru Islam"
+msgstr "Додатковий вихідний на Ісламський Новий рік"
+
+>>>>>>> develop
 #. New Year's Joint Holiday.
 msgid "Cuti Bersama Tahun Baru Masehi"
 msgstr "Додатковий вихідний на Новий рік"
@@ -194,3 +310,10 @@ msgstr "Додатковий вихідний на Новий рік"
 #. Independence Day Joint Holiday.
 msgid "Cuti Bersama Hari Kemerdekaan Republik Indonesia"
 msgstr "Додатковий вихідний на День незалежності Республіки Індонезія"
+<<<<<<< HEAD
+=======
+
+#. Easter Sunday.
+msgid "Kebangkitan Yesus Kristus"
+msgstr "Великдень"
+>>>>>>> develop
