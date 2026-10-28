@@ -10,13 +10,12 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars import _CustomIslamicHolidays
 from holidays.calendars.gregorian import JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
 from holidays.calendars.julian import JULIAN_CALENDAR
 from holidays.constants import BANK, GOVERNMENT, PUBLIC
 from holidays.groups import ChristianHolidays, InternationalHolidays, IslamicHolidays
+from holidays.helpers import tr
 from holidays.observed_holiday_base import ObservedHolidayBase, SUN_TO_NEXT_MON
 
 
@@ -31,19 +30,21 @@ class Lebanon(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, Isl
         * [Decree No. 16237 of 2006](https://web.archive.org/web/20250704170424/http://legiliban.ul.edu.lb/LawArticles.aspx?LawTreeSectionID=215180&LawID=212941&language=ar)
         * [Decree No. 3369 of 2010](https://web.archive.org/web/20250704170437/http://legiliban.ul.edu.lb/LawArticles.aspx?LawTreeSectionID=227216&LawID=224978&language=ar)
         * <https://web.archive.org/web/20200925173058/https://www.abl.org.lb/english/abl-and-banking-sector-news/official-holidays>
+        * <https://web.archive.org/web/20260116210114/https://www.abl.org.lb/french/news/official-holidays>
+        * <https://web.archive.org/web/20260329170010/https://www.consulatlibanmarseille.com/fr/home/holidays>
     """
 
     country = "LB"
     default_language = "ar"
     # %s (estimated).
-    estimated_label = tr("%s (المقدرة)")
+    estimated_label = tr("%s (تقديري)")
     # %s (observed).
-    observed_label = tr("%s (يُحتفل به)")
+    observed_label = tr("%s (يوم تعويضي)")
     # %s (observed, estimated).
-    observed_estimated_label = tr("%s (يُحتفل به، المقدرة)")
+    observed_estimated_label = tr("%s (يوم تعويضي تقديري)")
     start_year = 1978
     supported_categories = (BANK, GOVERNMENT, PUBLIC)
-    supported_languages = ("ar", "en_US")
+    supported_languages = ("ar", "en_US", "fr")
 
     def __init__(self, *args, islamic_show_estimated: bool = True, **kwargs):
         """
@@ -132,7 +133,7 @@ class Lebanon(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, Isl
         # Christmas Day.
         self._add_christmas_day(tr("عيد الميلاد"))
 
-        # Islamic New Year.
+        # Islamic New Year Day.
         self._add_islamic_new_year_day(tr("عيد رأس السنة الهجرية"))
 
         # Ashura.

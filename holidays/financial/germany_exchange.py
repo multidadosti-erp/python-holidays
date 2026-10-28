@@ -10,10 +10,9 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars.gregorian import OCT
 from holidays.groups import ChristianHolidays, InternationalHolidays, StaticHolidays
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -30,7 +29,7 @@ class GermanyStockExchange(HolidayBase, ChristianHolidays, InternationalHolidays
 
     market = "XETR"
     default_language = "de"
-    supported_languages = ("de", "en_US")
+    supported_languages = ("de", "en_US", "th", "uk")
     start_year = 2016
 
     def __init__(self, *args, **kwargs) -> None:
@@ -55,8 +54,8 @@ class GermanyStockExchange(HolidayBase, ChristianHolidays, InternationalHolidays
         # Pfingstmontag (Whit Monday) and German Unity Day (Tag der Deutschen Einheit)
         # stop being market holidays from 2022 onwards.
         if self._year <= 2021:
-            # Whit Monday.
-            self._add_whit_monday(tr("Pfingstmontag"))
+            # Pentecost Monday.
+            self._add_pentecost_monday(tr("Pfingstmontag"))
 
             # German Unity Day.
             self._add_holiday_oct_3(tr("Tag der Deutschen Einheit"))

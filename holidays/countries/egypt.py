@@ -10,8 +10,6 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars import _CustomIslamicHolidays
 from holidays.calendars.gregorian import JAN, APR, MAY, JUL, AUG, SEP, MON, TUE, WED, FRI, SAT, SUN
 from holidays.calendars.julian import JULIAN_CALENDAR
@@ -22,6 +20,7 @@ from holidays.groups import (
     InternationalHolidays,
     StaticHolidays,
 )
+from holidays.helpers import tr
 from holidays.observed_holiday_base import ObservedHolidayBase, ObservedRule
 
 EG_OBSERVED_RULE = ObservedRule({MON: +3, TUE: +2, WED: +1, SUN: +4})
@@ -39,16 +38,17 @@ class Egypt(
         * [National Holidays (English)](https://web.archive.org/web/20250529043734/https://www.presidency.eg/en/مصر/العطلات-الرسمية/)
         * [National Holidays (French)](https://web.archive.org/web/20250608173134/https://www.presidency.eg/fr/مصر/العطلات-الرسمية/)
         * [Ministerial Decision 1193](https://web.archive.org/web/20250423073350/https://manshurat.org/node/44922)
+        * [2026 Eid al-Fitr](https://web.archive.org/web/20260331062747/https://sis.gov.eg/en/media-center/news/dar-al-ifta-announces-friday-as-the-first-day-of-eidul-fitr/)
     """
 
     country = "EG"
     default_language = "ar_EG"
     # %s (estimated).
-    estimated_label = tr("%s (المقدرة)")
+    estimated_label = tr("%s (تقديري)")
     # %s (observed).
-    observed_label = tr("%s (ملاحظة)")
+    observed_label = tr("%s (يوم تعويضي)")
     # %s (observed, estimated).
-    observed_estimated_label = tr("%s (المقدرة، ملاحظة)")
+    observed_estimated_label = tr("%s (يوم تعويضي تقديري)")
     # Republic of Egypt was declared on 18 June 1953.
     start_year = 1954
     supported_categories = (GOVERNMENT, PUBLIC, SCHOOL)
@@ -129,7 +129,7 @@ class Egypt(
         self._add_eid_al_fitr_day(name)
         self._add_eid_al_fitr_day_two(name)
 
-        # Arafat Day.
+        # Day of Arafah.
         self._add_arafah_day(tr("وقفة عيد الأضحى المبارك"))
 
         # Eid al-Adha.
@@ -172,7 +172,7 @@ class EgyptIslamicHolidays(_CustomIslamicHolidays):
         2022: (JUL, 10),
     }
 
-    EID_AL_FITR_DATES_CONFIRMED_YEARS = (2020, 2025)
+    EID_AL_FITR_DATES_CONFIRMED_YEARS = (2020, 2026)
     EID_AL_FITR_DATES = {
         2022: (MAY, 1),
     }

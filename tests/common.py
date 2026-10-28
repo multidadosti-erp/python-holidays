@@ -85,25 +85,26 @@ class TestCase:
 
         def make_assert(helper_func, instance_name, method_type):
             def _method(self, *args, **kwargs):
-                if method_type == "name_count":
-                    if len(args) < 2:
-                        raise TypeError(
-                            f"Expected (name, count, ...) arguments for {instance_name}"
-                        )
-                    name, count, *rest = args
-                    return helper_func(self, name, count, instance_name, *rest, **kwargs)
-                elif method_type == "name":
-                    if not args:
-                        raise TypeError(f"Expected (name, ...) arguments for {instance_name}")
-                    name, *rest = args
-                    return helper_func(self, name, instance_name, *rest, **kwargs)
-                elif method_type == "year":
-                    if not args:
-                        raise TypeError(f"Expected (year, ...) arguments for {instance_name}")
-                    year, *rest = args
-                    return helper_func(self, year, instance_name, *rest, **kwargs)
-                else:
-                    return helper_func(self, instance_name, *args, **kwargs)
+                match method_type:
+                    case "name_count":
+                        if len(args) < 2:
+                            raise TypeError(
+                                f"Expected (name, count, ...) arguments for {instance_name}"
+                            )
+                        name, count, *rest = args
+                        return helper_func(self, name, count, instance_name, *rest, **kwargs)
+                    case "name":
+                        if not args:
+                            raise TypeError(f"Expected (name, ...) arguments for {instance_name}")
+                        name, *rest = args
+                        return helper_func(self, name, instance_name, *rest, **kwargs)
+                    case "year":
+                        if not args:
+                            raise TypeError(f"Expected (year, ...) arguments for {instance_name}")
+                        year, *rest = args
+                        return helper_func(self, year, instance_name, *rest, **kwargs)
+                    case _:
+                        return helper_func(self, instance_name, *args, **kwargs)
 
             return _method
 
@@ -180,7 +181,7 @@ class TestCase:
             with_subdiv_categories=with_subdiv_categories,
             with_subdiv_special_flags=with_subdiv_special_flags,
         )
-        cls._subdiv_lookup = {**cls._subdiv_base_lookup, **cls._subdiv_category_lookup}
+        cls._subdiv_lookup = cls._subdiv_base_lookup | cls._subdiv_category_lookup
 
         if years is None:
             # Default `self.full_range`
@@ -355,7 +356,7 @@ class TestCase:
     def setUp(self):
         super().setUp()
 
-        if getattr(self.test_class, "default_language") is not None:
+        if self.test_class.default_language is not None:
             self.set_language(self.test_class.default_language)
 
     def set_language(self, language):
@@ -388,12 +389,13 @@ class TestCase:
         items = []
         if expand_items:
             for item_arg in item_args:
-                if isinstance(item_arg, (list, set, tuple)):
-                    items.extend(item_arg)
-                elif isinstance(item_arg, (Generator, range)):
-                    items.extend(tuple(item_arg))
-                else:
-                    items.append(item_arg)
+                match item_arg:
+                    case list() | set() | tuple():
+                        items.extend(item_arg)
+                    case Generator() | range():
+                        items.extend(tuple(item_arg))
+                    case _:
+                        items.append(item_arg)
         else:
             items.extend(item_args)
 
@@ -462,7 +464,7 @@ class TestCase:
         holidays, dates = self._parse_arguments(args, instance_name=instance_name)
         self._verify_type(holidays)
 
-        filtered_holidays = {dt.strftime("%Y-%m-%d") for dt in holidays.keys() if dt.year == year}
+        filtered_holidays = {dt.strftime("%Y-%m-%d") for dt in holidays if dt.year == year}
 
         # Check one by one for descriptive error messages.
         for dt in dates:
@@ -551,7 +553,7 @@ class TestCase:
         self.assertEqual(
             len(filtered_holidays),
             len(expected_holidays),
-            {(dt, name) for dt, name in filtered_holidays.items()}.difference(
+            set(filtered_holidays.items()).difference(
                 (dt, name) for dt, name in expected_holidays
             ),
         )
@@ -597,21 +599,21 @@ class TestCase:
         self.assertEqual(0, len(holidays))
 
     # LocalizedHolidays.
-    def _assertLocalizedHolidays(self, localized_holidays, language=None):
+    def _assertLocalizedHolidays(self, localized_holidays, *, categories=None, language=None):
         """Helper: assert localized holidays match expected names."""
+        if categories is None:
+            categories = self.test_class.supported_categories
+
         instance = self.test_class(
             years=int(localized_holidays[0][0].split("-")[0]),
             language=language,
-            categories=self.test_class.supported_categories,
+            categories=categories,
         )
 
         for subdiv in instance.subdivisions:
             instance.update(
                 self.test_class(
-                    subdiv=subdiv,
-                    years=instance.years,
-                    language=language,
-                    categories=instance.supported_categories,
+                    subdiv=subdiv, years=instance.years, language=language, categories=categories
                 )
             )
 
@@ -624,7 +626,7 @@ class TestCase:
             f"Please make sure all holiday names are localized: {actual_holidays}",
         )
 
-    def assertLocalizedHolidays(self, *args):
+    def assertLocalizedHolidays(self, *args, categories=None):
         """Assert localized holidays match expected names."""
         arg = args[0]
         is_string = isinstance(arg, str)
@@ -635,7 +637,9 @@ class TestCase:
         if language:
             self.set_language(language)
         for language in (language, "invalid", ""):
-            self._assertLocalizedHolidays(localized_holidays, language)
+            self._assertLocalizedHolidays(
+                localized_holidays, categories=categories, language=language
+            )
 
 
 class CommonTests(TestCase):
@@ -710,6 +714,15 @@ class CommonTests(TestCase):
                     subdiv,
                     subdivisions,
                     f"Invalid subdivision alias {alias}: subdivision {subdiv} does not exist.",
+                )
+
+    def test_subdivisions_aliases_holidays_match(self):
+        for alias, subdiv in self.test_class.subdivisions_aliases.items():
+            for category in self.test_class.supported_categories:
+                self.assertEqual(
+                    self.test_class(subdiv=alias, categories=category, years=2025).items(),
+                    self.test_class(subdiv=subdiv, categories=category, years=2025).items(),
+                    f"Holidays of alias `{alias}` and subdivision `{subdiv}` do not match.",
                 )
 
 

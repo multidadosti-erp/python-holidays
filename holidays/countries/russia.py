@@ -10,11 +10,10 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars.gregorian import JAN, FEB, MAR, APR, MAY, JUN, JUL, NOV, DEC
 from holidays.calendars.julian import JULIAN_CALENDAR
 from holidays.groups import ChristianHolidays, InternationalHolidays, StaticHolidays
+from holidays.helpers import tr
 from holidays.observed_holiday_base import ObservedHolidayBase
 
 
@@ -30,7 +29,7 @@ class Russia(ObservedHolidayBase, ChristianHolidays, InternationalHolidays, Stat
     default_language = "ru"
     # %s (observed).
     observed_label = tr("%s (выходной)")
-    supported_languages = ("en_US", "ru", "th")
+    supported_languages = ("en_US", "ru", "th", "zh_CN")
     start_year = 1991
 
     def __init__(self, *args, **kwargs):
@@ -119,7 +118,7 @@ class RUS(Russia):
 
 
 class RussiaStaticHolidays:
-    # Date format (see strftime() Format Codes).
+    # Substituted date format.
     substituted_date_format = tr("%d.%m.%Y")
     # Day off (substituted from %s).
     substituted_label = tr("Выходной (перенесено с %s)")
@@ -363,6 +362,19 @@ class RussiaStaticHolidays:
             (NOV, 3, NOV, 1),
             (DEC, 31, JAN, 5),
         ),
+        # Substituted Holidays 2026
+        # src: https://web.archive.org/web/20250927144157/https://www.consultant.ru/document/cons_doc_LAW_515170/
+        2026: (
+            (JAN, 9, JAN, 3),
+            (DEC, 31, JAN, 4),
+        ),
+        # Substituted Holidays 2027
+        # src: https://web.archive.org/web/20260919183121/https://www.consultant.ru/document/cons_doc_LAW_544706/
+        2027: (
+            (FEB, 22, FEB, 20),
+            (NOV, 5, JAN, 2),
+            (DEC, 31, JAN, 3),
+        ),
     }
 
     # These are cases where additional in-lieus are given
@@ -498,4 +510,15 @@ class RussiaStaticHolidays:
             (JUN, 13, russia_day),
         ),
         2023: (NOV, 6, unity_day),
+        # src: https://web.archive.org/web/20260924105812/https://www.consultant.ru/law/ref/calendar/proizvodstvennye/2026/
+        2026: (
+            (MAR, 9, international_womens_day),
+            (MAY, 11, victory_day),
+        ),
+        # src: https://web.archive.org/web/20260928054141/https://www.consultant.ru/law/ref/calendar/proizvodstvennye/2027/
+        2027: (
+            (MAY, 3, labor_day),
+            (MAY, 10, victory_day),
+            (JUN, 14, russia_day),
+        ),
     }

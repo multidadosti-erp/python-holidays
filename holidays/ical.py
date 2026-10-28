@@ -41,14 +41,16 @@ class ICalExporter:
                 Determines whether to include the `;LANGUAGE=` attribute in the
                 `SUMMARY` field. Defaults to `False`.
 
-                If the `HolidaysBase` object has a `language` attribute, it will
-                be used. Otherwise, `default_language` will be used if available.
+                If the [`HolidayBase`][holidays.holiday_base.HolidayBase] object
+                has a `language` attribute, it will be used. Otherwise,
+                `default_language` will be used if available.
 
                 If neither attribute exists and `show_language=True`, an
                 exception will be raised.
 
             instance:
-                `HolidaysBase` object containing holiday data.
+                [`HolidayBase`][holidays.holiday_base.HolidayBase] object
+                containing holiday data.
         """
         self.holidays = instance
         self.show_language = show_language
@@ -68,10 +70,12 @@ class ICalExporter:
             raise ValueError("LANGUAGE cannot be included because the language code is missing.")
 
     def _validate_language(self, language: str) -> str:
-        """Validate the language code to ensure it complies with RFC 5646.
+        """Validate the language code to ensure it complies with
+        [RFC 5646](https://web.archive.org/web/20261001095044/https://datatracker.ietf.org/doc/html/rfc5646).
 
         In the current implementation, all languages must comply with
-        either ISO 639-1 or ISO 639-2 if specified (part of RFC 5646).
+        either [ISO 639-1 or ISO 639-2](https://web.archive.org/web/20261003082739/https://www.loc.gov/standards/iso639-2/php/code_list.php)
+        if specified (part of [RFC 5646](https://web.archive.org/web/20261001095044/https://datatracker.ietf.org/doc/html/rfc5646)).
 
         Args:
             language:
@@ -96,7 +100,8 @@ class ICalExporter:
         return language
 
     def _fold_line(self, line: str) -> str:
-        """Fold long lines according to RFC 5545.
+        """Fold long lines according to
+        [RFC 5545](https://web.archive.org/web/20260815171151/https://datatracker.ietf.org/doc/html/rfc5545).
 
         Content lines SHOULD NOT exceed 75 octets. If a line is too long,
         it must be split into multiple lines, with each continuation line
@@ -180,7 +185,7 @@ class ICalExporter:
 
         Args:
             return_bytes:
-                If True, return bytes instead of string.
+                If `True`, return bytes instead of string.
 
         Returns:
             The complete iCalendar data
@@ -193,26 +198,27 @@ class ICalExporter:
             "CALSCALE:GREGORIAN",
         ]
 
-        sorted_dates = sorted(self.holidays.keys())
         # Merged continuous holiday with the same name and use `DURATION` instead.
-        n = len(sorted_dates)
-        i = 0
-        while i < n:
-            dt = sorted_dates[i]
-            names = self.holidays.get_list(dt)
+        holiday_sequences: dict[str, list[date]] = {}
+        for dt in sorted(self.holidays.keys()):
+            for name in self.holidays.get_list(dt):
+                holiday_sequences.setdefault(name, []).append(dt)
 
-            for name in names:
-                days = 1
-                while (
-                    i + days < n
-                    and sorted_dates[i + days] == _timedelta(sorted_dates[i], days)
-                    and name in self.holidays.get_list(sorted_dates[i + days])
-                ):
+        events: list[tuple[date, str, int]] = []
+        for name, dates in holiday_sequences.items():
+            start_date = dates[0]
+            days = 1
+            for next_date in dates[1:]:
+                if next_date == _timedelta(start_date, days) and next_date.year == start_date.year:
                     days += 1
+                else:
+                    events.append((start_date, name, days))
+                    start_date = next_date
+                    days = 1
+            events.append((start_date, name, days))
 
-                lines.extend(self._generate_event(dt, name, days))
-
-            i += days
+        for event in sorted(events):
+            lines.extend(self._generate_event(*event))
 
         lines.append("END:VCALENDAR")
         lines.append("")
@@ -221,14 +227,15 @@ class ICalExporter:
         return output.encode() if return_bytes else output
 
     def save_ics(self, file_path: str | Path) -> None:
-        """Export the calendar data to a .ics file.
+        """Export the calendar data to a `.ics` file.
 
-        While RFC 5545 does not specifically forbid filenames for .ics files, but it's advisable
-        to follow general filesystem conventions and avoid using problematic characters.
+        While [RFC 5545](https://web.archive.org/web/20260815171151/https://datatracker.ietf.org/doc/html/rfc5545)
+        does not explicitly restrict filenames for `.ics` files, it is still advisable to follow
+        general filesystem conventions and avoid problematic characters.
 
         Args:
             file_path:
-                Path to save the .ics file, including the filename (with extension).
+                Path to save the `.ics` file, including the filename (with extension).
         """
         # Generate and write out content (always in bytes for .ics)
         content = self.generate(return_bytes=True)

@@ -11,7 +11,6 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
-from gettext import gettext as tr
 
 from holidays.calendars import _CustomIslamicHolidays
 from holidays.calendars.gregorian import (
@@ -30,6 +29,7 @@ from holidays.calendars.gregorian import (
     _timedelta,
 )
 from holidays.groups import IslamicHolidays
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -48,9 +48,9 @@ class Oman(HolidayBase, IslamicHolidays):
     country = "OM"
     default_language = "ar"
     # %s (estimated).
-    estimated_label = tr("%s (المقدرة)")
+    estimated_label = tr("%s (تقديري)")
     start_year = 1970
-    supported_languages = ("ar", "en_US")
+    supported_languages = ("ar", "en_US", "ur_PK")
     weekend = {FRI, SAT}
 
     def __init__(self, *args, islamic_show_estimated: bool = True, **kwargs):

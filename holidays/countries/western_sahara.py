@@ -10,9 +10,8 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.groups import IslamicHolidays
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -31,7 +30,7 @@ class WesternSahara(HolidayBase, IslamicHolidays):
     country = "EH"
     default_language = "ar"
     # %s (estimated).
-    estimated_label = tr("%s (المقدرة)")
+    estimated_label = tr("%s (تقديري)")
     # 1999 Constitution was adopted by the 10th Congress on September 4th, 1999.
     start_year = 2000
     supported_languages = ("ar", "en_US", "es", "fr")

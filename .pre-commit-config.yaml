@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # v6.0.0
     hooks:
       - id: check-ast
       - id: check-builtin-literals
@@ -18,21 +18,29 @@ repos:
         exclude: \.md$
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.21.2
+    rev: 75992aaa40730136014f34227e0135f63fc951b4  # v3.21.2
     hooks:
-    -   id: pyupgrade
+      - id: pyupgrade
         args:
           - --keep-runtime-typing
           - --py310-plus
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.6
+    rev: 2eeb5678de71a00c0902cbda7105d328432f72cb  # v0.16.8
     hooks:
       - id: ruff-check
       - id: ruff-format
 
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: 5b5dddc4fb0f83c3ea1fc5616fa63e115dce83e0  # v0.49.1
+    hooks:
+      - id: markdownlint
+        args:
+          - --fix
+        files: \.md$
+
   - repo: https://github.com/lucas-c/pre-commit-hooks
-    rev: v1.5.6
+    rev: ad1b27d73581aa16cca06fc4a0761fc563ffe8e8  # v1.5.6
     hooks:
       - id: insert-license
         name: check license headers
@@ -42,27 +50,32 @@ repos:
           - docs/file_header.txt
 
   - repo: https://github.com/pycqa/isort
-    rev: 8.0.1
+    rev: 131f4adcd5582bfc53928ab0d740eceb8b506b6c  # 9.0.1
     hooks:
       - id: isort
         exclude: ^(docs)
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.19.1
+    rev: 7ff8d35ae36a7d2b968f2f90b4c723e292e594ee  # v2.3.1
     hooks:
       - id: mypy
         additional_dependencies:
-          - types-polib
-          - types-python-dateutil
-          - types-requests
+          - types-polib==1.2.0.20260518
+          - types-python-dateutil==2.9.0.20260807
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: v2.18.1
+    rev: 59e7b26529dc6f15c43063064b8b06ded60d0910  # v2.29.4
     hooks:
       - id: pyproject-fmt
 
   - repo: local
     hooks:
+      - id: normalize-unicode
+        name: normalize unicode punctuation
+        entry: python scripts/normalize_text.py
+        language: system
+        types: [text]
+        exclude: ^(CHANGES\.md|scripts/normalize_text\.py)$
       - id: tests
         always_run: true
         entry: make check

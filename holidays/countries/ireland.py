@@ -21,7 +21,7 @@ class Ireland(HolidayBase, ChristianHolidays, InternationalHolidays, StaticHolid
 
     References:
         * <https://en.wikipedia.org/wiki/Public_holidays_in_the_Republic_of_Ireland>
-        * <https://web.archive.org/web/20250317124917/https://www.citizensinformation.ie/en/employment/employment_rights_and_conditions/leave_and_holidays/public_holidays_in_ireland.html>
+        * [Public Holidays in Ireland](https://web.archive.org/web/20250317124917/https://www.citizensinformation.ie/en/employment/employment_rights_and_conditions/leave_and_holidays/public_holidays_in_ireland.html)
     """
 
     country = "IE"
@@ -66,8 +66,8 @@ class Ireland(HolidayBase, ChristianHolidays, InternationalHolidays, StaticHolid
             # June Bank Holiday.
             self._add_holiday_1st_mon_of_jun("June Bank Holiday")
         else:
-            # Whit Monday.
-            self._add_whit_monday("Whit Monday")
+            # Pentecost Monday.
+            self._add_pentecost_monday("Whit Monday")
 
         # August Bank Holiday.
         self._add_holiday_1st_mon_of_aug("August Bank Holiday")

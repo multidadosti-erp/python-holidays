@@ -30,7 +30,7 @@ class TestJordan(CommonCountryTests, TestCase):
         self.assertHolidayName("عيد العمال", (f"{year}-05-01" for year in self.full_range))
 
     def test_independence_day(self):
-        self.assertHolidayName("عيد الإستقلال", (f"{year}-05-25" for year in self.full_range))
+        self.assertHolidayName("عيد الاستقلال", (f"{year}-05-25" for year in self.full_range))
 
     def test_christmas_day(self):
         self.assertHolidayName("عيد الميلاد المجيد", (f"{year}-12-25" for year in self.full_range))
@@ -169,18 +169,18 @@ class TestJordan(CommonCountryTests, TestCase):
     def test_l10n_default(self):
         self.assertLocalizedHolidays(
             ("2024-01-01", "رأس السنة الميلادية"),
-            ("2024-02-08", "ليلة المعراج (المقدرة)"),
-            ("2024-04-10", "عيد الفطر (المقدرة)"),
-            ("2024-04-11", "عطلة عيد الفطر (المقدرة)"),
-            ("2024-04-12", "عطلة عيد الفطر (المقدرة)"),
+            ("2024-02-08", "ليلة المعراج (تقديري)"),
+            ("2024-04-10", "عيد الفطر (تقديري)"),
+            ("2024-04-11", "عطلة عيد الفطر (تقديري)"),
+            ("2024-04-12", "عطلة عيد الفطر (تقديري)"),
             ("2024-05-01", "عيد العمال"),
-            ("2024-05-25", "عيد الإستقلال"),
-            ("2024-06-15", "يوم عرفة (المقدرة)"),
-            ("2024-06-16", "عيد الأضحى (المقدرة)"),
-            ("2024-06-17", "عطلة عيد الأضحى (المقدرة)"),
-            ("2024-06-18", "عطلة عيد الأضحى (المقدرة)"),
-            ("2024-07-07", "رأس السنة الهجرية (المقدرة)"),
-            ("2024-09-15", "عيد المولد النبوي (المقدرة)"),
+            ("2024-05-25", "عيد الاستقلال"),
+            ("2024-06-15", "يوم عرفة (تقديري)"),
+            ("2024-06-16", "عيد الأضحى (تقديري)"),
+            ("2024-06-17", "عطلة عيد الأضحى (تقديري)"),
+            ("2024-06-18", "عطلة عيد الأضحى (تقديري)"),
+            ("2024-07-07", "رأس السنة الهجرية (تقديري)"),
+            ("2024-09-15", "عيد المولد النبوي (تقديري)"),
             ("2024-12-25", "عيد الميلاد المجيد"),
         )
 
@@ -194,7 +194,7 @@ class TestJordan(CommonCountryTests, TestCase):
             ("2024-04-12", "Eid al-Fitr Holiday (estimated)"),
             ("2024-05-01", "Labor Day"),
             ("2024-05-25", "Independence Day"),
-            ("2024-06-15", "Arafat Day (estimated)"),
+            ("2024-06-15", "Day of Arafah (estimated)"),
             ("2024-06-16", "Eid al-Adha (estimated)"),
             ("2024-06-17", "Eid al-Adha Holiday (estimated)"),
             ("2024-06-18", "Eid al-Adha Holiday (estimated)"),

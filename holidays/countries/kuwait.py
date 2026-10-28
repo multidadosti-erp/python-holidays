@@ -11,10 +11,10 @@
 #  License: MIT (see LICENSE file)
 
 from datetime import date
-from gettext import gettext as tr
 
 from holidays.calendars.gregorian import SEP, THU, FRI, SAT
 from holidays.groups import InternationalHolidays, IslamicHolidays
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -30,8 +30,8 @@ class Kuwait(HolidayBase, InternationalHolidays, IslamicHolidays):
     country = "KW"
     default_language = "ar"
     # %s (estimated).
-    estimated_label = tr("%s (المقدرة)")
-    supported_languages = ("ar", "en_US")
+    estimated_label = tr("%s (تقديري)")
+    supported_languages = ("ar", "en_US", "ur_PK")
     weekend = {FRI, SAT}
 
     def __init__(self, *args, islamic_show_estimated: bool = True, **kwargs):
@@ -75,7 +75,7 @@ class Kuwait(HolidayBase, InternationalHolidays, IslamicHolidays):
         self._add_eid_al_fitr_day_two(tr("عطلة عيد الفطر"))
         self._add_eid_al_fitr_day_three(tr("عطلة عيد الفطر"))
 
-        # Arafat Day.
+        # Day of Arafah.
         self._add_arafah_day(tr("يوم عرفة"))
 
         # Eid al-Adha.

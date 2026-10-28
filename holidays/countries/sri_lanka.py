@@ -10,8 +10,6 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars import _CustomHinduHolidays, _CustomIslamicHolidays
 from holidays.calendars.gregorian import (
     JAN,
@@ -37,6 +35,7 @@ from holidays.groups import (
     SinhalaCalendarHolidays,
     StaticHolidays,
 )
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -54,27 +53,27 @@ class SriLanka(
     References:
         * [No. 29 of 1971 (Holidays Act)](https://web.archive.org/web/20250315041521/http://www.commonlii.org/lk/legis/num_act/ha29o1971152/)
         * [No. 21 of 1991 (Amendment)](https://web.archive.org/web/20200221094206/http://www.commonlii.org:80/lk/legis/num_act/ha21o1991232/)
+
+    Cross-Checked With:
         * [2003](https://web.archive.org/web/20110722150724/http://www.pubad.gov.lk/Holidays/holidays%202003.htm)
         * [2004](https://web.archive.org/web/20111018053717/http://www.pubad.gov.lk/Holidays/Public%20&%20Bank%20Holidays%202004.pdf)
         * [2005-2025](https://web.archive.org/web/20241120204015/https://documents.gov.lk/en/calendar.php)
+        * [2005](https://web.archive.org/web/20111018053927/http://www.pubad.gov.lk/Holidays/Public%20&%20Bank%20Holidays%202005.pdf)
+        * [2006](https://web.archive.org/web/20111018061003/http://www.pubad.gov.lk/Holidays/Public%20&%20Bank%20Holidays%202006.pdf)
+        * [2007](https://web.archive.org/web/20110722150032/http://www.pubad.gov.lk/Holidays/Public%20&%20Bank%20Holidays%202007.pdf)
+        * [2008](https://web.archive.org/web/20111018071837/http://www.pubad.gov.lk/Holidays/PublicBankHolidays2008.pdf)
+        * [2009](https://web.archive.org/web/20120309065711/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2009.pdf)
+        * [2010](https://web.archive.org/web/20111018071247/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2010.pdf)
+        * [2011](https://web.archive.org/web/20110722151043/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2011.pdf)
+        * [2012](https://web.archive.org/web/20111125074237/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2012.pdf)
+        * [2019](https://web.archive.org/web/20241206195320/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2019)
+        * [2020](https://web.archive.org/web/20250420233412/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2020)
+        * [2021](https://web.archive.org/web/20220524084434/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2021)
+        * [2022](https://web.archive.org/web/20231210111149/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2022)
+        * [2023](https://web.archive.org/web/20250218215654/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2023)
+        * [2024](https://web.archive.org/web/20250217180119/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2024)
+        * [2025](https://web.archive.org/web/20250407061643/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2025)
         * [2026](https://archive.org/details/2438-22-e)
-
-    Cross-Checked With:
-        * <https://web.archive.org/web/20111018053927/http://www.pubad.gov.lk/Holidays/Public%20&%20Bank%20Holidays%202005.pdf>
-        * <https://web.archive.org/web/20111018061003/http://www.pubad.gov.lk/Holidays/Public%20&%20Bank%20Holidays%202006.pdf>
-        * <https://web.archive.org/web/20110722150032/http://www.pubad.gov.lk/Holidays/Public%20&%20Bank%20Holidays%202007.pdf>
-        * <https://web.archive.org/web/20111018071837/http://www.pubad.gov.lk/Holidays/PublicBankHolidays2008.pdf>
-        * <https://web.archive.org/web/20120309065711/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2009.pdf>
-        * <https://web.archive.org/web/20111018071247/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2010.pdf>
-        * <https://web.archive.org/web/20110722151043/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2011.pdf>
-        * <https://web.archive.org/web/20111125074237/http://www.pubad.gov.lk/Holidays/Public&BankHolidays2012.pdf>
-        * <https://web.archive.org/web/20241206195320/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2019>
-        * <https://web.archive.org/web/20250420233412/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2020>
-        * <https://web.archive.org/web/20220524084434/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2021>
-        * <https://web.archive.org/web/20231210111149/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2022>
-        * <https://web.archive.org/web/20250218215654/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2023>
-        * <https://web.archive.org/web/20250217180119/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2024>
-        * <https://web.archive.org/web/20250407061643/https://www.cbsl.gov.lk/en/about/about-the-bank/bank-holidays-2025>
     """
 
     country = "LK"
@@ -197,9 +196,9 @@ class SriLanka(
         # Maha Sivarathri Day.
         self._add_holiday(tr("මහ සිවරාත්රි දිනය"), maha_sivarathri_dates.get(self._year))
 
-        # Deepavali was a working day in 2003.
+        # Diwali was a working day in 2003.
         if self._year >= 2004:
-            # Deepavali Festival Day.
+            # Diwali.
             self._add_diwali(tr("දීපවාලි උත්සව දිනය"))
 
         # Poya Holidays.
@@ -476,6 +475,6 @@ class SriLankaStaticHolidays:
     }
 
     special_workday_holidays = {
-        # Deepavali Festival Day.
+        # Diwali.
         2003: (OCT, 24, tr("දීපවාලි උත්සව දිනය")),
     }

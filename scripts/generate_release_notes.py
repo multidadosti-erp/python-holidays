@@ -14,25 +14,33 @@
 #  License: MIT (see LICENSE file)
 
 import argparse
+import contextlib
 import re
 import sys
-from datetime import date
+from datetime import datetime, timezone
 from pathlib import Path
 
 from git import Repo
 from github import Auth, Github
 from github.GithubException import UnknownObjectException
 
-sys.path.append(f"{Path.cwd()}")
-import holidays  # noqa: E402
+sys.path.insert(0, str(Path.cwd()))
+import holidays
 
 BRANCH_NAME = "dev"
 HEADER_TEMPLATE = """
-# Version {version}
+## Version {version}
 
 Released {month} {day}, {year}
 """
 IGNORED_CONTRIBUTORS = {"dependabot[bot]", "github-actions[bot]"}
+PR_ORDER_PATTERN = re.compile(
+    r"(BREAKING|Introduce|Refactor|.*Add .* support)"
+    r"|(Add .* holidays$)"
+    r"|(Localize|.*localization$)"
+    r"|(Fix)"
+    r"|(Change|Improve|Optimize|Update|Upgrade)"
+)
 REPOSITORY_NAME = "vacanza/holidays"
 
 
@@ -83,6 +91,7 @@ class ReleaseNotesGenerator:
 
         self.previous_commits: set[str] = set()
         self.pull_requests: dict[int, tuple[str, str]] = {}
+        self.skipped_pull_requests: set[int] = set()
 
         self.tag = holidays.__version__
 
@@ -113,38 +122,29 @@ class ReleaseNotesGenerator:
     @property
     def sorted_pull_requests(self):
         def custom_order(pr):
-            if re.findall(r"^(Introduce|Refactor)", pr[0]) or re.findall(r"Add .* support", pr[0]):
-                weight = 10
-            elif re.findall(r"^Add .* holidays$", pr[0]):
-                weight = 20
-            elif re.findall(r"(^Localize)|(localization$)", pr[0]):
-                weight = 30
-            elif re.findall(r"^Fix", pr[0]):
-                weight = 40
-            elif re.findall(r"^(Change|Improve|Optimize|Update|Upgrade)", pr[0]):
-                weight = 50
-            else:
-                weight = 100
-
-            return weight, pr
+            m = PR_ORDER_PATTERN.match(pr[0])
+            return (m.lastindex if m else 10), pr
 
         return sorted(self.pull_requests.values(), key=custom_order)
 
     def add_pull_request(self, pull_request):
         """Add pull request information to the release notes dict."""
         author = pull_request.user.login if pull_request.user else None
+        pr_number = pull_request.number
         if author in IGNORED_CONTRIBUTORS:
-            print(f"Skipping #{pull_request.number} {pull_request.title} by {author}")
+            print(f"Skipping #{pr_number} {pull_request.title} by {author}")
+            self.skipped_pull_requests.add(pr_number)
             return None
 
         # Skip failed release attempt PRs, version upgrades.
         pr_title = pull_request.title
-        if pr_title.startswith(("v", "Bump", "Revert")):
+        if pr_title.startswith(("v", "Bump", "Revert", "chore:")):
+            self.skipped_pull_requests.add(pr_number)
             return None
 
         # Get contributors (expand from commits by default).
         contributors = set()
-        if pull_request.number not in self.args.author_only:
+        if pr_number not in self.args.author_only:
             for commit in pull_request.get_commits():
                 if (
                     commit.author
@@ -152,13 +152,8 @@ class ReleaseNotesGenerator:
                 ):
                     contributors.add(author_login)
 
-        if author in contributors:
-            contributors.remove(author)
-        contributors = (f"@{c}" for c in [author] + sorted(contributors, key=str.lower))
-        self.pull_requests[pull_request.number] = (
-            pull_request.title,
-            f"#{pull_request.number} by {', '.join(contributors)}",
-        )
+        contributors = (f"@{c}" for c in [author, *sorted(contributors - {author}, key=str.lower)])
+        self.pull_requests[pr_number] = (pr_title, f"#{pr_number} by {', '.join(contributors)}")
 
     def generate_release_notes(self):
         """Generate release notes contents."""
@@ -208,10 +203,7 @@ class ReleaseNotesGenerator:
                 break
 
             try:
-                pull_request_number = re.findall(
-                    r"#(\d{3,})",
-                    commit.message,
-                )[0]
+                pull_request_number = re.findall(r"#(\d{3,})", commit.message)[0]
                 pull_request_numbers.add(int(pull_request_number))
             except IndexError:
                 continue
@@ -219,6 +211,7 @@ class ReleaseNotesGenerator:
         # Fetch old PRs metadata only. Skip all known PRs.
         pull_request_numbers -= set(self.pull_requests.keys())
         pull_request_numbers -= set(self.args.exclude)
+        pull_request_numbers -= self.skipped_pull_requests
         for pull_request_number in pull_request_numbers:
             if self.args.verbose:
                 messages = [f"Fetching PR #{pull_request_number}"]
@@ -226,23 +219,18 @@ class ReleaseNotesGenerator:
                     messages.append("(keeping PR author as a sole contributor)")
                 print(" ".join(messages))
 
-            try:
-                self.add_pull_request(self.remote_repo.get_pull(pull_request_number))
             # 3rd party contributions to forks.
-            except UnknownObjectException:
-                pass
+            with contextlib.suppress(UnknownObjectException):
+                self.add_pull_request(self.remote_repo.get_pull(pull_request_number))
 
     def print_release_notes(self):
         """Print generated release notes."""
         print("")
         if self.pull_requests:
-            today = date.today()
+            today = datetime.now(tz=timezone.utc)
             print(
                 HEADER_TEMPLATE.format(
-                    day=today.day,
-                    month=today.strftime("%B"),
-                    version=self.tag,
-                    year=today.year,
+                    day=today.day, month=today.strftime("%B"), version=self.tag, year=today.year
                 )
             )
             print("\n".join(f"- {pr[0]} ({pr[1]})" for pr in self.sorted_pull_requests))

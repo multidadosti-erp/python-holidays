@@ -10,8 +10,6 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars import _CustomIslamicHolidays, _CustomHinduHolidays
 from holidays.calendars.gregorian import JAN, FEB, MAR, APR, MAY, AUG, SEP, OCT, NOV
 from holidays.constants import PUBLIC, WORKDAY
@@ -22,6 +20,7 @@ from holidays.groups import (
     IslamicHolidays,
     StaticHolidays,
 )
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -54,7 +53,7 @@ class Nepal(
     estimated_label = tr("%s (अनुमानित)")
     start_year = 2010
     supported_categories = (PUBLIC, WORKDAY)
-    supported_languages = ("en_US", "ne")
+    supported_languages = ("en_US", "hi", "kn", "ne")
 
     def __init__(self, *args, islamic_show_estimated: bool = True, **kwargs):
         """
@@ -244,7 +243,7 @@ class Nepal(
         self._add_gyalpo_losar(tr("ग्याल्पो ल्होसार"))
 
         # Fagu Poornima.
-        self._add_nepal_holi(tr("फागुपुर्णिमा"))
+        self._add_nepal_holi(tr("फागुपूर्णिमा"))
 
         # Fagu Poornima (Terai).
         self._add_holi(tr("फागुपूर्णिमा (तराई)"))
@@ -268,7 +267,7 @@ class Nepal(
         self._add_papankusha_ekadashi(tr("एकादशी (दशैं)"))
 
         # Laxmi Pooja.
-        self._add_diwali_india(tr("लक्ष्मी पुजा"))
+        self._add_diwali_india(tr("लक्ष्मीपूजा"))
 
         # Gai Tihar.
         self._add_gau_krida(tr("गाई तिहार"))
@@ -291,10 +290,10 @@ class Nepal(
         # Islamic holidays.
 
         # Eid al-Fitr.
-        self._add_eid_al_fitr_day(tr("इद उल फित्र"))
+        self._add_eid_al_fitr_day(tr("ईद (ईद उल फित्र)"))
 
         # Eid al-Adha.
-        self._add_eid_al_adha_day(tr("बकरीद"))
+        self._add_eid_al_adha_day(tr("बकर ईद (ईद उल अजहा)"))
 
         # Removed by MoHA between 2019-2020.
         self._add_non_continuous_holidays()

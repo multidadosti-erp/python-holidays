@@ -10,11 +10,10 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars import _CustomIslamicHolidays
 from holidays.calendars.gregorian import JUN, JUL, SEP
 from holidays.groups import ChristianHolidays, InternationalHolidays, IslamicHolidays
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -25,10 +24,10 @@ class CentralAfricanRepublic(
 
     References:
         * <https://en.wikipedia.org/wiki/Public_holidays_in_the_Central_African_Republic>
-        * [PUBLIC HOLIDAYS](https://web.archive.org/web/20171215122602/http://www.ais-asecna.org/pdf/gen/gen-2-1/04gen2-1-01.pdf)
-        * <https://web.archive.org/web/20250122135347/https://corbeaunews-centrafrique.org/lindependance-et-la-fete-nationale-deux-dates-distinctes-pour-la-republique-centrafricaine/>
-        * <https://web.archive.org/web/20250715092147/https://www.rfi.fr/fr/afrique/20160912-rca-fete-tabaski-est-desormais-jour-ferie>
-        * <https://web.archive.org/web/20250715093233/https://www.aa.com.tr/fr/culture-et-arts/lofficialisation-des-fêtes-musulmanes-en-rca-nouvelle-donne-pour-la-cohésion-sociale/45806>
+        * [Public Holidays](https://web.archive.org/web/20171215122602/http://www.ais-asecna.org/pdf/gen/gen-2-1/04gen2-1-01.pdf)
+        * [National Day and Independence Day history](https://web.archive.org/web/20250122135347/https://corbeaunews-centrafrique.org/lindependance-et-la-fete-nationale-deux-dates-distinctes-pour-la-republique-centrafricaine/)
+        * [2016 Eid al-Adha](https://web.archive.org/web/20250715092147/https://www.rfi.fr/fr/afrique/20160912-rca-fete-tabaski-est-desormais-jour-ferie)
+        * [Official Inclusion of Islamic Holidays as Public Holidays](https://web.archive.org/web/20250715093233/https://www.aa.com.tr/fr/culture-et-arts/lofficialisation-des-fêtes-musulmanes-en-rca-nouvelle-donne-pour-la-cohésion-sociale/45806)
     """
 
     country = "CF"
@@ -70,8 +69,8 @@ class CentralAfricanRepublic(
         # Ascension Day.
         self._add_ascension_thursday(tr("Ascension"))
 
-        # Whit Monday.
-        self._add_whit_monday(tr("Lundi de Pentecôte"))
+        # Pentecost Monday.
+        self._add_pentecost_monday(tr("Lundi de Pentecôte"))
 
         if self._year >= 2007:
             # General Prayer Day.

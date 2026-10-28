@@ -10,8 +10,6 @@
 #  Website: https://github.com/vacanza/holidays
 #  License: MIT (see LICENSE file)
 
-from gettext import gettext as tr
-
 from holidays.calendars import _CustomIslamicHolidays
 from holidays.calendars.gregorian import JAN, MAR, JUN, JUL, AUG, SEP, OCT, NOV, DEC, FRI, SAT
 from holidays.constants import CHRISTIAN, HEBREW, PUBLIC, SABIAN, YAZIDI
@@ -22,6 +20,7 @@ from holidays.groups import (
     IslamicHolidays,
     MandaeanHolidays,
 )
+from holidays.helpers import tr
 from holidays.holiday_base import HolidayBase
 
 
@@ -46,7 +45,7 @@ class Iraq(
     country = "IQ"
     default_language = "ar"
     # %s (estimated).
-    estimated_label = tr("%s (المقدرة)")
+    estimated_label = tr("%s (تقديري)")
     start_year = 1964
     supported_categories = (CHRISTIAN, HEBREW, PUBLIC, SABIAN, YAZIDI)
     supported_languages = ("ar", "en_US")
@@ -147,7 +146,7 @@ class Iraq(
             self._add_passover(tr("عيد الفصح"), range(2))
 
             # Yom Kippur.
-            self._add_yom_kippur(tr("يوم الكفارة"))
+            self._add_yom_kippur(tr("عيد الغفران"))
 
             # Sukkot.
             self._add_sukkot(tr("عيد المظلة"), range(2))
